@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI That Works For You</title>
+<meta name="description" content="We install AI systems that answer your leads, chase the follow-up, and book your calendar — proven on our own business first.">
+<style>
+  :root{
+    --rec:#C93B3B;
+    --paper:#FBFAF7;
+    --ink:#24272B;
+    --muted:#6E6A63;
+    --line:#E4E0D8;
+    --card:#FFFFFF;
+    --wash:#F3F0EA;
+    --amber:#8A6D1F;
+    --amber-wash:#F7F1DF;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --rec:#E25C5C;
+      --paper:#17181A;
+      --ink:#E7E4DD;
+      --muted:#9B968D;
+      --line:#33342F;
+      --card:#1E1F22;
+      --wash:#232420;
+      --amber:#D9B23A;
+      --amber-wash:#262216;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    font-size:17px;line-height:1.55;
+  }
+  .page{max-width:1000px;margin:0 auto;padding:44px 22px 90px}
+  .label{
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;
+    font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+  }
+  .recdot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--rec);animation:pulse 2.2s ease-in-out infinite;vertical-align:1px;margin-right:8px}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  @media (prefers-reduced-motion: reduce){.recdot{animation:none}}
+
+  .hero{padding:26px 0 8px;border-bottom:2px solid var(--ink)}
+  h1{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-weight:800;letter-spacing:-.028em;
+    font-size:clamp(46px,9.5vw,84px);line-height:.98;margin:14px 0 16px;text-wrap:balance;
+  }
+  h1 em{font-style:normal;color:var(--rec)}
+  .dek{font-size:clamp(17px,2.5vw,21px);color:var(--muted);max-width:54ch;margin-bottom:30px}
+  .dek b{color:var(--ink)}
+
+  .statwall{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:34px 0 12px}
+  @media (max-width:680px){.statwall{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--card);padding:18px 16px 14px}
+  .stat .n{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:clamp(24px,4vw,34px);font-variant-numeric:tabular-nums;line-height:1.05}
+  .stat .n em{font-style:normal;color:var(--rec)}
+  .stat .d{font-size:13px;color:var(--muted);margin-top:4px;line-height:1.35}
+  .stamp{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.06em;color:var(--muted)}
+
+  .eyebrow{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rec);display:block;margin-top:64px}
+  h2{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-weight:800;letter-spacing:-.015em;font-size:clamp(25px,4.4vw,36px);
+    margin:6px 0 10px;text-wrap:balance;
+  }
+  .lede{color:var(--muted);font-size:17px;max-width:56ch;margin-bottom:22px}
+  .lede b{color:var(--ink)}
+
+  .phones{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:26px 0}
+  @media (max-width:760px){.phones{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+  .phone{display:flex;flex-direction:column;gap:10px}
+  .phone .frame{
+    border:1px solid var(--line);border-radius:26px;overflow:hidden;background:#000;
+    box-shadow:0 14px 34px rgba(0,0,0,.16);
+  }
+  .phone img{display:block;width:100%;height:auto}
+  .phone .cap{font-size:14.5px;color:var(--muted);line-height:1.45;padding:0 6px}
+  .phone .cap b{color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700}
+
+  .wide{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);margin:22px 0 8px;box-shadow:0 10px 28px rgba(0,0,0,.10)}
+  .wide img{display:block;width:100%;height:auto}
+  .widecap{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:10px 2px 0}
+  .widecap b{color:var(--rec);font-weight:600}
+
+  .ledger{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:24px 0;background:var(--card)}
+  .row{display:grid;grid-template-columns:150px 1fr;border-top:1px solid var(--line);align-items:center}
+  .row:first-child{border-top:none}
+  @media (max-width:560px){.row{grid-template-columns:110px 1fr}}
+  .row .num{padding:13px 18px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;font-size:20px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .row .what{padding:13px 18px 13px 0;font-size:15.5px;color:var(--muted)}
+  .row .what b{color:var(--ink)}
+
+  .replace{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:24px 26px;margin:24px 0;
+  }
+  .replace .big{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;font-size:clamp(21px,3.4vw,27px);letter-spacing:-.015em;margin-bottom:12px}
+  .replace .big em{font-style:normal;color:var(--rec)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{
+    background:var(--wash);border:1px solid var(--line);border-radius:999px;
+    padding:6px 14px;font-size:13.5px;color:var(--muted);white-space:nowrap;
+  }
+  .chip b{color:var(--ink)}
+  .replace .fine{font-size:13px;color:var(--muted);margin-top:12px;font-style:italic}
+
+  .menu{display:flex;flex-direction:column;gap:10px;margin:24px 0}
+  .offer{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:15px 20px;display:grid;grid-template-columns:1fr auto;gap:2px 18px;align-items:center;
+  }
+  @media (max-width:560px){.offer{grid-template-columns:1fr}}
+  .offer .t{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;font-size:16.5px;letter-spacing:-.01em}
+  .offer .d{font-size:14px;color:var(--muted);grid-column:1;line-height:1.4}
+  .offer .p{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12.5px;color:var(--rec);white-space:nowrap;grid-row:span 2;text-align:right}
+  @media (max-width:560px){.offer .p{grid-row:auto;text-align:left;margin-top:2px}}
+
+  .honest{
+    background:var(--amber-wash);border:1px solid var(--line);border-left:3px solid var(--amber);
+    border-radius:0 12px 12px 0;padding:16px 20px;margin:26px 0;max-width:66ch;font-size:15.5px;
+  }
+  .honest b{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+
+  .cta{background:var(--ink);color:var(--paper);border-radius:16px;padding:38px 30px;margin:60px 0 0;text-align:center}
+  .cta h2{color:inherit;margin-bottom:8px}
+  .cta p{opacity:.75;max-width:46ch;margin:0 auto 22px;font-size:16px}
+  .cta a{
+    display:inline-block;background:var(--rec);color:#fff;text-decoration:none;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;
+    font-size:16.5px;padding:14px 34px;border-radius:999px;
+  }
+  .cta a:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+  .cta .sub{font-size:13px;opacity:.55;margin-top:12px}
+
+  .foot{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="hero">
+  <span class="label"><span class="recdot"></span>PROOF, NOT PROMISES</span>
+  <h1>AI that <em>works</em> for you.</h1>
+  <p class="dek">Not a course. Not a chatbot demo. We install systems that <b>answer your leads, chase the follow-up, and book your calendar</b> — while you do the work only you can do. Everything on this page happened on our own business.</p>
+</div>
+
+<div class="statwall">
+  <div class="stat"><div class="n">2,252</div><div class="d">leads captured since March</div></div>
+  <div class="stat"><div class="n">1.48<em>M</em></div><div class="d">content views</div></div>
+  <div class="stat"><div class="n">59</div><div class="d">meetings booked on autopilot</div></div>
+  <div class="stat"><div class="n">$1.53<em>M</em></div><div class="d">new client assets closed</div></div>
+</div>
+<p class="stamp">EVERY NUMBER PULLED FROM OUR OWN DATABASE · AUG 12, 2026</p>
+
+<span class="eyebrow">Watch it work</span>
+<h2>A real lead, handled start to finish. Nobody typed a word.</h2>
+<p class="lede">She commented on a post. The AI replied in Marc's voice, delivered the goods, captured her email, qualified her, and asked for the meeting.</p>
+<div class="phones">
+  <div class="phone">
+    <div class="frame"><img src="img/dm-capture.jpg" alt="Instagram DM where the AI delivers a guide and captures the lead's email" loading="lazy"></div>
+    <div class="cap"><b>1 · Capture.</b> The AI answers her comment, delivers real value, and walks away with her email.</div>
+  </div>
+  <div class="phone">
+    <div class="frame"><img src="img/dm-booking.jpg" alt="Instagram DM where the AI qualifies the lead and asks for a booking" loading="lazy"></div>
+    <div class="cap"><b>2 · Qualify &amp; book.</b> It learns she's newly retired and asks for the meeting. Details blurred — she's a real person.</div>
+  </div>
+  <div class="phone">
+    <div class="frame"><img src="img/ig-profile.jpg" alt="Instagram profile with 10.3K followers and 506.9K views in the last 30 days" loading="lazy"></div>
+    <div class="cap"><b>3 · At scale.</b> The audience the machine feeds on: 10.3K followers, 506.9K views in the last 30 days.</div>
+  </div>
+</div>
+
+<div class="wide"><img src="img/meta-insights.jpg" alt="Meta Business Suite showing 484.3K views and 169.6K accounts reached in 28 days" loading="lazy"></div>
+<p class="widecap"><b>Meta's own dashboard</b> · 484.3K views · 169.6K reached · last 28 days · captured Aug 12, 2026</p>
+
+<span class="eyebrow">The receipts</span>
+<h2>Five months of a machine that never forgets to follow up</h2>
+<div class="ledger">
+  <div class="row"><div class="num">1,625</div><div class="what"><b>leads captured by AI in the DMs</b> — 24/7, in Marc's voice</div></div>
+  <div class="row"><div class="num">2,115</div><div class="what"><b>email addresses collected</b> — 94% of every lead that came in</div></div>
+  <div class="row"><div class="num">7,792</div><div class="what"><b>follow-up emails sent</b> — zero written by hand, nobody emailed twice</div></div>
+  <div class="row"><div class="num">589</div><div class="what"><b>text conversations</b> — booking nudges that land on the calendar</div></div>
+  <div class="row"><div class="num">21</div><div class="what"><b>deals closed</b> — $1.53M in new client assets, $3.05M more in pipeline</div></div>
+  <div class="row"><div class="num">24</div><div class="what"><b>AI agents and scheduled jobs</b> running right now, watchdog-monitored</div></div>
+</div>
+
+<div class="replace">
+  <div class="big">It replaces <em>~$12,000/month</em> of tools and staff.</div>
+  <div class="chips">
+    <span class="chip">AI receptionist <b>$500</b></span>
+    <span class="chip">call coaching <b>$1,200</b></span>
+    <span class="chip">executive assistant <b>$1,500</b></span>
+    <span class="chip">content agency <b>$3,000</b></span>
+    <span class="chip">fractional COO <b>$3,000</b></span>
+    <span class="chip">CRM + email stack <b>$1,100</b></span>
+    <span class="chip">+ monitoring, dashboards, booking…</span>
+  </div>
+  <p class="fine">Market-typical prices for the equivalent tool or service. Our running cost: an AI subscription and a server.</p>
+</div>
+
+<span class="eyebrow">Pick your system</span>
+<h2>Start with the piece that's bleeding</h2>
+<div class="menu">
+  <div class="offer"><div class="t">The Inbound Engine</div><div class="d">Every call, DM, and form answered in seconds — booked before your competitor picks up.</div><div class="p">$3,500 + $750/mo</div></div>
+  <div class="offer"><div class="t">Database Revival</div><div class="d">Your old leads and past clients, reactivated. Fastest ROI on the menu.</div><div class="p">$2,500 · 30 days</div></div>
+  <div class="offer"><div class="t">JobTread Autopilot</div><div class="d">For contractors: speed-to-lead, follow-ups, and proposals on autopilot.</div><div class="p">$10,000 + $1,000/mo</div></div>
+  <div class="offer"><div class="t">The Paperwork Machine</div><div class="d">Documents, notes, and invoice-chasing handled by software instead of your evenings.</div><div class="p">from $5,000</div></div>
+  <div class="offer"><div class="t">The AI Chief of Staff</div><div class="d">The full system on this page, installed in your business — with you approving anything that matters.</div><div class="p">$7,500 + $500/mo</div></div>
+</div>
+
+<div class="honest"><b>Straight answer on track record:</b> these numbers are from our own business — we built it for ourselves first and run it every day. You'd be a founding client. That's why the proof is real instead of borrowed, and why the pricing looks the way it does.</div>
+
+<div class="cta">
+  <h2>Free Leak Audit</h2>
+  <p>Tell us how leads reach you today. We'll show you where they're leaking, what it costs, and which system fixes it first.</p>
+  <a href="https://calm-money-bot-production.up.railway.app/ai-intake">Get the Free Leak Audit</a>
+  <div class="sub">10 minutes · a real analysis, not a sales script</div>
+</div>
+
+<div class="foot">
+  <span>Built and run by Marc Pineault · London, Ontario</span>
+  <span>Figures pulled from production systems Aug 12, 2026</span>
+</div>
+
+</div>
+</body>
+</html>
