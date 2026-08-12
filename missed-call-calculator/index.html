@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Missed Call Calculator</title>
+<meta name="description" content="Type your average job value and missed calls per week — see what ringing out actually costs your business per year. Free, no email required.">
+<link rel="canonical" href="https://lightworkai.ca/missed-call-calculator/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
+<style>
+  :root{
+    --rec:#C7372F; --paper:#FAF8F4; --ink:#1F2226; --muted:#6C675F;
+    --line:#E2DDD3; --card:#FFFFFF; --wash:#F1EDE5; --amber:#8A6D1F; --amber-wash:#F7F1DF;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --rec:#E8635A; --paper:#141517; --ink:#E9E6DF; --muted:#9C968C;
+      --line:#31322E; --card:#1C1D20; --wash:#222320; --amber:#D9B23A; --amber-wash:#262216;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:17.5px;line-height:1.6}
+  .top{border-bottom:2px solid var(--ink)}
+  .topline{max-width:680px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:14px 22px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .topline a{color:var(--ink);text-decoration:none;font-weight:600}
+  .topline .live{color:var(--rec);font-weight:600}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px 80px}
+  h1{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.025em;font-size:clamp(34px,7vw,52px);line-height:1.02;margin:46px 0 12px;text-wrap:balance}
+  .dek{color:var(--muted);font-size:18px;max-width:52ch;margin-bottom:34px}
+  .calc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 26px;box-shadow:0 14px 36px -16px rgba(0,0,0,.18)}
+  label{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:15px;margin:22px 0 8px}
+  label:first-child{margin-top:0}
+  label .hint{display:block;font-weight:400;font-size:13px;color:var(--muted);font-family:"Iowan Old Style",Palatino,Georgia,serif;font-style:italic;margin-top:2px}
+  input[type=number]{
+    width:100%;padding:14px 16px;font-size:22px;font-weight:700;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-variant-numeric:tabular-nums;
+    background:var(--paper);color:var(--ink);border:2px solid var(--line);border-radius:10px;
+  }
+  input[type=number]:focus{outline:none;border-color:var(--rec)}
+  input[type=range]{width:100%;accent-color:var(--rec);margin-top:6px}
+  .rangeval{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;color:var(--rec)}
+  .result{margin-top:30px;border-top:2px solid var(--ink);padding-top:22px;text-align:center}
+  .result .lbl{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .result .big{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.03em;font-size:clamp(44px,10vw,72px);color:var(--rec);font-variant-numeric:tabular-nums;line-height:1.05;margin:8px 0 2px}
+  .result .per{font-size:15px;color:var(--muted);font-style:italic}
+  .result .month{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:19px;margin-top:12px}
+  .fine{font-size:13px;color:var(--muted);font-style:italic;margin-top:22px;max-width:58ch}
+  .cta{background:var(--ink);color:var(--paper);border-radius:16px;padding:32px 26px;margin:40px 0 0;text-align:center}
+  .cta h2{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.015em;font-size:clamp(22px,4.5vw,30px);margin-bottom:8px;color:inherit}
+  .cta p{opacity:.72;max-width:44ch;margin:0 auto 20px;font-size:15.5px}
+  .cta a{display:inline-block;background:var(--rec);color:#fff;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:16px;padding:14px 30px;border-radius:999px}
+  .sign{text-align:center;margin-top:44px;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--rec)}
+  .foot{max-width:680px;margin:40px auto 0;padding:16px 22px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;font-family:ui-monospace,"SF Mono",Menlo,monospace;letter-spacing:.06em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .foot a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="topline"><a href="/">LIGHTWORK</a><span class="live">● PROOF OF WORK</span></div></div>
+
+<div class="wrap">
+<h1>What does your unanswered phone cost?</h1>
+<p class="dek">Three numbers, no email required. Industry data says about 62% of calls to small businesses ring out — and 78% of customers go with whoever answers first.</p>
+
+<div class="calc">
+  <label for="jobval">Average value of a job or client
+    <span class="hint">what one new customer is worth to you, in dollars</span>
+  </label>
+  <input type="number" id="jobval" value="3000" min="0" step="100" inputmode="numeric">
+
+  <label for="missed">Enquiries you miss per week
+    <span class="hint">calls that ring out, DMs and forms answered a day late — be honest</span>
+  </label>
+  <input type="number" id="missed" value="5" min="0" step="1" inputmode="numeric">
+
+  <label for="close">Of the enquiries you DO answer, how many become customers? <span class="rangeval" id="closeval">30%</span>
+    <span class="hint">your close rate on answered enquiries</span>
+  </label>
+  <input type="range" id="close" min="5" max="80" value="30" step="5">
+
+  <div class="result">
+    <div class="lbl">LEAKING FROM YOUR BUSINESS</div>
+    <div class="big" id="yearly">$234,000</div>
+    <div class="per">per year</div>
+    <div class="month" id="monthly">$19,500 / month</div>
+  </div>
+  <p class="fine">Math: missed enquiries × your close rate × job value × 52 weeks. It assumes a missed enquiry was as good as an answered one — some aren't, but remember the 78% stat: most of these people simply bought from whoever picked up.</p>
+</div>
+
+<div class="cta">
+  <h2>Now find the leaks you can't see</h2>
+  <p>The Free Leak Audit maps how enquiries actually reach your business — calls, DMs, forms, old database — and which leak to plug first.</p>
+  <a href="https://calm-money-bot-production.up.railway.app/ai-intake">Get the Free Leak Audit</a>
+</div>
+
+<div class="sign">THIS IS YOUR SIGN TO PUT AI IN YOUR BUSINESS</div>
+</div>
+
+<div class="foot"><span>LIGHTWORK · LONDON, ONTARIO</span><span><a href="/">HOME</a> · <a href="/ai-receptionist-cost/">PRICING GUIDE</a></span></div>
+
+<script>
+(function(){
+  var j=document.getElementById('jobval'), m=document.getElementById('missed'),
+      c=document.getElementById('close'), cv=document.getElementById('closeval'),
+      y=document.getElementById('yearly'), mo=document.getElementById('monthly');
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US')}
+  function calc(){
+    var jv=parseFloat(j.value)||0, ms=parseFloat(m.value)||0, cr=parseFloat(c.value)/100;
+    cv.textContent=c.value+'%';
+    var yearly=jv*ms*cr*52;
+    y.textContent=fmt(yearly);
+    mo.textContent=fmt(yearly/12)+' / month';
+  }
+  [j,m,c].forEach(function(el){el.addEventListener('input',calc)});
+  calc();
+})();
+</script>
+</body>
+</html>
