@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 5 Prompts That Run My Business</title>
+<meta name="description" content="Five real, copy-paste AI prompts for small business owners: write a quote, answer a Google review, revive a dead email thread, write a job ad that gets applicants, and read your week's numbers. Free, works tonight in ChatGPT or Claude.">
+<link rel="canonical" href="https://lightworkai.ca/five-prompts/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
+<style>
+  :root{
+    --rec:#C7372F; --paper:#FAF8F4; --ink:#1F2226; --muted:#6C675F;
+    --line:#E2DDD3; --card:#FFFFFF; --wash:#F1EDE5; --amber:#8A6D1F; --amber-wash:#F7F1DF;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --rec:#E8635A; --paper:#141517; --ink:#E9E6DF; --muted:#9C968C;
+      --line:#31322E; --card:#1C1D20; --wash:#222320; --amber:#D9B23A; --amber-wash:#262216;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:18px;line-height:1.65}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px 80px}
+  .top{border-bottom:2px solid var(--ink)}
+  .topline{max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:14px 22px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .topline a{color:var(--ink);text-decoration:none;font-weight:600}
+  .topline .live{color:var(--rec);font-weight:600}
+  h1{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.025em;font-size:clamp(32px,6.5vw,46px);line-height:1.05;margin:48px 0 14px;text-wrap:balance}
+  .byline{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
+  .byline b{color:var(--rec)}
+  h2{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.015em;font-size:clamp(23px,4vw,30px);margin:46px 0 12px;text-wrap:balance}
+  h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.01em;font-size:21px;margin:32px 0 10px}
+  p{margin:14px 0;max-width:65ch}
+  p b{color:var(--ink)}
+  ul,ol{margin:12px 0 12px 22px}
+  li{margin:8px 0}
+  a{color:var(--rec)}
+  .tldr{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--rec);border-radius:0 12px 12px 0;padding:18px 22px;margin:26px 0;font-size:16.5px}
+  .tldr b{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .pnum{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rec);font-weight:600;margin-top:52px;padding-top:18px;border-top:1px solid var(--line)}
+  .pnum:first-of-type{margin-top:34px}
+  h3.ptitle{margin:6px 0 8px}
+  .tpl{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:18px 0;overflow:hidden}
+  .tpl .lab{background:var(--wash);border-bottom:1px solid var(--line);padding:9px 10px 9px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .tpl pre{padding:16px;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:14.5px;line-height:1.7;white-space:pre-wrap;word-break:break-word;color:var(--ink);overflow-x:auto}
+  .copy{font:inherit;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--paper);background:var(--ink);
+    border:0;border-radius:999px;padding:6px 14px;cursor:pointer;white-space:nowrap}
+  .copy:hover{background:var(--rec)}
+  .tip{background:var(--wash);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:16px 0 0;font-size:15.5px}
+  .tip b{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--rec);display:block;margin-bottom:4px}
+  .honest{background:var(--amber-wash);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:0 12px 12px 0;padding:16px 20px;margin:24px 0;font-size:16px}
+  .cta{background:var(--ink);color:var(--paper);border-radius:16px;padding:36px 28px;margin:52px 0 0;text-align:center}
+  .cta h2{color:inherit;margin:0 0 8px}
+  .cta p{opacity:.72;max-width:46ch;margin:8px auto 20px;font-size:16px}
+  .cta a.btn{display:inline-block;background:var(--rec);color:#fff;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:16px;padding:14px 30px;border-radius:999px}
+  .fine{font-size:13.5px;color:var(--muted);font-style:italic}
+  .sign{text-align:center;margin-top:44px;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--rec)}
+  .foot{max-width:720px;margin:40px auto 0;padding:16px 22px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;font-family:ui-monospace,"SF Mono",Menlo,monospace;letter-spacing:.06em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .foot a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="topline"><a href="/">LIGHTWORK</a><span class="live">● FREE TOOLS</span></div></div>
+
+<div class="wrap">
+<h1>The 5 prompts that run my business</h1>
+<p class="byline">Free · by <b>Marc Pineault</b>, Lightwork · London, Ontario</p>
+
+<p>Before you buy any AI system, get good at asking. These five prompts do real work today, free. Open ChatGPT or Claude, paste one in, fill the parts in [brackets], and you'll have a finished quote, review reply, or hiring post in about two minutes.</p>
+
+<div class="tldr"><b>How to use these:</b> copy the whole prompt, including the rules and the output format — that's the part that makes the answer good. Then paste your own messy stuff where the [brackets] are. Bad answers almost always mean a bracket got left empty.</div>
+
+<h2>The five</h2>
+<ol>
+  <li><b>The Quote Writer</b> — messy job notes to a clean quote email</li>
+  <li><b>The Review Responder</b> — a reply to any Google review, including the brutal ones</li>
+  <li><b>The Follow-Up Fixer</b> — three ways to revive a dead thread</li>
+  <li><b>The Job Ad That Actually Gets Applicants</b> — a hiring post that sells the job</li>
+  <li><b>The Friday Numbers</b> — your week, in plain English</li>
+</ol>
+
+<p class="pnum">Prompt 01</p>
+<h3 class="ptitle">The Quote Writer</h3>
+<p>You finish a site visit with notes in your phone, a photo, and a number in your head. This turns that into a quote email a customer can actually say yes to — with the scope, the exclusions, and one clear next step. It uses <b>your</b> pricing and refuses to invent numbers.</p>
+
+<div class="tpl">
+  <div class="lab"><span>Copy this whole thing</span><button class="copy" type="button">Copy</button></div>
+<pre>You are the estimator and writer for my business. You write quotes that customers understand and say yes to.
+
+MY BUSINESS: [type of business, e.g. residential HVAC, mortgage brokerage, landscaping] in [city].
+MY JOB NOTES (messy is fine - voice-to-text, measurements, half sentences):
+[paste everything you have]
+
+MY PRICING:
+[paste your real rates - e.g. labour $95/hr, materials at cost plus 20%, minimum call-out $250, or your flat prices per item]
+
+RULES:
+- Use ONLY my pricing above. Never invent, estimate, or "typical market" a number.
+- If something is missing and you cannot price it, do NOT guess. List it under I NEED FROM YOU.
+- Grade 7 reading level. No industry jargon unless my customers already use that word.
+- Do not promise a start date, completion time, warranty length, or permit outcome unless it is in my notes.
+- Email body under 300 words. No em-dashes. Warm and direct, not salesy.
+
+OUTPUT IN THIS ORDER:
+1. SUBJECT LINE - under 8 words, includes what the job is.
+2. EMAIL BODY - one line restating what they asked for, then:
+   WHAT'S INCLUDED (bullets, plain language)
+   WHAT'S NOT INCLUDED (bullets - be specific, this is what prevents fights later)
+   THE PRICE (one number, plus tax noted separately)
+   NEXT STEP (one action, one date, e.g. "reply yes by Friday and I'll book you for the week of the 24th")
+3. PRICE BREAKDOWN - a table: line item | quantity | price | total.
+4. I NEED FROM YOU - every assumption you had to make and every number you could not price. Number them so I can answer fast.
+
+Then stop and wait. If I answer the I NEED FROM YOU list, rewrite the quote with the real numbers.</pre>
+</div>
+<div class="tip"><b>Tip for better results</b>Paste the last quote you sent a customer and add one line: "match this voice and format." The AI stops sounding like a corporate template and starts sounding like you. Do it once, then save the whole thing as a note on your phone.</div>
+
+<p class="pnum">Prompt 02</p>
+<h3 class="ptitle">The Review Responder</h3>
+<p>A one-star review is not written for you, it's read by the next hundred customers. This writes a reply in your voice that stays calm, gives away nothing it shouldn't, and moves the fight to a phone call.</p>
+
+<div class="tpl">
+  <div class="lab"><span>Copy this whole thing</span><button class="copy" type="button">Copy</button></div>
+<pre>You write public review responses for my business. Your reader is not the reviewer - it is the next 100 customers deciding whether to call me.
+
+MY BUSINESS: [name], a [type of business] in [city]. I am [owner first name].
+THE REVIEW: [paste the review, the star rating, and the reviewer's first name]
+WHAT ACTUALLY HAPPENED, IN MY WORDS: [your side of it - or write "I don't recognize this person and have no record of them"]
+MY VOICE: [paste 2-3 sentences you have written to a customer, or describe it: blunt / warm / formal / funny]
+
+RULES:
+- Under 75 words. Plain and human.
+- Banned phrases: "we value your feedback", "we strive to", "we apologize for any inconvenience", "reach out", "at [business] we believe".
+- Never admit fault, negligence, or liability. Sympathy is fine. Confession is not.
+- Never confirm private details in public: not that they were a customer, not what they paid, not anything about their home, health, or finances.
+- Never argue and never contradict their story point by point. If a fact is plainly wrong, correct it once, in one neutral sentence, with no defensiveness.
+- Never name a refund, discount, or dollar figure.
+- Always move it offline: give the phone number or email ONE time.
+- Sign off with my first name.
+
+OUTPUT:
+A) WARM - takes the high road, assumes good faith.
+B) SHORT - two sentences, for when the review is unhinged and length only feeds it.
+C) FIRM - polite but corrects the record once and stands its ground.
+Then: WHAT NOT TO SAY HERE - the two lines a normal owner would type in anger, and what each one would cost me publicly or legally.
+
+If the review is 4 or 5 stars instead, skip the above and give me 3 short thank-you replies that mention the specific thing they praised and do not sound copy-pasted.</pre>
+</div>
+<div class="tip"><b>Tip for better results</b>Write your side of the story angry, in full, and paste it in. The AI reads the facts and drops the temperature. Just never paste the angry version into Google yourself, and give it a night before you post the reply.</div>
+
+<p class="pnum">Prompt 03</p>
+<h3 class="ptitle">The Follow-Up Fixer</h3>
+<p>Most lost deals aren't lost, they're just quiet. Paste the dead thread and get three short messages in three different tones, so you can pick the one that fits without staring at a blank reply box.</p>
+
+<div class="tpl">
+  <div class="lab"><span>Copy this whole thing</span><button class="copy" type="button">Copy</button></div>
+<pre>You write follow-up messages for my business. My goal is ONE reply. Not a sale, not a meeting - a reply.
+
+MY BUSINESS: [type of business] in [city].
+THE DEAD THREAD (oldest message at the top): [paste the whole thing]
+LAST CONTACT WAS: [date or "about X weeks ago"]
+WHAT HAS CHANGED SINCE THEN: [price, availability, season, a new option, or write "nothing"]
+
+RULES:
+- Each message under 60 words and under 5 sentences. It gets read on a phone, standing up.
+- Banned openers: "just checking in", "circling back", "touching base", "bumping this to the top of your inbox", "hope you're well".
+- The reason for the message must be about THEM, not about my pipeline.
+- End with one question that takes 5 seconds to answer: yes/no, or pick between two dates.
+- Do not invent a deadline, a discount, or scarcity that I did not give you.
+- Do not repeat the whole history back to them. Assume they remember.
+- Grade 6 language. No em-dashes. No exclamation marks.
+
+OUTPUT - three messages, labelled:
+A) THE USEFUL ONE - leads with something genuinely helpful (timing, a heads-up, a piece of info) and asks nothing until the last line.
+B) THE DIRECT ONE - names the silence in a friendly way and asks for a straight answer.
+C) THE CLOSE-THE-FILE ONE - gives them permission to say no, so the easy reply is a reply.
+
+For each one give me: subject line (if email), the message, the best day and time to send it, and one sentence on why it works.
+Then tell me which one you would send first for this specific thread, and why.</pre>
+</div>
+<div class="tip"><b>Tip for better results</b>Add one line about who they are: "she's a busy office manager, three kids, replies at night." Follow-ups fail on tone more than wording, and the AI can't guess the person from an email thread.</div>
+
+<p class="pnum">Prompt 04</p>
+<h3 class="ptitle">The Job Ad That Actually Gets Applicants</h3>
+<p>Good hires read job ads like customers read a product page. This one sells the job: real pay, a real day, and an honest line about who does not last here — which is what keeps the wrong applicants from wasting your week.</p>
+
+<div class="tpl">
+  <div class="lab"><span>Copy this whole thing</span><button class="copy" type="button">Copy</button></div>
+<pre>You are a recruiter who writes job ads that sell the job like a product page. Skilled people have options. Assume my ad is the fourth one they are reading today.
+
+THE BUSINESS: [name], a [type of business] in [city]. We have [number] people.
+THE ROLE: [job title]
+PAY: [range and how it is paid - hourly, salary, commission, bonus. Do not leave this blank.]
+HOURS AND SCHEDULE: [ ]
+LOCATION / TRAVEL: [ ]
+PROVIDED: [truck, tools, phone, gear, training, tickets paid for]
+BENEFITS: [health, RRSP or 401k, vacation, or write "none yet"]
+REQUIRED: [licences, tickets, years, must-haves]
+NICE TO HAVE: [ ]
+A REAL DAY HERE: [walk me through 7am to 4pm, honestly, including the boring parts]
+WHO THRIVES HERE: [describe your best current employee - how they work, not their resume]
+WHO DOESN'T: [describe someone who quit or was let go, and why it didn't work]
+
+RULES:
+- The pay range goes in the ad. If I left PAY blank, stop and tell me to fill it in - do not write the ad.
+- First two lines have to make a qualified person keep reading. Nothing about company history up top.
+- Banned: "rockstar", "ninja", "fast-paced environment", "wear many hats", "competitive wages", "like a family", "self-starter", "dynamic". If I used one of those words, replace it with the concrete thing behind it.
+- Every claim needs a specific detail attached. "Great team" is nothing. "Four guys, all been here 3+ years, we buy lunch Fridays" is something.
+- Grade 6 reading level. Under 350 words. Short paragraphs.
+- Do not invent benefits, culture, or details I did not give you.
+
+OUTPUT:
+1. HEADLINE - under 12 words, includes the role, the pay, and the city.
+2. THE POST - in this order: what the job actually is day to day / pay and hours / who thrives here / who this is not for / what you need to have / how to apply.
+3. THE SHORT VERSION - 40 words for Facebook, Kijiji, or Craigslist.
+4. THE FILTER QUESTION - one question applicants must answer in their message that screens out mass-appliers and takes a real candidate 30 seconds.
+5. FLAGS - anything in my inputs that could break hiring or pay-transparency rules in [province or state], flagged for me to check with a professional.</pre>
+</div>
+<div class="tip"><b>Tip for better results</b>The "who doesn't thrive here" answer is the one that does the work. Be specific and a little unflattering — "hated that we start at 6:30 and there's no set lunch." Honest ads get fewer applicants and better ones.</div>
+
+<p class="pnum">Prompt 05</p>
+<h3 class="ptitle">The Friday Numbers</h3>
+<p>Most owners never review the week because it means building a spreadsheet. Don't. Paste whatever numbers you have, however messy, and get a plain-English readout: what's up, what's down, and the one thing to fix Monday.</p>
+
+<div class="tpl">
+  <div class="lab"><span>Copy this whole thing</span><button class="copy" type="button">Copy</button></div>
+<pre>You are the operations analyst for my business and I am the owner. Talk to me like a smart friend at the end of the week, not like a consultant.
+
+MY BUSINESS: [type of business] in [city].
+THIS WEEK'S NUMBERS (messy is fine - paste from anywhere, in any order):
+[revenue, jobs done, calls received, calls missed, quotes sent, quotes won, new leads, ad spend, hours worked, whatever you actually have]
+LAST WEEK OR A TYPICAL WEEK, FOR COMPARISON:
+[paste it, or write "don't have it"]
+ANYTHING UNUSUAL THIS WEEK: [holiday, rain, sick, big job, new ad - or "nothing"]
+
+RULES:
+- Use ONLY the numbers I gave you. Never estimate, never fill a gap with an industry average or benchmark.
+- If a number is missing, say what is missing and what it would have told me. Do not guess it.
+- Do the arithmetic and show your work in one short line each, e.g. "quote win rate = 4 won / 11 sent = 36%".
+- No jargon. Banned: KPI, funnel, velocity, synergy, leverage, optimize, actionable.
+- Under 250 words total.
+- Be blunt about bad news. Do not cheerlead and do not soften it. If I had a bad week, say I had a bad week.
+- If something unusual explains a number, say so instead of calling it a trend.
+
+OUTPUT IN THIS ORDER:
+1. THE HEADLINE - one sentence. The single most important thing that happened this week.
+2. UP - up to 3 bullets. Each with the number and the change.
+3. DOWN - up to 3 bullets. Same.
+4. THE ONE THING - the single fix for next week, why that one and not the others, and the exact first action to take Monday morning.
+5. WATCH THIS - one number I am not tracking that I should start tracking, and what it would tell me.
+6. MISSING - the numbers you needed and did not get.
+
+Do not add advice I did not ask for.</pre>
+</div>
+<div class="tip"><b>Tip for better results</b>Run this same prompt every Friday for a month and paste in the previous week's readout as your comparison. By week four it's spotting drifts you'd never see in a single week — and it takes five minutes.</div>
+
+<h2>Getting more out of any prompt</h2>
+<ul>
+  <li><b>Fill every bracket.</b> An empty bracket is where the AI starts making things up. If you don't have the number, write "don't have it" so it knows.</li>
+  <li><b>Keep the rules section.</b> It's tempting to trim. The rules are what stop the generic corporate voice.</li>
+  <li><b>Ask for three, pick one.</b> First drafts are average. Third options are usually where the good line lives.</li>
+  <li><b>Push back.</b> "Too formal, say it how I'd say it to a neighbour" fixes more than rewriting the prompt does.</li>
+  <li><b>Never paste anything you wouldn't email.</b> Client financials, health details, ID numbers, passwords — leave them out and use initials or placeholders.</li>
+  <li><b>You are still the last set of eyes.</b> Read it before it goes out with your name on it.</li>
+</ul>
+
+<div class="honest"><b>The honest part:</b> these prompts are the manual version. You still have to notice the review, open the app, paste the thread, and send the message. Our installs are what happens when the prompts run themselves, on your real data, all day — the missed call gets texted back at 9:40pm without you, the quote follow-up goes out on day three whether or not you remembered. Same idea. No copy-pasting, and no forgetting.</div>
+
+<div class="cta">
+  <h2>Where are your leads leaking?</h2>
+  <p>The Free Leak Audit: tell us how leads reach you today, and we'll show you where they're leaking and what it's costing — with your numbers, not ours.</p>
+  <a class="btn" href="https://calm-money-bot-production.up.railway.app/ai-intake">Get the Free Leak Audit</a>
+</div>
+
+<p class="fine">Lightwork installs AI systems for small businesses across Canada and the US. Published prices and live proof are on the <a href="/">home page</a>.</p>
+
+<div class="sign">THIS IS YOUR SIGN TO PUT AI IN YOUR BUSINESS</div>
+</div>
+
+<div class="foot"><span>LIGHTWORK · LONDON, ONTARIO · SERVING CANADA + THE US</span><span><a href="/">HOME</a> · <a href="/missed-call-calculator/">CALCULATOR</a> · <a href="/ai-receptionist-cost/">PRICING GUIDE</a></span></div>
+
+<script>
+document.querySelectorAll('.tpl .copy').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var pre = btn.closest('.tpl').querySelector('pre');
+    var done = function(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = 'Copy'; }, 1800); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(pre.innerText).then(done, function(){ btn.textContent = 'Select all'; });
+    } else {
+      var r = document.createRange(); r.selectNodeContents(pre);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      try { document.execCommand('copy'); done(); } catch(e) { btn.textContent = 'Select all'; }
+    }
+  });
+});
+</script>
+
+</body>
+</html>

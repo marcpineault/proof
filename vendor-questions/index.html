@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Vendor BS Detector</title>
+<meta name="description" content="17 questions to ask any AI vendor before you sign — and the answers that should make you walk. Written by a firm that sells AI systems and would want you to ask us the same things.">
+<link rel="canonical" href="https://lightworkai.ca/vendor-questions/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
+<style>
+  :root{
+    --rec:#C7372F; --paper:#FAF8F4; --ink:#1F2226; --muted:#6C675F;
+    --line:#E2DDD3; --card:#FFFFFF; --wash:#F1EDE5; --amber:#8A6D1F; --amber-wash:#F7F1DF;
+    --rec-wash:#FBEFEC;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --rec:#E8635A; --paper:#141517; --ink:#E9E6DF; --muted:#9C968C;
+      --line:#31322E; --card:#1C1D20; --wash:#222320; --amber:#D9B23A; --amber-wash:#262216;
+      --rec-wash:#2A1B19;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:18px;line-height:1.65}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px 80px}
+  .top{border-bottom:2px solid var(--ink)}
+  .topline{max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:14px 22px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .topline a{color:var(--ink);text-decoration:none;font-weight:600}
+  .topline .live{color:var(--rec);font-weight:600}
+  h1{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.025em;font-size:clamp(32px,6.5vw,46px);line-height:1.05;margin:48px 0 14px;text-wrap:balance}
+  .byline{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
+  .byline b{color:var(--rec)}
+  h2{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.015em;font-size:clamp(23px,4vw,30px);margin:46px 0 12px;text-wrap:balance}
+  p{margin:14px 0;max-width:65ch}
+  p b{color:var(--ink)}
+  ul{margin:12px 0 12px 22px}
+  li{margin:8px 0}
+  a{color:var(--rec)}
+  .tldr{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--rec);border-radius:0 12px 12px 0;padding:18px 22px;margin:26px 0;font-size:16.5px}
+  .tldr b{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .honest{background:var(--amber-wash);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:0 12px 12px 0;padding:16px 20px;margin:24px 0;font-size:16px}
+  .sechead{margin:52px 0 6px;padding-top:22px;border-top:2px solid var(--ink)}
+  .seckicker{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rec);font-weight:600}
+  .sechead h2{margin:6px 0 0}
+  .secnote{color:var(--muted);font-size:16px;margin:8px 0 0;font-style:italic}
+  .q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:18px 0}
+  .qhead{display:flex;gap:12px;align-items:baseline}
+  .qnum{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.06em;color:var(--rec);font-weight:600;flex:none;padding-top:3px}
+  .q h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.012em;font-size:19.5px;line-height:1.3;text-wrap:balance}
+  .why{margin:10px 0 0 0;font-size:16.5px;color:var(--muted)}
+  .why b{color:var(--ink)}
+  .scary{background:var(--rec-wash);border-left:3px solid var(--rec);border-radius:0 8px 8px 0;padding:11px 14px;margin:14px 0 0;font-size:15.5px}
+  .scary .lab{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--rec);font-weight:600;display:block;margin-bottom:3px}
+  .cta{background:var(--ink);color:var(--paper);border-radius:16px;padding:36px 28px;margin:52px 0 0;text-align:center}
+  .cta h2{color:inherit;margin:0 0 8px}
+  .cta p{opacity:.72;max-width:46ch;margin:8px auto 20px;font-size:16px}
+  .cta a.btn{display:inline-block;background:var(--rec);color:#fff;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:16px;padding:14px 30px;border-radius:999px}
+  .endcard{margin:40px 0 0;padding:22px 16px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);text-align:center;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--rec);font-weight:600;line-height:1.7}
+  .fine{font-size:13.5px;color:var(--muted);font-style:italic}
+  .foot{max-width:720px;margin:40px auto 0;padding:16px 22px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;font-family:ui-monospace,"SF Mono",Menlo,monospace;letter-spacing:.06em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .foot a{margin-left:14px}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="topline"><a href="/">LIGHTWORK</a><span class="live">● PROOF OF WORK</span></div></div>
+
+<div class="wrap">
+<h1>The Vendor BS Detector</h1>
+<p class="byline">17 questions · by <b>Marc Pineault</b>, Lightwork · London, Ontario</p>
+
+<p>We sell AI systems. So read this with the appropriate suspicion — and then use it on us.</p>
+
+<p>These are the questions we would want a business owner to ask us before signing anything, because they're the ones that separate a system built into your business from a template someone touched once. Each one comes with the answer that should end the conversation.</p>
+
+<div class="tldr"><b>How to use it:</b> ask all 17 on the call, out loud, and write down the answers. You are not looking for perfect responses — you're looking for a vendor who has clearly thought about the question before. Hesitation on ownership, compliance, or what happens when it breaks is the whole signal.</div>
+
+<!-- ============ 1. PROOF ============ -->
+<div class="sechead">
+  <span class="seckicker">Section 1 of 5</span>
+  <h2>Proof</h2>
+  <p class="secnote">Anyone can demo software. Very few run it on themselves.</p>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">01</span><h3>Show me it running on your own business. Right now.</h3></div>
+  <p class="why">If the system is good enough to sell you, it's good enough for their own phone and inbox. A vendor who won't eat their own cooking is reselling someone else's software.</p>
+  <div class="scary"><span class="lab">Walk away if</span>"That's not really applicable to what we do." Translation: they've never lived with the thing they're about to install in your business.</div>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">02</span><h3>Whose numbers are on your website?</h3></div>
+  <p class="why">Most agency case studies are borrowed — from the software platform they resell, from a white-label partner, or from a client of a client.</p>
+  <div class="scary"><span class="lab">Walk away if</span>They can't tell you which business produced a result, or the "results" are screenshots they can't reproduce live in the account they came from.</div>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">03</span><h3>Can I hear a real conversation it handled — not a demo script?</h3></div>
+  <p class="why">Demos are rehearsed on the happy path. Real transcripts show you how it behaves when a caller is angry, confused, or asking something nobody anticipated.</p>
+  <div class="scary"><span class="lab">Walk away if</span>The only thing they can show you is a polished demo reel, or a sandbox number that only answers the two questions they scripted.</div>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">04</span><h3>Who actually builds mine, and will that person still be around in month three?</h3></div>
+  <p class="why">Plenty of shops sell with a closer and deliver with a template. You want to know the name of the person configuring your system and who answers when it misbehaves.</p>
+  <div class="scary"><span class="lab">Walk away if</span>The salesperson can't name the builder, or "onboarding" means you get a login and a help-doc link.</div>
+</div>
+
+<!-- ============ 2. OWNERSHIP ============ -->
+<div class="sechead">
+  <span class="seckicker">Section 2 of 5</span>
+  <h2>Ownership</h2>
+  <p class="secnote">Assume the relationship ends badly. What do you walk out with?</p>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">05</span><h3>Who owns the phone number — and can I port it out?</h3></div>
+  <p class="why">Your number is on your trucks, your invoices, and every review site. If the vendor holds it, they hold your business.</p>
+  <div class="scary"><span class="lab">Walk away if</span>"We provision it on our account." That's a hostage, not a feature. Porting should be a yes with no conditions attached.</div>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">06</span><h3>Who owns the conversation data and the lead records?</h3></div>
+  <p class="why">Every call, text, and DM the system handles is a record of who wanted to buy from you and why. That is your asset, not theirs.</p>
+  <div class="scary"><span class="lab">Walk away if</span>Export is "available on request," limited to a summary report, or only offered while your account is in good standing.</div>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">07</span><h3>Do I get the prompts, scripts, and automation logic?</h3></div>
+  <p class="why">The instructions that tell the AI how to speak for your business are your voice, written down. You should be able to read them, edit them, and take them with you.</p>
+  <div class="scary"><span class="lab">Walk away if</span>"That's proprietary." Sometimes there's real IP in the platform — but the words your customers hear should never be a black box you're not allowed to open.</div>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">08</span><h3>Whose name is on the accounts — and whose credit card?</h3></div>
+  <p class="why">Calendars, CRM, texting, email sending. If those live under the vendor's master account, you don't have a system, you have a subscription to their setup.</p>
+  <div class="scary"><span class="lab">Walk away if</span>Everything sits inside their sub-account and they can't hand you admin. Ask directly: <i>"if we part ways Friday, what still works Monday?"</i></div>
+</div>
+
+<!-- ============ 3. COMPLIANCE ============ -->
+<div class="sechead">
+  <span class="seckicker">Section 3 of 5</span>
+  <h2>Compliance</h2>
+  <p class="secnote">If it texts your customers, someone is carrying legal risk. Find out who.</p>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">09</span><h3>Who handles the business texting registration — and is it under my name?</h3></div>
+  <p class="why">Carriers require businesses to register before sending application-to-person texts. Unregistered traffic gets filtered or blocked, which means your follow-ups silently stop arriving.</p>
+  <div class="scary"><span class="lab">Walk away if</span>"Don't worry about it," or "we just use a regular cell number." Both are ways of saying your messages will start disappearing and nobody will notice.</div>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">10</span><h3>How do you handle consent and opt-outs — CASL in Canada, TCPA in the US?</h3></div>
+  <p class="why">Automated outreach makes it very easy to message people you never had permission to message, at scale, with a timestamped record of doing it.</p>
+  <div class="scary"><span class="lab">Walk away if</span>They don't recognise the acronyms, or the answer is "everyone does this." A serious vendor can tell you where consent is captured, where it's stored, and how a STOP is honoured everywhere at once.</div>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">11</span><h3>What are the quiet hours, whose time zone, and who can change them?</h3></div>
+  <p class="why">Automations fire on schedules. Without an explicit quiet-hours rule, a follow-up sequence will eventually text a customer at 3am — and that customer will remember it.</p>
+  <div class="scary"><span class="lab">Walk away if</span>There are no quiet hours, or the schedule runs in the vendor's time zone instead of your customers'.</div>
+</div>
+
+<!-- ============ 4. UPTIME & SAFETY ============ -->
+<div class="sechead">
+  <span class="seckicker">Section 4 of 5</span>
+  <h2>Uptime &amp; safety</h2>
+  <p class="secnote">Everything breaks. The only question is whether anyone finds out before your customers do.</p>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">12</span><h3>It's Saturday at 7pm and it stops answering. Who finds out, and how?</h3></div>
+  <p class="why">A silent failure is worse than no system at all — you've stopped answering the phone and you don't know it. Weekends and holidays are exactly when it matters.</p>
+  <div class="scary"><span class="lab">Walk away if</span>"It never goes down." Everything goes down. The real answer names a monitor, a threshold, and a human who gets paged. If the answer is "you'd let us know Monday," you are the monitoring.</div>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">13</span><h3>What can the AI do without a human approving it?</h3></div>
+  <p class="why">There's a real difference between a system that books an appointment and one that can quote a price, promise a timeline, or commit you to work you can't do.</p>
+  <div class="scary"><span class="lab">Walk away if</span>There's no list. A good vendor can tell you exactly which actions are automatic, which are gated behind your approval, and how to move an item from one bucket to the other.</div>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">14</span><h3>What's the escalation path to a human — and how fast does it trigger?</h3></div>
+  <p class="why">Some conversations should never be handled by software: complaints, emergencies, a big client with an odd request. The system needs to know when to tap out.</p>
+  <div class="scary"><span class="lab">Walk away if</span>"The AI handles 100% of conversations." That's not a capability claim, it's a description of a system that will annoy the customers you least want annoyed.</div>
+</div>
+
+<!-- ============ 5. MONEY & EXIT ============ -->
+<div class="sechead">
+  <span class="seckicker">Section 5 of 5</span>
+  <h2>Money &amp; exit</h2>
+  <p class="secnote">A vendor who won't be measured is a vendor who plans not to be.</p>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">15</span><h3>What single number do you report to me every month?</h3></div>
+  <p class="why">Activity is easy to fake and easy to inflate. You want one outcome number tied to money — booked jobs, qualified conversations, recovered enquiries — reported the same way every month.</p>
+  <div class="scary"><span class="lab">Walk away if</span>The answer is a dashboard tour. Messages sent, minutes handled, and "engagement" are not results. If nobody names a number, nobody is accountable to one.</div>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">16</span><h3>And what happens if that number drops?</h3></div>
+  <p class="why">This is the question that reveals whether you're buying a service or renting software. Something specific has to happen when the system underperforms.</p>
+  <div class="scary"><span class="lab">Walk away if</span>"Give it more time." A real answer sounds like: we look at it, we tell you what we changed, and here's what we do if it stays down.</div>
+</div>
+
+<div class="q">
+  <div class="qhead"><span class="qnum">17</span><h3>Walk me through leaving. What's the notice, and what breaks?</h3></div>
+  <p class="why">Ask this on the first call, cheerfully, before any money moves. How a vendor describes the exit tells you exactly how confident they are that you'll want to stay.</p>
+  <div class="scary"><span class="lab">Walk away if</span>A twelve-month lock-in on an unproven system, an exit fee, or the honest-but-fatal admission that if you leave, your phone number, your booking flow, and your customer history all go with them.</div>
+</div>
+
+<!-- ============ HONESTY BOX ============ -->
+<h2>Our own answers to the hard ones</h2>
+<div class="honest"><b>Since we'd want you to ask us:</b> we run this system on our own business every day, and we publish the numbers rather than describing them — since March 2026 it has captured 1,625 leads in the DMs, sent 7,792 follow-up emails, and booked 59 meetings, pulled from our production database. You own your phone number and you can port it out. You own your conversation data and lead records, exportable whenever you want, no conditions. When anything goes quiet, a human gets paged — we learned that one the hard way and wrote it into every install since. And our prices are published on the <a href="/ai-receptionist-cost/">pricing page</a> instead of hidden behind "book a demo." That's the list. We're not going to invent a track record we haven't earned yet.</div>
+
+<p class="fine">Nothing on this page is legal advice. If automated outreach is a meaningful part of your business, have a lawyer in your jurisdiction review your consent process.</p>
+
+<div class="cta">
+  <h2>Not sure what to even ask about yet?</h2>
+  <p>The Free Leak Audit: tell us how leads reach you today, and we'll show you where they're leaking and what it's costing — with your numbers, not ours.</p>
+  <a class="btn" href="https://calm-money-bot-production.up.railway.app/ai-intake">Get the Free Leak Audit</a>
+</div>
+
+<div class="endcard">This is your sign to put AI in your business</div>
+</div>
+
+<div class="foot"><span>LIGHTWORK · LONDON, ONTARIO · SERVING CANADA + THE US</span><span><a href="/">HOME</a><a href="/missed-call-calculator/">CALCULATOR</a><a href="/ai-receptionist-cost/">PRICING</a></span></div>
+
+</body>
+</html>

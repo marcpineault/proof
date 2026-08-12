@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Follow-Up Pack</title>
+<meta name="description" content="The exact 7-touch follow-up sequence for a new enquiry — every text, email, and voicemail written out, copy-paste ready. Run it by hand or load it into any CRM.">
+<link rel="canonical" href="https://lightworkai.ca/follow-up-pack/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
+<style>
+  :root{
+    --rec:#C7372F; --paper:#FAF8F4; --ink:#1F2226; --muted:#6C675F;
+    --line:#E2DDD3; --card:#FFFFFF; --wash:#F1EDE5; --amber:#8A6D1F; --amber-wash:#F7F1DF;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --rec:#E8635A; --paper:#141517; --ink:#E9E6DF; --muted:#9C968C;
+      --line:#31322E; --card:#1C1D20; --wash:#222320; --amber:#D9B23A; --amber-wash:#262216;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:18px;line-height:1.65}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px 80px}
+  .top{border-bottom:2px solid var(--ink)}
+  .topline{max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:14px 22px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .topline a{color:var(--ink);text-decoration:none;font-weight:600}
+  .topline .live{color:var(--rec);font-weight:600}
+  h1{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.025em;font-size:clamp(32px,6.5vw,46px);line-height:1.05;margin:48px 0 14px;text-wrap:balance}
+  .byline{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
+  .byline b{color:var(--rec)}
+  h2{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.015em;font-size:clamp(23px,4vw,30px);margin:46px 0 12px;text-wrap:balance}
+  h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.01em;font-size:21px;margin:38px 0 6px}
+  p{margin:14px 0;max-width:65ch}
+  p b{color:var(--ink)}
+  ul,ol{margin:12px 0 12px 22px}
+  li{margin:8px 0}
+  a{color:var(--rec)}
+  .tldr{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--rec);border-radius:0 12px 12px 0;padding:18px 22px;margin:26px 0;font-size:16.5px}
+  .tldr b{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .tablewrap{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+  table{width:100%;border-collapse:collapse;font-size:15.5px;min-width:560px}
+  th{background:var(--wash);text-align:left;padding:10px 16px;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  td{padding:11px 16px;border-top:1px solid var(--line);vertical-align:top}
+  td.money{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .tag{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .touchmeta{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--rec);margin:0 0 10px;font-weight:600}
+  .tmpl{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--ink);border-radius:0 12px 12px 0;padding:16px 20px;margin:14px 0 8px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:14.5px;line-height:1.7;white-space:pre-wrap}
+  .tmpl .lbl{display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:600}
+  .tmpl .ph{color:var(--rec)}
+  .why{font-size:15.5px;color:var(--muted);font-style:italic;margin:6px 0 0;max-width:62ch}
+  .rules{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--rec);border-radius:0 12px 12px 0;padding:20px 24px;margin:26px 0}
+  .rules h3{margin:0 0 6px;font-size:19px}
+  .rules ol{margin:10px 0 0 20px;font-size:16.5px}
+  .honest{background:var(--amber-wash);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:0 12px 12px 0;padding:16px 20px;margin:24px 0;font-size:16px}
+  .cta{background:var(--ink);color:var(--paper);border-radius:16px;padding:36px 28px;margin:52px 0 0;text-align:center}
+  .cta h2{color:inherit;margin:0 0 8px}
+  .cta p{opacity:.72;max-width:46ch;margin:8px auto 20px;font-size:16px}
+  .cta a.btn{display:inline-block;background:var(--rec);color:#fff;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:16px;padding:14px 30px;border-radius:999px}
+  .endcard{margin:44px 0 0;padding:22px 18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--rec);font-weight:600;line-height:1.9}
+  .fine{font-size:13.5px;color:var(--muted);font-style:italic}
+  .foot{max-width:720px;margin:40px auto 0;padding:16px 22px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;font-family:ui-monospace,"SF Mono",Menlo,monospace;letter-spacing:.06em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .foot a{color:var(--muted);text-decoration:none}
+  .foot a:hover{color:var(--rec)}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="topline"><a href="/">LIGHTWORK</a><span class="live">● PROOF OF WORK</span></div></div>
+
+<div class="wrap">
+<h1>The Follow-Up Pack</h1>
+<p class="byline">7 touches, written out · by <b>Marc Pineault</b>, Lightwork · August 2026</p>
+
+<p>Most sales don't die from rejection. They die from silence. Someone calls, fills in a form, or sends a DM — you reply once, they get busy, and nobody says anything again. The job goes to whoever kept talking.</p>
+
+<p>This is the exact 7-touch sequence our own machine runs on every new enquiry. Every message is written out below. Copy them into your phone, your email, or your CRM and run it by hand. It works either way — the sequence is the asset, not the software.</p>
+
+<div class="tldr"><b>How to use this:</b> the moment a new enquiry comes in, start the clock at Day 0. Send each touch on its day. <b>The second they reply, stop the sequence and have a real conversation.</b> That's the whole system.</div>
+
+<h2>The cadence</h2>
+
+<div class="tablewrap"><table>
+  <tr><th>Touch</th><th>When</th><th>Channel</th><th>The job of this touch</th></tr>
+  <tr><td class="money">T1</td><td class="money">Day 0 · instant</td><td>Text</td><td>Prove a human is on it. Under 5 minutes beats anything clever sent tomorrow.</td></tr>
+  <tr><td class="money">T2</td><td class="money">Day 0 · same day</td><td>Email</td><td>Deliver the useful thing you promised. Be worth keeping in the inbox.</td></tr>
+  <tr><td class="money">T3</td><td class="money">Day 2</td><td>Text</td><td>One light nudge with an easy yes-or-no question.</td></tr>
+  <tr><td class="money">T4</td><td class="money">Day 5</td><td>Email</td><td>Answer the #1 objection before they have to say it out loud.</td></tr>
+  <tr><td class="money">T5</td><td class="money">Day 9</td><td>Call + voicemail</td><td>Be a voice, not a notification. Most competitors never do this.</td></tr>
+  <tr><td class="money">T6</td><td class="money">Day 14</td><td>Email</td><td>The honest case for deciding now — including the cost of waiting.</td></tr>
+  <tr><td class="money">T7</td><td class="money">Day 21</td><td>Text</td><td>Close the loop without closing the door. This one gets more replies than you'd think.</td></tr>
+</table></div>
+
+<p class="fine">Seven touches over three weeks. Total hands-on time if you run it manually: about 12 minutes per enquiry.</p>
+
+<h2>The messages</h2>
+<p>Swap anything in <b>[square brackets]</b> for your own details. Keep them short. Short reads as human; long reads as a campaign.</p>
+
+<h3>T1 — Day 0, instant text</h3>
+<p class="touchmeta">Job: prove a human is on it</p>
+<div class="tmpl"><span class="lbl">Text · send within 5 minutes</span>Hi <span class="ph">[First name]</span> — <span class="ph">[Your name]</span> here from <span class="ph">[Business name]</span>. Got your <span class="ph">[call / message / enquiry]</span> about <span class="ph">[what they asked about]</span>. I'm on it.
+
+Quick one so I can help properly: <span class="ph">[one specific question — e.g. what's the address? / when were you hoping to start?]</span>
+
+You can reply right here.</div>
+<p class="why">Why it works: it names you, names the business, repeats what they asked for so they know you actually read it, and asks exactly one question. One question gets answered. Three get ignored.</p>
+
+<h3>T2 — Day 0, email</h3>
+<p class="touchmeta">Job: deliver the useful thing</p>
+<div class="tmpl"><span class="lbl">Email · subject line</span><span class="ph">[What they asked about]</span> — here's what you asked for</div>
+<div class="tmpl"><span class="lbl">Email · body</span>Hi <span class="ph">[First name]</span>,
+
+Good to hear from you today. Here's the <span class="ph">[quote / info / availability / pricing]</span> I mentioned:
+
+<span class="ph">[The actual useful thing. A number, a date, a straight answer. Not "let's book a call to discuss."]</span>
+
+Two things worth knowing before you decide:
+
+1. <span class="ph">[Something genuinely helpful, even if it doesn't sell for you — e.g. "if you can wait until spring, the price drops about 15%."]</span>
+2. <span class="ph">[The next practical step and how long it takes.]</span>
+
+If it's helpful, the easiest next step is <span class="ph">[book a time here / reply with a day that works]</span>. If the timing's off, just say so and I'll get out of your inbox.
+
+<span class="ph">[Your name]</span>
+<span class="ph">[Business name]</span> · <span class="ph">[phone]</span> · <span class="ph">[website]</span></div>
+<p class="why">Why it works: it hands over real information instead of holding it hostage behind a call. The point that doesn't sell for you is the point they remember.</p>
+
+<h3>T3 — Day 2, text</h3>
+<p class="touchmeta">Job: one light nudge</p>
+<div class="tmpl"><span class="lbl">Text</span>Hi <span class="ph">[First name]</span>, <span class="ph">[Your name]</span> from <span class="ph">[Business name]</span> — did that <span class="ph">[quote / info]</span> land okay?
+
+No rush either way. Just tell me yes, not yet, or no and I'll take it from there.</div>
+<p class="why">Why it works: "yes, not yet, or no" gives permission to say no, which is why people answer. A no on Day 2 is worth more than silence for a month.</p>
+
+<h3>T4 — Day 5, email</h3>
+<p class="touchmeta">Job: answer the #1 objection</p>
+<div class="tmpl"><span class="lbl">Email · subject line</span>The part people usually ask me about</div>
+<div class="tmpl"><span class="lbl">Email · body</span>Hi <span class="ph">[First name]</span>,
+
+Not chasing — just answering the question most people have at this stage and don't always want to ask.
+
+<b>"<span class="ph">[The real objection. Usually: is it worth the money? how long will it take? what if it goes wrong?]</span>"</b>
+
+Straight answer: <span class="ph">[Answer it honestly, including the part that isn't flattering. E.g. "it's not the cheapest option in town. Here's what the extra buys you, and here's when the cheaper option is genuinely the right call."]</span>
+
+<span class="ph">[One short, real example: a customer, what they were worried about, what actually happened. Real or leave it out.]</span>
+
+If that changes things, reply and we'll sort out timing. If not, no hard feelings.
+
+<span class="ph">[Your name]</span>
+<span class="ph">[Business name]</span> · <span class="ph">[phone]</span></div>
+<p class="why">Why it works: naming the objection out loud takes the awkwardness out of it. Admitting a weakness makes everything else you said more believable.</p>
+
+<h3>T5 — Day 9, phone call</h3>
+<p class="touchmeta">Job: be a voice, not a notification</p>
+<p>Call once. If they pick up, forget the script — ask how the <b>[project / decision]</b> is going and listen. If it goes to voicemail, leave this. Keep it under 20 seconds.</p>
+<div class="tmpl"><span class="lbl">Voicemail script</span>Hi <span class="ph">[First name]</span>, it's <span class="ph">[Your name]</span> from <span class="ph">[Business name]</span> — you got in touch about <span class="ph">[what they asked about]</span>.
+
+No pressure at all. I'm just closing off my list for the month and wanted to check whether you still want a hand with it, or whether it's sorted.
+
+Either way is fine. Give me a shout at <span class="ph">[phone number]</span>, or reply to my text — that's easier. Thanks <span class="ph">[First name]</span>.</div>
+<div class="tmpl"><span class="lbl">Text · send right after the voicemail</span>Just left you a voicemail — <span class="ph">[Your name]</span> at <span class="ph">[Business name]</span>. Replying here is easier if you'd rather.</div>
+<p class="why">Why it works: hardly anyone calls anymore, which is exactly why it lands. The follow-up text stops them wondering who the missed number was.</p>
+
+<h3>T6 — Day 14, email</h3>
+<p class="touchmeta">Job: the honest case for acting now</p>
+<div class="tmpl"><span class="lbl">Email · subject line</span>Worth knowing if you're still deciding</div>
+<div class="tmpl"><span class="lbl">Email · body</span>Hi <span class="ph">[First name]</span>,
+
+Two weeks since you got in touch, so I'll be straight with you.
+
+Waiting on <span class="ph">[the thing they enquired about]</span> usually costs something. In your case it's probably <span class="ph">[the real, specific cost of waiting — e.g. "another season of the same problem," "prices go up in October," "the fix gets bigger the longer it sits."]</span>
+
+And sometimes waiting is the right call. If <span class="ph">[the honest condition — e.g. "you're moving next year," or "cash is tight right now"]</span>, then wait. I'd rather you did the right thing than the fast thing.
+
+I've got <span class="ph">[real availability — e.g. "two slots left in September"]</span>. If you want one, reply and it's yours. If not, this is my second-to-last email and I'll leave you be.
+
+<span class="ph">[Your name]</span>
+<span class="ph">[Business name]</span> · <span class="ph">[phone]</span></div>
+<p class="why">Why it works: it gives a real reason to move and a real reason not to. Only claim scarcity you actually have — a fake deadline is the fastest way to lose someone who was going to buy in March.</p>
+
+<h3>T7 — Day 21, text</h3>
+<p class="touchmeta">Job: leave the door open</p>
+<div class="tmpl"><span class="lbl">Text · the open loop</span>Hi <span class="ph">[First name]</span> — <span class="ph">[Your name]</span> at <span class="ph">[Business name]</span>. Last one from me, promise.
+
+I'll assume <span class="ph">[the thing]</span> is handled or parked for now. Either is completely fine.
+
+If it comes back around — this winter, next year, whenever — text this number and I'll pick it straight back up. Nothing to re-explain. All the best.</div>
+<p class="why">Why it works: it ends the chase without ending the relationship. This message gets more replies than the six before it, because it's the only one that asks for nothing.</p>
+
+<h2>The rules</h2>
+<p>The sequence is the easy part. These rules are what keep it from turning into spam — and keep you on the right side of the people you're trying to win.</p>
+
+<div class="rules">
+<h3>Non-negotiables</h3>
+<ol>
+  <li><b>Stop the moment they reply.</b> Any reply, any channel — the sequence is over. Nothing kills goodwill faster than an automated Day 5 email landing after a real conversation on Day 4.</li>
+  <li><b>Never text before 8am or after 9pm in their local time.</b> Not their timezone — <i>theirs</i>. A 7:40am text reads as desperate; a 10pm text reads as rude.</li>
+  <li><b>Every message identifies your business.</b> Name and business in every text and every email, every time. If they have to ask "who is this?", you've already lost the thread.</li>
+  <li><b>If they say stop, stop everywhere, forever.</b> "Stop," "no thanks," "not interested," "remove me" — all the same thing. Take them off texts <i>and</i> email <i>and</i> the call list, immediately and permanently. One list, not three.</li>
+  <li><b>One sender, one thread.</b> Same phone number, same email address, start to finish. Rotating numbers is what spammers do and customers can tell.</li>
+  <li><b>Seven and done.</b> When the sequence ends, it ends. Moving someone to a monthly newsletter they never asked for is how you get marked as spam.</li>
+</ol>
+</div>
+
+<div class="honest"><b>Consent, in one line:</b> these templates are written for people who contacted <b>you</b> first — an enquiry, a form, a call, a DM. That's the whole scope of this pack. <b>In Canada,</b> CASL governs commercial electronic messages including texts and DMs, and an enquiry generally gives you a limited window of implied consent. <b>In the US,</b> the TCPA governs marketing texts and calls and generally expects prior express written consent for marketing messages, plus honouring do-not-call and opt-out requests. This is a plain-English pointer, not legal advice — if you're running this at volume or reaching people who never contacted you, talk to a lawyer who does this for a living.</div>
+
+<h2>The honest bit</h2>
+
+<div class="honest"><b>Running this by hand takes discipline.</b> Not skill — discipline. Touch 1 is easy. Touch 5 on a Thursday when you're on a roof, three jobs behind, and the enquiry is nine days cold is where almost everyone quits. That's not a character flaw, it's just how busy weeks work. Our machine has sent <b>7,792</b> of these follow-ups without missing one — that's the only number on this page, and it's ours, pulled from our production database. We're not going to quote you an industry statistic to make the case. Run the sequence by hand for a month and you'll see your own numbers, which are the ones that matter.</div>
+
+<div class="cta">
+  <h2>Find out where your leads are leaking</h2>
+  <p>The Free Leak Audit: tell us how enquiries reach you today, and we'll show you where they're going quiet and what it's costing — with your numbers, not ours.</p>
+  <a class="btn" href="https://calm-money-bot-production.up.railway.app/ai-intake">Get the Free Leak Audit</a>
+</div>
+
+<div class="endcard">THIS IS YOUR SIGN TO PUT AI IN YOUR BUSINESS</div>
+</div>
+
+<div class="foot">
+  <span>LIGHTWORK · LONDON, ONTARIO · SERVING CANADA + THE US</span>
+  <span><a href="/">HOME</a> · <a href="/missed-call-calculator/">MISSED-CALL CALCULATOR</a> · <a href="/ai-receptionist-cost/">AI RECEPTIONIST COST</a></span>
+</div>
+
+</body>
+</html>
