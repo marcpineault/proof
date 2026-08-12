@@ -109,9 +109,10 @@
 
   /* exhibits with red-pen annotations */
   .duo{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+  @media (min-width:960px){.trio3{grid-template-columns:repeat(3,1fr);gap:22px}}
   @media (max-width:700px){.duo{grid-template-columns:1fr;max-width:430px;margin-inline:auto}}
   .shot{position:relative}
-  .frame{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 44px -14px rgba(0,0,0,.28)}
+  .frame{position:relative;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 44px -14px rgba(0,0,0,.28)}
   .ring{
     position:absolute;border:3px solid var(--rec);border-radius:50%;
     transform:rotate(-2deg);pointer-events:none;
@@ -205,20 +206,26 @@
 
 <section class="wrap">
   <p class="eyebrow">Watch it work</p>
-  <h2>A real lead, handled start to finish. Nobody typed a word.</h2>
-  <p class="sub">She commented on a post. The AI replied in Marc's voice, delivered the goods, captured her email, qualified her, and asked for the meeting.</p>
-  <div class="duo">
+  <h2>Real leads, handled start to finish. Nobody typed a word.</h2>
+  <p class="sub">They commented on a post. The AI replied in Marc's voice, delivered the goods, captured the email — and in the last one, the lead asks for the meeting <b>herself</b>.</p>
+  <div class="duo trio3">
     <div class="shot">
       <div class="frame"><img src="img/dm-capture.jpg" width="640" height="1387" alt="Instagram DM where the AI delivers a guide and captures the lead's email">
-        <span class="ring" style="left:10%;top:42.5%;width:64%;height:5.8%"></span>
+        <span class="ring" style="left:10%;top:45%;width:64%;height:7%"></span>
       </div>
       <p class="note"><span class="who">Red circle · the moment that matters</span>Her email, captured by the AI — value first, ask second. (Blurred: she's a real person.)</p>
     </div>
     <div class="shot">
       <div class="frame"><img src="img/dm-booking.jpg" width="640" height="1387" alt="Instagram DM where the AI qualifies the lead and asks for a booking">
-        <span class="ring" style="left:22%;top:52%;width:74%;height:8.5%"></span>
+        <span class="ring" style="left:22%;top:55%;width:74%;height:9%"></span>
       </div>
       <p class="note"><span class="who">Red circle · the ask</span>It learns she's newly retired and asks for the meeting — politely, at the right moment.</p>
+    </div>
+    <div class="shot">
+      <div class="frame"><img src="img/dm-consult.jpg" width="640" height="994" alt="Instagram DM where a different lead shares her email and asks how to book a private consultation">
+        <span class="ring" style="left:8%;top:86.5%;width:78%;height:10%"></span>
+      </div>
+      <p class="note"><span class="who">Red circle · the outcome</span>A different lead, same machine: email delivered — then she asks for the consultation herself.</p>
     </div>
   </div>
 </section>
@@ -232,7 +239,7 @@
   <div class="duo">
     <div class="shot">
       <div class="frame" style="border-radius:14px"><img src="img/ig-profile.jpg" width="640" height="681" alt="Instagram profile with 10.3K followers and 506.9K views in the last 30 days">
-        <span class="ring" style="left:4%;top:74%;width:90%;height:15%"></span>
+        <span class="ring" style="left:4%;top:76%;width:90%;height:12%"></span>
       </div>
       <p class="caption"><b>The profile</b> · 506.9K views / 30 days</p>
     </div>
