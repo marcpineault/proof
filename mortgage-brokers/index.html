@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Systems for Canadian Mortgage Brokers | Lightwork</title>
+<meta name="description" content="The biggest renewal wave in Canadian history is sitting in your database. AI systems that mine renewal dates, answer every inquiry in seconds, and chase documents — built CASL-compliant, on your accounts.">
+<link rel="canonical" href="https://lightworkai.ca/mortgage-brokers/">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
+<style>
+  :root{
+    --rec:#C7372F; --rec-soft:#F6E3E1; --paper:#FAF8F4; --ink:#1F2226; --muted:#6C675F;
+    --line:#E2DDD3; --card:#FFFFFF; --wash:#F1EDE5; --amber:#8A6D1F; --amber-wash:#F7F1DF;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --rec:#E8635A; --rec-soft:#3A2321; --paper:#141517; --ink:#E9E6DF; --muted:#9C968C;
+      --line:#31322E; --card:#1C1D20; --wash:#222320; --amber:#D9B23A; --amber-wash:#262216;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:18px;line-height:1.65}
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px 80px}
+  .top{border-bottom:2px solid var(--ink)}
+  .topline{max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:14px 22px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .topline a{color:var(--ink);text-decoration:none;font-weight:600}
+  .topline .live{color:var(--rec);font-weight:600}
+  h1{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.025em;font-size:clamp(32px,6.5vw,46px);line-height:1.05;margin:48px 0 14px;text-wrap:balance}
+  .byline{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
+  .byline b{color:var(--rec)}
+  h2{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.015em;font-size:clamp(23px,4vw,30px);margin:46px 0 12px;text-wrap:balance}
+  p{margin:14px 0;max-width:65ch}
+  p b{color:var(--ink)}
+  ul{margin:12px 0 12px 22px}
+  li{margin:8px 0}
+  a{color:var(--rec)}
+  .tldr{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--rec);border-radius:0 12px 12px 0;padding:18px 22px;margin:26px 0;font-size:16.5px}
+  .tldr b{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .stat{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:16px 2px;border-bottom:1px solid var(--line);align-items:baseline}
+  .stats{border-top:2px solid var(--ink);margin-top:20px}
+  .stat .n{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;font-size:clamp(24px,4vw,32px);text-align:right;font-variant-numeric:tabular-nums}
+  .stat .n em{font-style:normal;color:var(--rec)}
+  .stat .t{font-size:15.5px;color:var(--muted)}
+  .stat .t b{color:var(--ink)}
+  .offer{display:grid;grid-template-columns:1fr auto;gap:2px 18px;padding:18px 2px;border-bottom:1px solid var(--line);align-items:baseline}
+  .offers{border-top:2px solid var(--ink);margin-top:20px}
+  .offer h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;font-size:18px}
+  .offer p{grid-column:1;font-size:15px;color:var(--muted);margin:4px 0 0}
+  .offer .price{grid-column:2;grid-row:1/span 2;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12.5px;color:var(--rec);white-space:nowrap;text-align:right}
+  @media (max-width:560px){.offer{grid-template-columns:1fr}.offer .price{grid-column:1;grid-row:auto;text-align:left;margin-top:4px}}
+  .honest{background:var(--amber-wash);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:0 12px 12px 0;padding:16px 20px;margin:24px 0;font-size:16px}
+  .honest b{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .cta{background:var(--ink);color:var(--paper);border-radius:16px;padding:36px 28px;margin:52px 0 0;text-align:center}
+  .cta h2{color:inherit;margin:0 0 8px}
+  .cta p{opacity:.72;max-width:46ch;margin:8px auto 20px;font-size:16px}
+  .cta a.btn{display:inline-block;background:var(--rec);color:#fff;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:16px;padding:14px 30px;border-radius:999px}
+  .foot{max-width:720px;margin:40px auto 0;padding:16px 22px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;font-family:ui-monospace,"SF Mono",Menlo,monospace;letter-spacing:.06em;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="topline"><a href="/">LIGHTWORK</a><span class="live">● FOR MORTGAGE BROKERS</span></div></div>
+
+<div class="wrap">
+<h1>The biggest renewal wave in Canadian history is sitting in your database.</h1>
+<p class="byline">CANADIAN MORTGAGE BROKERS · <b>CASL-COMPLIANT BY DESIGN</b></p>
+
+<div class="tldr"><b>The short version:</b> over a million Canadian mortgages renew in 2026, and close to a million more in 2027. Most of those borrowers say they'll shop — and most never go back to their original broker. The renewal date is <b>already in your CRM.</b> We build the system that mines it, works it, and books the calls — on your accounts, inside the rules.</div>
+
+<h2>The math your database is hiding</h2>
+<div class="stats">
+  <div class="stat"><div class="n">1.15<em>M</em></div><div class="t"><b>Canadian mortgages renewing in 2026</b> — with roughly 940K more behind them in 2027</div></div>
+  <div class="stat"><div class="n">56<em>%</em></div><div class="t"><b>of renewing borrowers say they'll shop around</b> (Equifax Canada consumer data)</div></div>
+  <div class="stat"><div class="n">~20<em>%</em></div><div class="t"><b>is roughly how many return to their original broker</b> — everyone else is up for grabs, including your own book</div></div>
+</div>
+<p>Every file you've ever closed has a renewal date on it. The broker who reaches that borrower first — with something useful, months before the bank's retention letter — wins the file. Doing that by hand across a whole book is impossible. That's the system we install.</p>
+
+<h2>The systems, priced</h2>
+<div class="offers">
+  <div class="offer"><h3>Database Revival — Renewal Edition</h3><span class="price">$2,500 · 30 DAYS</span><p>Your book, segmented by renewal date and consent status, worked with a personal multi-touch sequence that books review calls onto your calendar. Fastest ROI on the menu.</p></div>
+  <div class="offer"><h3>The Inbound Engine</h3><span class="price">$3,500 + $750/MO</span><p>Every inquiry — web form, email, text — answered in seconds and booked, including the 7pm "can I qualify?" messages you see the next morning.</p></div>
+  <div class="offer"><h3>The Paperwork Machine</h3><span class="price">FROM $5,000</span><p>Document collection chased automatically, application packages assembled, compliance notes written from your call recordings.</p></div>
+</div>
+<p style="margin-top:18px"><b>Pricing rule:</b> you pay about one month of what the system saves or makes you in a year. One recovered renewal typically covers the install several times over.</p>
+
+<h2>Built inside the rules — because the rules are the moat</h2>
+<ul>
+  <li><b>CASL:</b> implied consent runs two years from a closed transaction — we segment your book by last-transaction date and build express-consent capture into every touch, so the list gets stronger as it's worked.</li>
+  <li><b>No robo-calling, ever:</b> automated voice outreach needs express consent in Canada. We don't build it. Text and email sequences that sound like you, inside consent — yes. AI dialing your book — never.</li>
+  <li><b>You approve what matters:</b> anything money-adjacent or rate-adjacent waits for your thumbs-up. The system drafts; you stay the broker.</li>
+</ul>
+
+<h2>Installed remotely. Owned by you.</h2>
+<p>One recorded video call is the discovery: you walk us through the workflow and drop an export of your book into a shared folder. We build at our desk, install over screen-share on <b>your machine and your accounts</b>, and train your team until they run it without us. Nothing hosted on our side. Fire us the day after handoff and everything keeps working.</p>
+
+<div class="honest"><b>Straight answer on track record:</b> the machine we install is the one we run on our own advisory business every day — 1,625 leads captured by AI, 7,792 follow-ups sent, zero written by hand, every number pulled from our own production database. You'd be a founding broker client, and the pricing reflects that.</div>
+
+<div class="cta">
+  <h2>Free Leak Audit</h2>
+  <p>Tell us how renewals and inquiries reach you today. We'll show you what's leaking out of your book, what it costs per year, and which system fixes it first.</p>
+  <a class="btn" href="https://calm-money-bot-production.up.railway.app/ai-intake">Get the Free Leak Audit</a>
+</div>
+</div>
+
+<div class="foot">
+  <span>LIGHTWORK · LONDON, ONTARIO</span>
+  <span><a href="/" style="color:inherit">HOME</a> · <a href="/contractors/" style="color:inherit">CONTRACTORS</a> · <a href="/london/" style="color:inherit">LONDON</a></span>
+</div>
+</body>
+</html>
