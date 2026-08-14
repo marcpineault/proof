@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lightwork</title>
-<meta name="description" content="We install AI systems that answer your leads, chase the follow-up, and book your calendar — proven on our own business first.">
+<meta name="description" content="We install AI systems inside your business — your tools, your accounts, your team running it. You own everything. Proven on our own business first.">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://lightworkai.ca/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
@@ -167,6 +167,37 @@
   }
   .honest b{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 
+  /* process steps */
+  .steps{margin-top:40px;border-top:2px solid var(--ink)}
+  .prow{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:20px 2px;border-bottom:1px solid var(--line);align-items:baseline}
+  .prow .pn{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:13px;letter-spacing:.1em;color:var(--rec);font-weight:600}
+  .prow h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.015em;font-size:19px}
+  .prow p{font-size:15px;color:var(--muted);max-width:60ch;margin-top:4px}
+  .prow p b{color:var(--ink)}
+
+  /* ownership manifesto */
+  .own{margin-top:48px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--rec);border-radius:0 16px 16px 0;padding:30px 30px}
+  @media (max-width:560px){.own{padding:22px 18px}}
+  .own h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:clamp(22px,3.6vw,30px);margin-bottom:12px}
+  .own h3 em{font-style:normal;color:var(--rec)}
+  .own p{font-size:16px;color:var(--muted);max-width:64ch}
+  .own p b{color:var(--ink)}
+  .ownrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .owntag{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--ink)}
+  .owntag b{color:var(--rec);font-weight:600}
+
+  /* client testimonial */
+  .client{margin-top:44px;display:grid;grid-template-columns:1fr;gap:0}
+  .bigquote{font-size:clamp(24px,4.4vw,38px);line-height:1.2;font-style:italic;max-width:26ch;text-wrap:balance}
+  .bigquote .hl{background:linear-gradient(transparent 62%, var(--rec-soft) 62%)}
+  .quotewho{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:18px}
+  .quotewho b{color:var(--ink)}
+  .casecard{margin-top:28px;border:1px solid var(--line);border-radius:14px;background:var(--card);padding:24px 26px}
+  .casecard .ch{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--rec);font-weight:600;margin-bottom:10px}
+  .casecard p{font-size:15.5px;color:var(--muted);max-width:66ch}
+  .casecard p b{color:var(--ink)}
+
   /* final CTA */
   .final{background:var(--ink);color:var(--paper);border-radius:18px;padding:52px 30px;text-align:center;margin-block:20px 0}
   .final h2{color:inherit;margin-inline:auto}
@@ -192,7 +223,7 @@
 <main>
 <div class="wrap hero">
   <h1>AI that <span class="pen">works<svg viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 12 C 20 18, 45 6, 62 11 S 92 16, 98 9"/></svg></span> for&nbsp;you.</h1>
-  <p class="dek">Not a course. Not a chatbot demo. We install systems that <b>answer your leads, chase the follow-up, and book your calendar</b> — while you do the work only you can do. Everything below happened on our own business.</p>
+  <p class="dek">Not a course. Not a chatbot demo. Not an agency you rent forever. We install systems that <b>answer your leads, chase the follow-up, and book your calendar</b> — on your accounts, your tools, your machines. <b>You own everything.</b> Everything below happened on our own business first.</p>
   <div class="cta-row">
     <a class="btn" href="https://calm-money-bot-production.up.railway.app/ai-intake">Get the Free Leak Audit</a>
     <span class="cta-sub">10 MIN · A REAL ANALYSIS, NOT A SALES SCRIPT</span>
@@ -286,8 +317,53 @@
 <div class="rule"></div>
 
 <section class="wrap">
+  <p class="eyebrow">Client no. 001</p>
+  <div class="client">
+    <p class="bigquote">“He saved me <span class="hl">six grand in one session</span>.”</p>
+    <p class="quotewho"><b>Jason Hastings</b> · Owner, Bang On Construction · $1.3M/yr renovation company · Strathroy, Ontario</p>
+  </div>
+  <div class="casecard">
+    <p class="ch">Case file · in progress</p>
+    <p><b>The build:</b> a site visit becomes a scan, a voice note, and a checklist — and comes back as the <b>design, the estimate, and the client presentation</b>, exported straight into JobTread. What took his designer ten hours happens while the crew drives back. Full case study publishes when the numbers are in — real ones, like everything on this page.</p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section class="wrap">
+  <p class="eyebrow">How it works</p>
+  <h2>Fully remote. Your machine, your accounts, our build.</h2>
+  <p class="sub">No site visit, no lock-in, no “platform.” A recorded call and a shared folder replace the boardroom — and the system gets built on <b>your</b> real work, not a demo dataset.</p>
+  <div class="steps">
+    <div class="prow"><span class="pn">01</span><div><h3>Demo call</h3><p>Watch a system get built live on your actual data — not slides. A working build in under an hour, on video.</p></div></div>
+    <div class="prow"><span class="pn">02</span><div><h3>Discovery</h3><p>One recorded call. You walk us through the workflow and screen-share your tools; we set up one shared folder and you drop in a real week of your business — rate sheets, exports, transcripts. <b>That recording is the site visit.</b></p></div></div>
+    <div class="prow"><span class="pn">03</span><div><h3>The build</h3><p>We build and test against your samples at our desk. You get short preview videos as it comes together; you reply with a voice note. No meetings.</p></div></div>
+    <div class="prow"><span class="pn">04</span><div><h3>Install</h3><p>One screen-share session on <b>your machine, your accounts</b>. We connect your tools and run your first real job through the system together. It's live.</p></div></div>
+    <div class="prow"><span class="pn">05</span><div><h3>Parallel week</h3><p>Your team runs it on real work while the old way still exists. Anything rough gets fixed same-day — you're never betting the business on week one.</p></div></div>
+    <div class="prow"><span class="pn">06</span><div><h3>Train &amp; hand off</h3><p>One session per operator: they run three real jobs themselves while we watch. Then the written SOP goes in your drive — including the “if it breaks, do this” page.</p></div></div>
+    <div class="prow"><span class="pn">07</span><div><h3>Graduation</h3><p>Your team runs a full week without us touching anything. That's the finish line — <b>the system is yours, documented, and running.</b> Two weeks of direct support included after.</p></div></div>
+  </div>
+
+  <div class="own">
+    <h3>You own <em>everything.</em></h3>
+    <p>The system runs on <b>your AI subscription, your computers, your accounts.</b> We never hold your logins, nothing is hosted on our side, and there is nothing to cancel if you leave. Fire us the day after handoff and everything keeps working. Most agencies build lock-in — rented dashboards, their GoHighLevel account, your data hostage. <b>We build assets.</b></p>
+    <div class="ownrow">
+      <span class="owntag"><b>✓</b> Your accounts</span>
+      <span class="owntag"><b>✓</b> Your data</span>
+      <span class="owntag"><b>✓</b> Written SOPs</span>
+      <span class="owntag"><b>✓</b> Team trained</span>
+      <span class="owntag"><b>✗</b> No hostage dashboards</span>
+      <span class="owntag"><b>✗</b> Nothing to cancel</span>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section class="wrap">
   <p class="eyebrow">Pick your system</p>
   <h2>Start with the piece that's bleeding.</h2>
+  <p class="sub">Pricing rule of thumb: <b>you pay about one month of what the system saves you in a year.</b> If the math isn't obvious on the first call, we'll tell you not to hire us. And the savings are the small half — a business that runs on documented systems is worth a <b>higher multiple</b> when you sell it than one that runs on the owner's memory.</p>
   <div class="offers">
     <div class="offer"><h3>The Inbound Engine</h3><span class="price">$3,500 + $750/MO</span><p>Every call, DM, and form answered in seconds — booked before your competitor picks up.</p></div>
     <div class="offer"><h3>Database Revival</h3><span class="price">$2,500 · 30 DAYS</span><p>Your old leads and past clients, reactivated. Fastest ROI on the menu.</p></div>
@@ -295,7 +371,11 @@
     <div class="offer"><h3>The Paperwork Machine</h3><span class="price">FROM $5,000</span><p>Documents, notes, and invoice-chasing handled by software instead of your evenings.</p></div>
     <div class="offer"><h3>The AI Chief of Staff</h3><span class="price">$7,500 + $500/MO</span><p>The full system on this page, installed in your business — with you approving anything that matters.</p></div>
   </div>
-  <div class="honest"><b>Straight answer on track record:</b> these numbers are from our own business — we built it for ourselves first and run it every day. You'd be a founding client. That's why the proof is real instead of borrowed, and why the pricing looks the way it does.</div>
+  <div class="casecard" style="margin-top:28px">
+    <p class="ch">What the monthly actually buys</p>
+    <p>Not maintenance — a <b>scoreboard and a build partner.</b> Every month you get the number the system moved (leads answered in under 5 minutes, estimates out in 24 hours, jobs booked), a working call, your systems updated as the AI tools change under them, and first place in line for the next build. The install is yours forever either way — <b>the monthly is optional and cancels anytime.</b></p>
+  </div>
+  <div class="honest"><b>Straight answer on track record:</b> every number on this page is from our own business — we built the machine for ourselves first and run it every day. Client work started in 2026 with Bang On Construction, and their case study publishes when the results are real. You'd be a founding client, and that's why the proof here is our own instead of borrowed.</div>
 </section>
 
 
