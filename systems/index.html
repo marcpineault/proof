@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Systems — Lightwork</title>
+<meta name="description" content="Two ways to work with Lightwork: drop-in growth systems proven on our own business, or a custom build for the workflow that eats your week. Fixed prices. You own everything.">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://lightworkai.ca/systems/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
+<style>
+  :root{
+    --rec:#C7372F; --rec-soft:#F6E3E1; --paper:#FAF8F4; --ink:#1F2226;
+    --muted:#6C675F; --line:#E2DDD3; --card:#FFFFFF; --wash:#F1EDE5;
+    --amber:#8A6D1F; --amber-wash:#F7F1DF;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --rec:#E8635A; --rec-soft:#3A2321; --paper:#141517; --ink:#E9E6DF;
+      --muted:#9C968C; --line:#31322E; --card:#1C1D20; --wash:#222320;
+      --amber:#D9B23A; --amber-wash:#262216;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    font-size:17.5px;line-height:1.55;-webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--rec)}
+  :focus-visible{outline:3px solid var(--rec);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:1020px;margin:0 auto;padding-inline:22px}
+
+  .top{border-bottom:2px solid var(--ink)}
+  .topline{display:flex;justify-content:space-between;align-items:center;padding-block:14px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .topline b{color:var(--ink);font-weight:600}
+  .topline a{color:var(--muted);text-decoration:none}
+  .topline a:hover{color:var(--rec)}
+
+  .hero{padding-block:58px 40px}
+  h1{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-weight:800;letter-spacing:-.03em;line-height:1.0;
+    font-size:clamp(40px,7.4vw,74px);text-wrap:balance;max-width:16ch;
+  }
+  h1 em{font-style:normal;color:var(--rec)}
+  .dek{font-size:clamp(17px,2.4vw,20px);color:var(--muted);max-width:56ch;margin:26px 0 0;text-wrap:pretty}
+  .dek b{color:var(--ink)}
+  .cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:30px}
+  .btn{
+    display:inline-block;background:var(--rec);color:#fff;text-decoration:none;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:16.5px;
+    padding:15px 32px;border-radius:999px;box-shadow:0 10px 24px -8px color-mix(in srgb, var(--rec) 55%, transparent);
+  }
+  .btn:hover{filter:brightness(1.06)}
+  .cta-sub{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+
+  section{padding-block:64px}
+  .rule{border-top:1px solid var(--line)}
+  .eyebrow{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--rec);font-weight:600;margin-bottom:10px}
+  h2{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.022em;
+    font-size:clamp(28px,5vw,44px);line-height:1.04;text-wrap:balance;max-width:24ch}
+  .sub{color:var(--muted);font-size:18px;max-width:58ch;margin-top:14px;text-wrap:pretty}
+  .sub b{color:var(--ink)}
+
+  /* the two doors */
+  .doors{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+  @media (max-width:760px){.doors{grid-template-columns:1fr}}
+  .door{border:1px solid var(--line);border-top:4px solid var(--rec);border-radius:0 0 16px 16px;background:var(--card);padding:28px 26px}
+  .door .dh{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--rec);font-weight:600;margin-bottom:10px}
+  .door h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:clamp(21px,3.2vw,27px);margin-bottom:10px}
+  .door p{font-size:15.5px;color:var(--muted);max-width:60ch}
+  .door p b{color:var(--ink)}
+  .door .q{font-style:italic;color:var(--ink);font-size:16.5px;margin-top:14px;padding-left:14px;border-left:3px solid var(--rec)}
+  .door .go{display:inline-block;margin-top:16px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:15px;text-decoration:none}
+
+  /* component cards */
+  .comp{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:26px 26px;margin-top:22px}
+  @media (max-width:560px){.comp{padding:20px 18px}}
+  .comphead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .comp h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.015em;font-size:21px}
+  .comp .price{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:13px;color:var(--rec);white-space:nowrap}
+  .comp .fix{font-size:16px;color:var(--muted);max-width:62ch;margin-top:8px}
+  .comp .fix b{color:var(--ink)}
+  .comp ul{list-style:none;margin-top:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14.5px;color:var(--muted)}
+  .comp ul li{padding:7px 0 7px 24px;position:relative;border-top:1px solid var(--line)}
+  .comp ul li::before{content:"→";position:absolute;left:0;color:var(--rec);font-weight:700}
+  .comp ul li b{color:var(--ink)}
+  .num{
+    display:inline-block;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--rec);font-weight:600;margin-bottom:6px;
+  }
+  .owns{
+    margin-top:16px;padding:10px 14px;background:var(--wash);border-radius:8px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11.5px;letter-spacing:.06em;color:var(--muted);
+  }
+  .owns b{color:var(--ink)}
+
+  .honest{
+    background:var(--amber-wash);border:1px solid var(--line);border-left:3px solid var(--amber);
+    border-radius:0 12px 12px 0;padding:18px 22px;margin-top:32px;max-width:66ch;font-size:15.5px;
+  }
+  .honest b{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+
+  /* custom lane */
+  .bigquote{font-size:clamp(22px,4vw,34px);line-height:1.2;font-style:italic;max-width:26ch;text-wrap:balance;margin-top:34px}
+  .bigquote .hl{background:linear-gradient(transparent 62%, var(--rec-soft) 62%)}
+  .quotewho{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:16px}
+  .quotewho b{color:var(--ink)}
+
+  .ladder{margin-top:36px;border-top:2px solid var(--ink)}
+  .lrow{display:grid;grid-template-columns:1fr auto;gap:4px 22px;padding:20px 2px;border-bottom:1px solid var(--line);align-items:baseline}
+  @media (max-width:560px){.lrow{grid-template-columns:1fr}}
+  .lrow h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.015em;font-size:19px}
+  .lrow p{grid-column:1;font-size:15px;color:var(--muted);max-width:56ch;margin-top:4px}
+  .lrow p b{color:var(--ink)}
+  .lrow .price{grid-column:2;grid-row:1/span 2;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:13px;color:var(--rec);white-space:nowrap;text-align:right}
+  @media (max-width:560px){.lrow .price{grid-column:1;grid-row:auto;text-align:left;margin-top:4px}}
+
+  .mathcard{margin-top:36px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--rec);border-radius:0 16px 16px 0;padding:28px 28px}
+  @media (max-width:560px){.mathcard{padding:22px 18px}}
+  .mathcard h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:clamp(21px,3.4vw,28px);margin-bottom:10px}
+  .mathcard h3 em{font-style:normal;color:var(--rec)}
+  .mathcard p{font-size:15.5px;color:var(--muted);max-width:62ch;margin-top:8px}
+  .mathcard p b{color:var(--ink)}
+
+  .final{background:var(--ink);color:var(--paper);border-radius:18px;padding:52px 30px;text-align:center;margin-block:20px 0}
+  .final h2{color:inherit;margin-inline:auto}
+  .final p{opacity:.7;max-width:46ch;margin:12px auto 26px;font-size:16.5px}
+  .final .cta-sub{color:var(--paper);opacity:.6;margin-top:14px;display:block}
+
+  footer{padding-block:34px 60px;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.06em;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap topline">
+    <a href="/"><b>LIGHTWORK</b> · HOME</a>
+    <span>THE SYSTEMS</span>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <h1>Your business bleeds in <em>two places.</em> Pick yours.</h1>
+  <p class="dek"><b>Leads you never answer</b> — the call at 6pm Friday that goes to voicemail and books with your competitor. And <b>hours you burn by hand</b> — the quote, the paperwork, the follow-up that eats your evenings. Lightwork sells one fix for each: <b>ready-to-install growth systems</b> we already run on our own business, and <b>custom builds</b> for the workflow that's uniquely yours.</p>
+  <div class="cta-row">
+    <a class="btn" href="https://calm-money-bot-production.up.railway.app/ai-intake">Get the Free Leak Audit</a>
+    <span class="cta-sub">10 MIN · WE'LL TELL YOU WHICH FIX COMES FIRST</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="doors">
+    <div class="door">
+      <div class="dh">Door one · Growth Systems</div>
+      <h3>The leads are leaking.</h3>
+      <p>Marketing and follow-up plumbing every business needs: answer in seconds, follow up forever, book the calendar. <b>Pre-built, fixed price, live in about two weeks</b> — because we already built each one for ourselves and ran it for months.</p>
+      <p class="q">"What happens to a lead who calls you at 6pm on a Friday?"</p>
+      <a class="go" href="#stack">See the six systems ↓</a>
+    </div>
+    <div class="door">
+      <div class="dh">Door two · Custom Builds</div>
+      <h3>The hours are burning.</h3>
+      <p>A workflow that exists only inside your business — estimating, quoting, bookkeeping, job paperwork. <b>Scoped from your real data, priced by what it saves you</b>, built with you session by session.</p>
+      <p class="q">"What's the most expensive thing your team still does by hand?"</p>
+      <a class="go" href="#custom">See how a build works ↓</a>
+    </div>
+  </div>
+</div>
+
+<section class="wrap" id="stack">
+  <p class="eyebrow">Door one · Growth Systems</p>
+  <h2>Six systems. Each one owns a number.</h2>
+  <p class="sub">Every system below runs on our own business today — the numbers on the <a href="/">homepage</a> are its output. Each installs in about two weeks, on <b>your accounts, your tools</b>. And each one reports a single number to you weekly, so you always know it's earning.</p>
+
+  <div class="comp">
+    <span class="num">01 · The door-opener</span>
+    <div class="comphead"><h3>The Inbound Engine</h3><span class="price">$3,500 + $750/MO</span></div>
+    <p class="fix">Every call, form fill, and after-hours inquiry gets an instant, on-brand text back that answers questions and books the appointment. <b>78% of buyers go with whoever responds first.</b> That becomes you, every time.</p>
+    <ul>
+      <li>Missed-call text-back on your existing number, <b>under 5 minutes, 24/7</b></li>
+      <li>Answers in your voice, qualifies, and offers your calendar</li>
+      <li>Anything it can't answer goes straight to your phone</li>
+    </ul>
+    <div class="owns">THE WEEKLY NUMBER → <b>leads answered inside 5 minutes</b></div>
+  </div>
+
+  <div class="comp">
+    <span class="num">02 · Fastest ROI on the menu</span>
+    <div class="comphead"><h3>Database Revival</h3><span class="price">$2,500 · 30 DAYS</span></div>
+    <p class="fix">Your old leads and past clients are the cheapest revenue you'll ever get. A two-week sprint through the list you already own: clean it, message it properly, count the bookings, stop. <b>One-time project, not a retainer.</b></p>
+    <ul>
+      <li>List cleaned, de-duplicated, and consent-checked (CASL done right)</li>
+      <li>A 3-touch email + text sequence written in your voice, with a real offer</li>
+      <li>Sent in careful daily batches — never a blast that burns your domain</li>
+    </ul>
+    <div class="owns">THE NUMBER → <b>appointments booked from the old list</b></div>
+  </div>
+
+  <div class="comp">
+    <span class="num">03 · The always-on lane</span>
+    <div class="comphead"><h3>The DM Engine</h3><span class="price">$3,500 + $750/MO</span></div>
+    <p class="fix">Comments and DMs become captured leads while you sleep. This is the exact system that captured <b>1,625 leads in our own Instagram DMs</b> — delivering value first, collecting the email, and escalating real buyers to your phone.</p>
+    <ul>
+      <li>Comment-keyword automations that deliver your guide in the DMs</li>
+      <li>Answers questions in your voice; paced like a human, so platforms stay happy</li>
+      <li>Real buyers escalated to you; everything else handled</li>
+    </ul>
+    <div class="owns">THE WEEKLY NUMBER → <b>leads captured from social conversations</b></div>
+  </div>
+
+  <div class="comp">
+    <span class="num">04 · The compounder</span>
+    <div class="comphead"><h3>The Follow-Up Machine</h3><span class="price">$3,000 + $500/MO</span></div>
+    <p class="fix">The fortune is in the follow-up nobody has time to do. Welcome series, value-first nurture, and booking nudges that run themselves — <b>7,792 follow-up emails sent on our own list, zero written by hand, nobody emailed twice.</b></p>
+    <ul>
+      <li>Email sequences written in your voice — value first, ask later</li>
+      <li>Proper sending setup on your own domain, warmed up so it lands in the inbox</li>
+      <li>A ledger that guarantees no lead is ever double-messaged or forgotten</li>
+    </ul>
+    <div class="owns">THE WEEKLY NUMBER → <b>replies and bookings from your list</b></div>
+  </div>
+
+  <div class="comp">
+    <span class="num">05 · The presence layer</span>
+    <div class="comphead"><h3>The Content Engine</h3><span class="price">$3,500 + $750/MO</span></div>
+    <p class="fix">One recording from you becomes a scheduled week of posts — your footage, your numbers, your voice. Feeds the DM Engine with the comments it converts. <b>1.48M views on our own content</b> came out of this exact pipeline.</p>
+    <ul>
+      <li>Repurposing pipeline: one video or voice note in, a week of posts out</li>
+      <li>Scheduled at your best times across your platforms</li>
+      <li>You approve every post from your phone — nothing publishes without you</li>
+    </ul>
+    <div class="owns">THE WEEKLY NUMBER → <b>posts published + the DMs they start</b></div>
+  </div>
+
+  <div class="comp">
+    <span class="num">06 · The finisher</span>
+    <div class="comphead"><h3>The Finishing Touches</h3><span class="price">FROM $1,500 · OR BUNDLED</span></div>
+    <p class="fix">The small automatic touches that quietly compound: booking reminders, no-show recovery, the post-job review ask, and a rescue for any lead who replied and got forgotten. <b>Usually bundled free into any install above.</b></p>
+    <ul>
+      <li>One clean booking reminder (one — not five annoying ones)</li>
+      <li>Review ask the day the job closes, while they're happiest</li>
+      <li>Ghosted-lead rescue: anyone who replied and never got an answer</li>
+    </ul>
+    <div class="owns">THE NUMBER → <b>no lead or client ghosted, ever</b></div>
+  </div>
+
+  <div class="honest"><b>Why no ads management?</b> Because we don't send paid traffic into a leaky funnel — and neither should you. Engine first, ads after. Once your stack is live and converting, we'll manage the spend into it or connect you with someone good.</div>
+
+  <div class="mathcard">
+    <h3>Stack them: the Full Install. <em>$7,500–$15,000</em></h3>
+    <p>Three or more systems plus team training — the whole engine on this page, installed in your business, with <b>you approving anything that matters</b> until you trust it. The monthly on any system is optional and cancels anytime: it buys the weekly scoreboard, the tuning, and your systems kept current as AI tools change under them. <b>The install is yours forever either way.</b></p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section class="wrap" id="custom">
+  <p class="eyebrow">Door two · Custom Builds</p>
+  <h2>The workflow that's uniquely yours, automated.</h2>
+  <p class="sub">Estimates, quotes, bookkeeping, job paperwork, scheduling — the thing your team does by hand every week that no off-the-shelf tool fits. We scope it from your real data, price it by what it saves, and build it <b>with</b> you.</p>
+
+  <p class="bigquote">“He saved me <span class="hl">six grand in one session</span>.”</p>
+  <p class="quotewho"><b>Jason Hastings</b> · Owner, Bang On Construction · $1.3M/yr renovation company</p>
+
+  <div class="ladder">
+    <div class="lrow">
+      <h3>Working Session</h3><span class="price">$500 · CREDITED</span>
+      <p>Two hours, live on your real data. We build one quick win together — <b>you leave with it running.</b> Recorded, so the transcript seeds everything after. Fully credited toward a build. This is the session the quote above came from.</p>
+    </div>
+    <div class="lrow">
+      <h3>Custom System Build</h3><span class="price">$2,500–$5,000</span>
+      <p>One workflow, end-to-end, in 2–6 weeks. Scoped from a recorded walkthrough and a folder of your real samples — rate sheets, exports, transcripts. Built at our desk, <b>proven on a live job next to your old way</b> before you pay the final milestone, then installed on your machine with your team trained.</p>
+    </div>
+    <div class="lrow">
+      <h3>Full Install</h3><span class="price">$7,500–$15,000</span>
+      <p>Three or more systems plus team rollout — the business runs on the new operating system, not on the owner. Milestone payments, each released on a working demo.</p>
+    </div>
+    <div class="lrow">
+      <h3>Keep Current</h3><span class="price">$500/MO · OPTIONAL</span>
+      <p>Monthly working call, your systems updated as AI tools change, priority on the next build. Cancel anytime — <b>everything keeps working the day you do.</b></p>
+    </div>
+  </div>
+
+  <div class="mathcard">
+    <h3>How the price gets set: <em>one month of a year's savings.</em></h3>
+    <p>Before anything gets built, we do the math out loud with you: hours saved × what those hours cost, plus what slow-and-wrong costs in cash flow. The build price is about <b>one month of that annual number</b>. Saving $1,000 a week of admin → a $4,000 build. If the math isn't obviously good, we'll say so and tell you not to hire us.</p>
+    <p>And the savings are the small half: businesses sell on a multiple of profit, so <b>$26K a year of savings at a 3× multiple is $78K of business value</b> — and a company that runs on documented systems commands a higher multiple than one that runs on the owner's memory.</p>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section class="wrap">
+  <p class="eyebrow">Most owners need both</p>
+  <h2>Start with whichever is bleeding faster.</h2>
+  <p class="sub">The doors aren't silos — they're entry points. Our first client started with a custom build (his estimating workflow) and is adding growth systems next. Most owners who come for the missed calls end up showing us their paperwork within a month. The Leak Audit tells you which fix pays back first — <b>then you get one win in about two weeks before we talk about anything else.</b></p>
+  <div class="honest"><b>Straight answer on track record:</b> every growth-system number on this page is from our own business — we built the machine for ourselves first and run it every day. Client work started in 2026 with Bang On Construction. You'd be a founding client, and that's why the proof here is our own instead of borrowed.</div>
+</section>
+
+<div class="wrap">
+  <div class="final">
+    <h2>Free Leak Audit</h2>
+    <p>Ten minutes on how leads and work move through your business today. We'll show you where it's leaking, what it costs, and which system fixes it first.</p>
+    <a class="btn" href="https://calm-money-bot-production.up.railway.app/ai-intake">Get the Free Leak Audit</a>
+    <span class="cta-sub">10 MIN · A REAL ANALYSIS, NOT A SALES SCRIPT</span>
+  </div>
+</div>
+</main>
+
+<footer class="wrap">
+  <span>LIGHTWORK · BUILT AND RUN BY MARC PINEAULT · LONDON, ONTARIO</span>
+  <span><a href="/" style="color:inherit">HOME</a> · <a href="/missed-call-calculator/" style="color:inherit">CALCULATOR</a> · <a href="/contractors/" style="color:inherit">CONTRACTORS</a> · <a href="/mortgage-brokers/" style="color:inherit">BROKERS</a></span>
+</footer>
+
+</body>
+</html>
