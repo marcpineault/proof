@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Receipts &#8212; Lightwork</title>
+<meta name="description" content="Every number Lightwork can prove, pulled live from our own production database: 2,272 leads, $1.53M in client assets closed, 24x search growth, 19 always-on jobs. With the screenshots.">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://lightworkai.ca/proof/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
+</head>
+<body>
+<style>
+:root{
+  --rec:#C7372F;
+  --rec-soft:#F6E3E1;
+  --paper:#FAF8F4;
+  --ink:#1F2226;
+  --muted:#6C675F;
+  --faint:#918B81;
+  --line:#E2DDD3;
+  --card:#FFFFFF;
+  --wash:#F1EDE5;
+  --amber:#8A6D1F;
+  --amber-wash:#F7F1DF;
+  --grid:#E7E2D8;
+  --shadow:rgba(31,34,38,.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --rec:#E8635A;
+    --rec-soft:#3A2321;
+    --paper:#141517;
+    --ink:#E9E6DF;
+    --muted:#9C968C;
+    --faint:#7C776E;
+    --line:#31322E;
+    --card:#1C1D20;
+    --wash:#222320;
+    --amber:#D9B23A;
+    --amber-wash:#262216;
+    --grid:#2A2B28;
+    --shadow:rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"]{
+  --rec:#E8635A;
+  --rec-soft:#3A2321;
+  --paper:#141517;
+  --ink:#E9E6DF;
+  --muted:#9C968C;
+  --faint:#7C776E;
+  --line:#31322E;
+  --card:#1C1D20;
+  --wash:#222320;
+  --amber:#D9B23A;
+  --amber-wash:#262216;
+  --grid:#2A2B28;
+  --shadow:rgba(0,0,0,.5);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+img{max-width:100%;height:auto;display:block}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  font-size:17.5px;line-height:1.56;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--rec)}
+:focus-visible{outline:3px solid var(--rec);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:22px}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+.sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+
+/* ---- case-file margin rule ---- */
+.filerule,.filename-v{display:none}
+@media (min-width:1180px){
+  .filerule{position:fixed;top:0;bottom:0;left:38px;width:4px;display:block;
+    border-left:1px solid var(--rec);border-right:1px solid var(--rec);opacity:.5;pointer-events:none;z-index:2}
+  .filename-v{display:block;position:fixed;left:12px;bottom:28px;writing-mode:vertical-rl;transform:rotate(180deg);
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--rec);opacity:.85;pointer-events:none;z-index:2}
+}
+
+/* ---- top bar ---- */
+.top{border-bottom:2px solid var(--ink)}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px;flex-wrap:wrap;
+  font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.topline b{color:var(--ink);font-weight:600}
+.live{display:inline-flex;align-items:center;gap:8px;color:var(--rec);font-weight:600}
+.recdot{width:8px;height:8px;border-radius:50%;background:var(--rec);animation:pulse 2.1s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.28}}
+@media (prefers-reduced-motion: reduce){.recdot{animation:none}}
+
+/* ---- hero ---- */
+.hero{padding-block:62px 40px}
+h1{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-weight:800;letter-spacing:-.033em;line-height:.95;
+  font-size:clamp(46px,9.4vw,96px);text-wrap:balance;max-width:13ch}
+.pen{position:relative;white-space:nowrap;display:inline-block}
+.pen svg{position:absolute;left:-3%;bottom:-13px;width:106%;height:22px;overflow:visible}
+.pen svg path{fill:none;stroke:var(--rec);stroke-width:5;stroke-linecap:round}
+.dek{font-size:clamp(17px,2.3vw,20.5px);color:var(--muted);max-width:56ch;margin-top:32px;text-wrap:pretty}
+.dek b{color:var(--ink)}
+
+/* ---- scoreboard ---- */
+.statwall{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border-block:1px solid var(--line);margin-top:50px}
+@media (max-width:700px){.statwall{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--paper);padding:24px 12px 20px;text-align:center}
+.stat .n{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-weight:800;
+  letter-spacing:-.025em;font-size:clamp(28px,4.4vw,42px);font-variant-numeric:tabular-nums;line-height:1}
+.stat .n em{font-style:normal;color:var(--rec)}
+.stat .d{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--muted);margin-top:9px;line-height:1.45}
+.stamp{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.07em;
+  color:var(--muted);text-align:center;padding-top:14px}
+.stamp b{color:var(--rec);font-weight:600}
+
+/* ---- sections / exhibits ---- */
+section{padding-block:70px;border-top:1px solid var(--line)}
+section:first-of-type{border-top:none}
+.exlabel{display:flex;align-items:baseline;gap:14px;margin-bottom:14px;flex-wrap:wrap}
+.exno{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--rec);font-weight:600;
+  border:1px solid var(--rec);border-radius:3px;padding:3px 8px}
+.extag{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted)}
+h2{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-weight:800;
+  letter-spacing:-.023em;font-size:clamp(28px,4.7vw,44px);line-height:1.04;text-wrap:balance;max-width:22ch}
+.sub{color:var(--muted);font-size:18px;max-width:60ch;margin-top:16px;text-wrap:pretty}
+.sub b{color:var(--ink)}
+
+/* ---- provenance line: the page's spine ---- */
+.prov{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.06em;
+  color:var(--faint);margin-top:18px;padding-left:12px;border-left:2px solid var(--rec);line-height:1.6}
+.prov b{color:var(--muted);font-weight:600}
+
+/* ---- ledger rows ---- */
+.ledger{margin-top:36px;border-top:2px solid var(--ink)}
+.lrow{display:grid;grid-template-columns:190px 1fr;align-items:baseline;gap:20px;
+  padding:17px 2px;border-bottom:1px solid var(--line)}
+@media (max-width:600px){.lrow{grid-template-columns:112px 1fr;gap:13px}}
+.lrow .n{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-weight:800;
+  letter-spacing:-.02em;font-size:clamp(22px,3.4vw,32px);font-variant-numeric:tabular-nums;text-align:right;line-height:1.1}
+.lrow .n em{font-style:normal;color:var(--rec)}
+.lrow .t{font-size:16px;color:var(--muted);text-wrap:pretty}
+.lrow .t b{color:var(--ink);font-weight:600}
+
+/* ---- source table ---- */
+.tablewrap{overflow-x:auto;margin-top:32px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15.5px}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+th{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--wash)}
+td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.pill{display:inline-block;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10px;
+  letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;font-weight:600}
+.pill.ai{background:var(--rec-soft);color:var(--rec)}
+.pill.hand{background:var(--wash);color:var(--muted)}
+
+/* ---- charts ---- */
+.chartcard{margin-top:34px;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:24px 20px 16px}
+.charthead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+.charttitle{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:16px;letter-spacing:-.01em}
+.chartnote{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted)}
+.chartbox{position:relative}
+svg.plot{display:block;width:100%;height:auto;overflow:visible}
+.tip{position:absolute;pointer-events:none;opacity:0;transition:opacity .12s ease;
+  background:var(--ink);color:var(--paper);border-radius:7px;padding:8px 11px;
+  font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11.5px;line-height:1.45;
+  white-space:nowrap;transform:translate(-50%,-124%);box-shadow:0 8px 20px -8px var(--shadow);z-index:5}
+.tip b{color:#fff;font-weight:700}
+:root[data-theme="dark"] .tip b{color:var(--paper)}
+details.numbers{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}
+details.numbers summary{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--rec);cursor:pointer;font-weight:600}
+details.numbers table{min-width:0;margin-top:10px;font-size:14px}
+details.numbers th,details.numbers td{padding:7px 10px}
+
+/* ---- exhibits: phone frames + red pen ---- */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+@media (max-width:820px){.trio{grid-template-columns:1fr;max-width:400px;margin-inline:auto}}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px;align-items:start}
+@media (max-width:760px){.duo{grid-template-columns:1fr;max-width:420px;margin-inline:auto}}
+.shot{position:relative}
+.frame{position:relative;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#000;
+  box-shadow:0 18px 42px -16px var(--shadow)}
+.ring{position:absolute;border:3px solid var(--rec);border-radius:50%;transform:rotate(-2deg);pointer-events:none}
+.note{font-style:italic;color:var(--rec);font-size:16px;line-height:1.4;margin-top:14px;
+  padding-left:13px;border-left:3px solid var(--rec)}
+.note .who{display:block;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-style:normal;
+  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.wideshot{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card);
+  margin-top:26px;box-shadow:0 12px 30px -14px var(--shadow)}
+.caption{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-top:11px}
+.caption b{color:var(--rec);font-weight:600}
+
+/* ---- crossed-off stack ---- */
+.crosscard{margin-top:36px;border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+.crossrow{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding:13px 20px;border-bottom:1px solid var(--line);font-size:16px}
+.crossrow.out span:first-child{text-decoration:line-through;text-decoration-color:var(--rec);
+  text-decoration-thickness:2px;color:var(--muted)}
+.crossrow .amt{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;
+  font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--muted)}
+.crossrow.total{background:var(--wash);border-bottom:none;font-weight:600}
+.crossrow.total .amt{color:var(--rec);font-size:19px}
+
+/* ---- job grid ---- */
+.jobs{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:34px}
+.job{background:var(--card);padding:16px 17px}
+.job .jn{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:15.5px;letter-spacing:-.01em}
+.job .jt{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--rec);margin-top:5px}
+.job .jd{font-size:14.5px;color:var(--muted);margin-top:8px;line-height:1.48}
+
+/* ---- case files ---- */
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:38px}
+@media (max-width:800px){.cases{grid-template-columns:1fr}}
+.case{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:26px 24px;position:relative}
+.case .ctag{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;font-weight:600;padding:4px 9px;border-radius:3px;display:inline-block;margin-bottom:14px}
+.case.is-building .ctag{background:var(--rec-soft);color:var(--rec)}
+.case.is-held .ctag{background:var(--amber-wash);color:var(--amber)}
+.case h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;
+  font-size:22px;letter-spacing:-.02em;line-height:1.15}
+.case .meta{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);margin-top:8px}
+.case p{font-size:16px;color:var(--muted);margin-top:15px;text-wrap:pretty}
+.case p b{color:var(--ink)}
+.quote{font-size:23px;line-height:1.3;color:var(--ink);font-style:italic;margin-top:16px;text-wrap:balance}
+
+/* ---- honest ledger ---- */
+.honest{background:var(--wash);border:1px solid var(--line);border-radius:14px;padding:36px 30px;margin-top:34px}
+.honest h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;
+  font-size:21px;letter-spacing:-.02em;margin-bottom:6px}
+.honest ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:14px}
+.honest li{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:16px;color:var(--muted);text-wrap:pretty}
+.honest li b{color:var(--ink);font-weight:600}
+.honest li .mk{color:var(--rec);font-family:ui-monospace,monospace;font-weight:700;line-height:1.5}
+
+/* ---- final ---- */
+.final{background:var(--ink);color:var(--paper);border-radius:16px;padding:54px 30px;text-align:center;margin-top:24px}
+.final h2{color:var(--paper);margin-inline:auto}
+.final p{opacity:.72;max-width:46ch;margin:14px auto 28px;font-size:16.5px}
+.btn{display:inline-block;background:var(--rec);color:#fff;text-decoration:none;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:16.5px;
+  padding:15px 34px;border-radius:999px;box-shadow:0 10px 26px -10px var(--rec)}
+.btn:hover{filter:brightness(1.07)}
+.final .fine{display:block;margin-top:16px;font-family:ui-monospace,"SF Mono",Menlo,monospace;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--paper);opacity:.6}
+footer{padding-block:32px 60px;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;
+  letter-spacing:.06em;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+</style>
+
+<div class="filerule" aria-hidden="true"></div>
+<div class="filename-v" aria-hidden="true">Case file &#183; Lightwork &#183; 2026</div>
+
+<div class="top">
+  <div class="wrap topline">
+    <span><a href="/" style="text-decoration:none;color:inherit"><b>Lightwork</b></a> &#183; Proof of work &#183; London, Ontario</span>
+    <span class="live"><span class="recdot" aria-hidden="true"></span>System running</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <h1>Every number we can <span class="pen">prove<svg viewBox="0 0 200 22" preserveAspectRatio="none" aria-hidden="true"><path d="M3 15 C 46 6, 96 19, 152 9 S 190 12, 197 8"/></svg></span>.</h1>
+    <p class="dek">We build AI systems that answer leads, chase follow-up, and fill a calendar. Before selling one to anybody, we ran it on our own retirement-planning business for five months. <b>This page is that business's production database, opened up.</b> Every figure below was pulled live on August 17, 2026 &#8212; and every one carries the query it came from.</p>
+  </header>
+
+  <div class="statwall">
+    <div class="stat"><div class="n"><em>2,272</em></div><div class="d">Leads captured<br>since March 10</div></div>
+    <div class="stat"><div class="n">95<em>%</em></div><div class="d">Captured by AI<br>nobody typed a word</div></div>
+    <div class="stat"><div class="n">$1.53<em>M</em></div><div class="d">New client assets<br>closed &#183; 21 deals</div></div>
+    <div class="stat"><div class="n">7,928</div><div class="d">Follow-up emails<br>zero written by hand</div></div>
+    <div class="stat"><div class="n">10,404</div><div class="d">Followers<br>up 236% in 95 days</div></div>
+    <div class="stat"><div class="n">19</div><div class="d">Always-on jobs<br>running right now</div></div>
+  </div>
+  <p class="stamp">Pulled from production <b>August 17, 2026</b> &#183; no rounding up, no borrowed logos</p>
+
+  <!-- ============ EXHIBIT 01 ============ -->
+  <section>
+    <div class="exlabel"><span class="exno">Exhibit 01</span><span class="extag">Lead capture</span></div>
+    <h2>2,272 leads in 160 days. 95% of them handled without a human.</h2>
+    <p class="sub">The database was empty on March 10, 2026. Everything in it since arrived through a system that runs whether or not anyone is awake &#8212; Instagram DMs answered in Marc's voice, website tools that qualify and file the lead, TikTok DMs, quiz results. <b>The DM agent alone captured 1,642 of them.</b></p>
+
+    <div class="chartcard">
+      <div class="charthead">
+        <span class="charttitle">Leads captured, running total</span>
+        <span class="chartnote">Mar 10 &#8211; Aug 17, 2026</span>
+      </div>
+      <div class="chartbox" id="box-leads">
+        <svg class="plot" id="chart-leads" viewBox="0 0 760 260" role="img" aria-label="Running total of leads captured, rising from 22 in March 2026 to 2,272 in August 2026"></svg>
+        <div class="tip" id="tip-leads"></div>
+      </div>
+      <details class="numbers">
+        <summary>Show the numbers</summary>
+        <table>
+          <thead><tr><th>As of</th><th style="text-align:right">Running total</th><th style="text-align:right">Added that month</th></tr></thead>
+          <tbody>
+            <tr><td>Mar 31, 2026</td><td class="num">22</td><td class="num">22</td></tr>
+            <tr><td>Apr 30, 2026</td><td class="num">208</td><td class="num">186</td></tr>
+            <tr><td>May 31, 2026</td><td class="num">974</td><td class="num">766</td></tr>
+            <tr><td>Jun 30, 2026</td><td class="num">1,747</td><td class="num">773</td></tr>
+            <tr><td>Jul 31, 2026</td><td class="num">2,141</td><td class="num">394</td></tr>
+            <tr><td>Aug 17, 2026</td><td class="num">2,272</td><td class="num">131</td></tr>
+          </tbody>
+        </table>
+      </details>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Where the lead came from</th><th style="text-align:right">Leads</th><th>Run by</th></tr></thead>
+        <tbody>
+          <tr><td>Instagram DM agent</td><td class="num">1,642</td><td><span class="pill ai">AI</span></td></tr>
+          <tr><td>Website tools &amp; calculators</td><td class="num">402</td><td><span class="pill ai">AI</span></td></tr>
+          <tr><td>Website quiz</td><td class="num">77</td><td><span class="pill ai">AI</span></td></tr>
+          <tr><td>TikTok DM agent</td><td class="num">45</td><td><span class="pill ai">AI</span></td></tr>
+          <tr><td>Direct bookings</td><td class="num">20</td><td><span class="pill hand">By hand</span></td></tr>
+          <tr><td>Referrals</td><td class="num">17</td><td><span class="pill hand">By hand</span></td></tr>
+          <tr><td>Cold calls</td><td class="num">17</td><td><span class="pill hand">By hand</span></td></tr>
+          <tr><td>Paid ads &amp; lead forms</td><td class="num">13</td><td><span class="pill hand">By hand</span></td></tr>
+          <tr><td>Everything else</td><td class="num">39</td><td><span class="pill hand">By hand</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ledger">
+      <div class="lrow"><div class="n"><em>2,133</em></div><div class="t"><b>email addresses captured</b> &#8212; 94% of every lead that came in. On the Instagram agent specifically it is 1,612 of 1,642, or 98%.</div></div>
+      <div class="lrow"><div class="n">160</div><div class="t"><b>days of history</b> &#8212; first record March 10, 2026, most recent today. There is no older dataset; this is the whole life of the system.</div></div>
+    </div>
+
+    <div class="wideshot"><img src="/img/quiz-page.jpg" alt="The retirement readiness quiz page on the client site, the single highest-traffic entry point in the funnel." loading="lazy"></div>
+    <p class="caption">The busiest front door &#183; <b>727 visits in 90 days</b> &#183; every completion files itself as a lead, scored and tagged, with no one watching</p>
+
+    <p class="prov"><b>Source:</b> Neon production database, table <span class="mono">prospects</span> &#183; <span class="mono">SELECT count(*), source, created_at</span> &#183; run 2026-08-17. Two test rows excluded from the source table above.</p>
+  </section>
+
+  <!-- ============ EXHIBIT 02 ============ -->
+  <section>
+    <div class="exlabel"><span class="exno">Exhibit 02</span><span class="extag">The machine, mid-conversation</span></div>
+    <h2>Real leads, handled start to finish. Nobody typed a word.</h2>
+    <p class="sub">They commented on a post. The AI replied in Marc's voice, delivered what it promised, captured the email &#8212; and in the third one, the lead asks for the meeting herself. <b>Names and faces are blurred because these are real people.</b></p>
+
+    <div class="trio">
+      <div class="shot">
+        <div class="frame">
+          <img src="/img/dm-capture.jpg" alt="Instagram DM conversation in which the AI delivers a resource and the lead replies with her email address, which is circled in red.">
+          <span class="ring" style="left:14%;top:45.5%;width:66%;height:7%"></span>
+        </div>
+        <p class="note"><span class="who">Red circle &#183; the capture</span>Her email address, handed over willingly. Value first, ask second.</p>
+      </div>
+      <div class="shot">
+        <div class="frame">
+          <img src="/img/dm-booking.jpg" alt="Instagram DM conversation in which the AI learns the lead is newly retired and asks for a meeting, with the ask circled in red.">
+          <span class="ring" style="left:24%;top:56%;width:73%;height:6.5%"></span>
+        </div>
+        <p class="note"><span class="who">Red circle &#183; the ask</span>It works out she's newly retired, then asks for the meeting &#8212; politely, at the right moment.</p>
+      </div>
+      <div class="shot">
+        <div class="frame">
+          <img src="/img/dm-consult.jpg" alt="Instagram DM conversation in which a different lead asks for a consultation unprompted, with her request circled in red.">
+          <span class="ring" style="left:12%;top:86%;width:75%;height:9%"></span>
+        </div>
+        <p class="note"><span class="who">Red circle &#183; the outcome</span>Different lead, same machine. She asks for the consultation herself.</p>
+      </div>
+    </div>
+
+    <p class="prov"><b>Source:</b> screenshots taken from the live Instagram account, 2026-08-12. Names, handles, avatars and email addresses redacted before publishing.</p>
+  </section>
+
+  <!-- ============ EXHIBIT 03 ============ -->
+  <section>
+    <div class="exlabel"><span class="exno">Exhibit 03</span><span class="extag">Follow-up</span></div>
+    <h2>The part every business drops, done 7,928 times without being asked.</h2>
+    <p class="sub">Capturing a lead is the easy half. The system that follows is the one that earns money: a sequence that emails, waits, texts, nudges toward the calendar, and stops the moment somebody replies &#8212; so nobody ever gets the same message twice.</p>
+
+    <div class="ledger">
+      <div class="lrow"><div class="n"><em>7,928</em></div><div class="t"><b>follow-up emails sent</b> to 2,045 different people since March 30 &#8212; none of them written by hand at the time of sending.</div></div>
+      <div class="lrow"><div class="n">8,647</div><div class="t"><b>opens recorded</b>, with 333 clicks and only 44 bounces, across the two months that open-tracking has been running.</div></div>
+      <div class="lrow"><div class="n">614</div><div class="t"><b>text messages</b> across 166 phone numbers &#8212; booking nudges written and timed by the system.</div></div>
+      <div class="lrow"><div class="n">25.3<em>%</em></div><div class="t"><b>of people texted replied.</b> 42 of the 166 numbers wrote back. That is a real conversation rate, counted, not a claimed benchmark.</div></div>
+    </div>
+
+    <p class="prov"><b>Source:</b> Neon tables <span class="mono">drip_sends</span> (2026-03-30 &#8594; 2026-08-17), <span class="mono">email_events</span> (2026-06-15 &#8594; 2026-08-17, engagement events only), <span class="mono">sms_conversations</span> (2026-03-22 &#8594; 2026-08-17). Reply rate computed per distinct phone number.</p>
+  </section>
+
+  <!-- ============ EXHIBIT 04 ============ -->
+  <section>
+    <div class="exlabel"><span class="exno">Exhibit 04</span><span class="extag">Business done</span></div>
+    <h2>$1.53M in new client assets, from leads the machine found.</h2>
+    <p class="sub">This is the number that matters. Not impressions, not "engagement" &#8212; signed clients and the assets they moved over, sitting in the same database that captured them in the first place.</p>
+
+    <div class="ledger">
+      <div class="lrow"><div class="n"><em>$1.53M</em></div><div class="t"><b>in new client assets closed</b> across 21 won deals.</div></div>
+      <div class="lrow"><div class="n">$2.0<em>M</em></div><div class="t"><b>more in live pipeline</b> &#8212; deals currently at discovery, proposal or application stage.</div></div>
+      <div class="lrow"><div class="n">210</div><div class="t"><b>calendar events created</b>, 31 of them booked by the prospect themselves through the self-serve link &#8212; no phone tag.</div></div>
+      <div class="lrow"><div class="n">63</div><div class="t"><b>meetings tracked</b> through the pipeline, from first conversation to signed.</div></div>
+    </div>
+
+    <p class="prov"><b>Source:</b> Neon tables <span class="mono">prospects</span> (stage = Closed-Won, sum of assets), <span class="mono">calendar_events</span>, <span class="mono">meetings</span> &#183; run 2026-08-17. Assets are recorded on 15 of the 21 won deals; the $1.53M is the sum of what is recorded, not an estimate of the rest.</p>
+  </section>
+
+  <!-- ============ EXHIBIT 05 ============ -->
+  <section>
+    <div class="exlabel"><span class="exno">Exhibit 05</span><span class="extag">The audience it feeds on</span></div>
+    <h2>3,099 followers to 10,404 in 95 days.</h2>
+    <p class="sub">The lead machine needs something to eat. That's the content engine: scripts written against what actually performed, an AI avatar that films them, an automated render, and a scheduler that posts them. <b>307 posts published &#8212; and half a million views in the last thirty days, on the platform's own dashboard.</b></p>
+
+    <div class="chartcard">
+      <div class="charthead">
+        <span class="charttitle">Instagram followers</span>
+        <span class="chartnote">May 14 &#8211; Aug 17, 2026</span>
+      </div>
+      <div class="chartbox" id="box-foll">
+        <svg class="plot" id="chart-foll" viewBox="0 0 760 240" role="img" aria-label="Instagram follower count rising from 3,099 on May 14 2026 to 10,404 on August 17 2026"></svg>
+        <div class="tip" id="tip-foll"></div>
+      </div>
+      <details class="numbers">
+        <summary>Show the numbers</summary>
+        <table>
+          <thead><tr><th>Date</th><th style="text-align:right">Followers</th></tr></thead>
+          <tbody>
+            <tr><td>May 14, 2026</td><td class="num">3,099</td></tr>
+            <tr><td>Jul 12, 2026</td><td class="num">7,920</td></tr>
+            <tr><td>Aug 17, 2026</td><td class="num">10,404</td></tr>
+          </tbody>
+        </table>
+      </details>
+    </div>
+
+    <div class="duo">
+      <div class="shot">
+        <div class="frame"><img src="/img/ig-profile.jpg" alt="Instagram profile screenshot showing 506.9 thousand views over 30 days."></div>
+        <p class="caption">The profile &#183; <b>506.9K views / 30 days</b></p>
+      </div>
+      <div class="shot">
+        <div class="frame"><img src="/img/ig-dashboard.jpg" alt="Instagram professional dashboard showing 506.9 thousand views and 2.4 thousand new followers."></div>
+        <p class="caption">Creator dashboard &#183; <b>2.4K new followers</b></p>
+      </div>
+    </div>
+
+    <div class="wideshot"><img src="/img/meta-insights.jpg" alt="Meta Business Suite dashboard showing 484.3 thousand views and 169.6 thousand accounts reached over 28 days."></div>
+    <p class="caption">Meta's own dashboard &#183; <b>484.3K views &#183; 169.6K accounts reached</b> &#183; last 28 days</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Best-performing posts</th><th style="text-align:right">Views</th></tr></thead>
+        <tbody>
+          <tr><td>"Everyone waits until 71 to open a RRIF"</td><td class="num">194,612</td></tr>
+          <tr><td>"Comment RRIF" &#8212; the follow-up</td><td class="num">160,751</td></tr>
+          <tr><td>"The RRIF trap hits every Canadian at 71"</td><td class="num">144,034</td></tr>
+          <tr><td>"Canada has no gift tax, so give while you're alive"</td><td class="num">134,282</td></tr>
+          <tr><td>"You take CPP at 60 and keep working"</td><td class="num">132,769</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ledger">
+      <div class="lrow"><div class="n"><em>278</em></div><div class="t"><b>videos rendered by the avatar pipeline</b> between April 29 and July 29 &#8212; written, voiced, captioned and exported without a camera being switched on.</div></div>
+      <div class="lrow"><div class="n">307</div><div class="t"><b>posts published</b> through the scheduler, 211 of them in the last 90 days.</div></div>
+    </div>
+
+    <p class="prov"><b>Source:</b> Zernio account analytics pulled live 2026-08-17 (followers, posts, per-post views); Instagram and Meta Business Suite dashboards screenshotted 2026-08-12; rendered-video count is a file count of the render output folder.</p>
+  </section>
+
+  <!-- ============ EXHIBIT 06 ============ -->
+  <section>
+    <div class="exlabel"><span class="exno">Exhibit 06</span><span class="extag">Getting found by AI</span></div>
+    <h2>When people ask ChatGPT for a planner, we started being the answer.</h2>
+    <p class="sub">Search is moving inside the AI assistants, and almost nobody is measuring whether they get named. We built an engine that publishes to the site, then interrogates the models every day to check whether they mention us and whether they cite the site as a source. <b>It is scored, not guessed &#8212; and the search traffic followed.</b></p>
+
+    <div class="chartcard">
+      <div class="charthead">
+        <span class="charttitle">Visits from search engines, per month</span>
+        <span class="chartnote">Mar &#8211; Jul 2026 &#183; complete months</span>
+      </div>
+      <div class="chartbox" id="box-seo">
+        <svg class="plot" id="chart-seo" viewBox="0 0 760 250" role="img" aria-label="Monthly organic search sessions rising from 23 in March 2026 to 559 in July 2026"></svg>
+        <div class="tip" id="tip-seo"></div>
+      </div>
+      <details class="numbers">
+        <summary>Show the numbers</summary>
+        <table>
+          <thead><tr><th>Month</th><th style="text-align:right">Search visits</th></tr></thead>
+          <tbody>
+            <tr><td>March 2026</td><td class="num">23</td></tr>
+            <tr><td>April 2026</td><td class="num">101</td></tr>
+            <tr><td>May 2026</td><td class="num">187</td></tr>
+            <tr><td>June 2026</td><td class="num">422</td></tr>
+            <tr><td>July 2026</td><td class="num">559</td></tr>
+            <tr><td>August 2026 (17 days)</td><td class="num">313</td></tr>
+          </tbody>
+        </table>
+      </details>
+    </div>
+
+    <div class="ledger">
+      <div class="lrow"><div class="n"><em>24&#215;</em></div><div class="t"><b>growth in search traffic</b> &#8212; 23 visits from search in March, 559 in July. August is running slightly ahead of July on a per-day basis.</div></div>
+      <div class="lrow"><div class="n">1,605</div><div class="t"><b>visits from search</b> in total since March, out of 5,696 sessions and 4,990 people on the site.</div></div>
+      <div class="lrow"><div class="n">34</div><div class="t"><b>arrived straight from an AI assistant</b> in the last 90 days &#8212; a channel Google now reports on its own. Bing and Copilot sent 314 more.</div></div>
+      <div class="lrow"><div class="n"><em>370</em></div><div class="t"><b>articles published</b> to the site between January 8 and August 6, 2026 &#8212; each one through a hard quality gate before it goes live.</div></div>
+      <div class="lrow"><div class="n">5<em>&#8594;</em>7<em>%</em></div><div class="t"><b>mention rate, up over 28 days.</b> Across 684 scored test questions, the share where a model names us went from 5% to 7%.</div></div>
+      <div class="lrow"><div class="n">13<em>%</em></div><div class="t"><b>on GPT-4o specifically</b> &#8212; 47 of 357 test questions returned our name. Gemini is still at zero, and we say so.</div></div>
+      <div class="lrow"><div class="n">7,200</div><div class="t"><b>AI citations logged by Microsoft</b> over three months &#8212; times our pages were pulled into a Copilot answer, climbing from a handful a day to nearly 300 at the July peak.</div></div>
+      <div class="lrow"><div class="n">1</div><div class="t"><b>prospect who said it out loud.</b> He told Marc on the call that he'd found the site by asking an AI for advice-only planners &#8212; then booked.</div></div>
+    </div>
+
+    <div class="wideshot"><img src="/img/bing-ai-citations.jpg" alt="Microsoft Bing Webmaster Tools AI Performance report showing 7.2 thousand total citations over three months." loading="lazy"></div>
+    <p class="caption">Microsoft's own AI Performance report &#183; <b>7.2K citations &#183; 3 months</b> &#183; the late-July fall-off is real: we cut publishing volume deliberately after a quality change, and it shows</p>
+
+    <div class="wideshot"><img src="/img/ga-snapshot.jpg" alt="Google Analytics reports snapshot showing 2.2 thousand active users and the top pages on the site." loading="lazy"></div>
+    <p class="caption">Google Analytics, last 28 days &#183; <b>2.2K active users</b> &#183; the quiz and the planner tools sit at the top, which is the whole point</p>
+
+    <div class="wideshot"><img src="/img/articles-wall.jpg" alt="The site's resource library showing a dense grid of published financial planning articles." loading="lazy"></div>
+    <p class="caption">A slice of the library &#183; <b>370 articles published</b> &#183; researched, written, fact-checked and posted by the system, each through a quality gate</p>
+
+    <p class="prov"><b>Source:</b> Google Analytics property for the site, read live 2026-08-17 (sessions, users, organic-search channel, AI-assistant channel); the site's own citation-tracking tables in Neon, same day (mention and citation rates, trailing 28 days vs prior 28); article count is a file count of published posts on disk; Microsoft citation figures from Bing Webmaster "AI Performance" (beta), trailing 3 months as at 2026-08-17. The chart shows complete months only &#8212; August is 17 days old at the time of writing and is excluded rather than shown as a short bar.</p>
+  </section>
+
+  <!-- ============ EXHIBIT 07 ============ -->
+  <section>
+    <div class="exlabel"><span class="exno">Exhibit 07</span><span class="extag">The machine itself</span></div>
+    <h2>19 jobs running right now, on our own hardware.</h2>
+    <p class="sub">Not a subscription to somebody's dashboard. A set of scheduled jobs and agents that boot on a machine in London, Ontario, watch each other for failure, and do a specific job at a specific time.</p>
+
+    <div class="jobs">
+      <div class="job"><div class="jn">DM agent</div><div class="jt">Always on</div><div class="jd">Answers Instagram DMs in Marc's voice, delivers the resource, captures the email, files the lead.</div></div>
+      <div class="job"><div class="jn">Daily shift</div><div class="jt">6:00 am daily</div><div class="jd">Runs the whole morning routine &#8212; numbers, lead review, content, SEO &#8212; before anyone sits down.</div></div>
+      <div class="job"><div class="jn">Executive meeting</div><div class="jt">Mondays 7:00 am</div><div class="jd">Four AI directors score their own function and argue; a fifth synthesises one priority for the week.</div></div>
+      <div class="job"><div class="jn">Booking agent</div><div class="jt">Every 15 min</div><div class="jd">Watches for people ready to meet and gets them onto the calendar.</div></div>
+      <div class="job"><div class="jn">Transcript watcher</div><div class="jt">Every 5 min</div><div class="jd">Catches new call recordings, writes the notes, updates the CRM, drafts the follow-up.</div></div>
+      <div class="job"><div class="jn">Uptime watcher</div><div class="jt">Every 5 min</div><div class="jd">Checks the site and services are alive and raises an alarm before a client notices.</div></div>
+      <div class="job"><div class="jn">Nurture enrolment</div><div class="jt">10:00 am daily</div><div class="jd">Puts new leads into the right follow-up sequence and never double-enrols anyone.</div></div>
+      <div class="job"><div class="jn">Business-card watcher</div><div class="jt">Every 5 min</div><div class="jd">Photograph a card at an event; it becomes a CRM record before you get to the car.</div></div>
+      <div class="job"><div class="jn">Filming batch</div><div class="jt">Fridays 7:00 am</div><div class="jd">Writes next week's scripts against what actually performed, and kills the weak ones.</div></div>
+    </div>
+
+    <div class="ledger">
+      <div class="lrow"><div class="n"><em>67</em></div><div class="t"><b>named procedures</b> the system can run on command &#8212; onboard a client, prep a meeting, audit costs, review a plan, check what's broken.</div></div>
+      <div class="lrow"><div class="n">14</div><div class="t"><b>tools wired together</b> &#8212; calendar, email, CRM, database, social scheduler, analytics, payments, transcription, hosting.</div></div>
+      <div class="lrow"><div class="n">4</div><div class="t"><b>codebases</b> behind it, with real test coverage and safety rails: kill switches, send caps, approval gates, compliance checks.</div></div>
+    </div>
+
+    <div class="crosscard">
+      <div class="crossrow out"><span>AI receptionist service</span><span class="amt">$500/mo</span></div>
+      <div class="crossrow out"><span>Call-coaching software</span><span class="amt">$1,200/mo</span></div>
+      <div class="crossrow out"><span>Part-time executive assistant</span><span class="amt">$1,500/mo</span></div>
+      <div class="crossrow out"><span>Content agency retainer</span><span class="amt">$3,000/mo</span></div>
+      <div class="crossrow out"><span>Fractional COO</span><span class="amt">$3,000/mo</span></div>
+      <div class="crossrow out"><span>CRM and email marketing stack</span><span class="amt">$1,100/mo</span></div>
+      <div class="crossrow out"><span>Monitoring, dashboards, booking tools</span><span class="amt">$1,700/mo</span></div>
+      <div class="crossrow total"><span>One integrated system instead</span><span class="amt">~$12,000/mo replaced</span></div>
+    </div>
+    <p class="caption">Market-typical prices for the equivalent tool or service &#183; our actual running cost is an AI subscription and a server</p>
+
+    <p class="prov"><b>Source:</b> scheduled jobs verified as loaded on the machine 2026-08-17, not merely installed. A further 18 jobs exist but are switched off, and are deliberately not counted above.</p>
+  </section>
+
+  <!-- ============ CLIENT FILES ============ -->
+  <section>
+    <div class="exlabel"><span class="exno">Client files</span><span class="extag">Open, and honest about it</span></div>
+    <h2>Two clients. Neither case study is finished, so neither is dressed up.</h2>
+
+    <div class="cases">
+      <div class="case is-building">
+        <span class="ctag">Client 001 &#183; Building</span>
+        <h3>Bang On Construction</h3>
+        <div class="meta">$1.3M/yr renovation company &#183; Strathroy, Ontario</div>
+        <p class="quote">&#8220;He saved me six grand in one session.&#8221;</p>
+        <div class="meta" style="margin-top:10px">Jason Hastings, owner</div>
+        <p><b>The build:</b> a site visit becomes a scan, a voice note and a checklist &#8212; and comes back as the design, the estimate and the client presentation, exported straight into the software his team already uses. What took his designer ten hours happens while the crew drives back.</p>
+        <p>The full case study publishes when the numbers are in. Real ones, like everything else on this page.</p>
+      </div>
+      <div class="case is-held">
+        <span class="ctag">Client 002 &#183; Scoped, not started</span>
+        <h3>JC Group</h3>
+        <div class="meta">Mortgage brokerage &#183; Victoria, British Columbia</div>
+        <p><b>The build:</b> 1.15 million Canadian mortgages come up for renewal this year and most brokers never mine their own database for them. The renewal date is already sitting in their system; the work is turning it into a compliant, well-timed conversation.</p>
+        <p>Scope of work signed, compliance pack written, access checklist ready. <b>Nothing has been built yet</b> &#8212; the engagement is held at a licensing gate we insisted on clearing first. We would rather show you a stalled project honestly than a finished one we invented.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HONEST LEDGER ============ -->
+  <section>
+    <div class="exlabel"><span class="exno">The other side</span><span class="extag">What this page does not claim</span></div>
+    <h2>The part most portfolios leave out.</h2>
+    <p class="sub">Anyone can build a page of big numbers. The useful question is what got left off it &#8212; so here is ours, in the same size type.</p>
+
+    <div class="honest">
+      <h3>Read this before you hire us</h3>
+      <ul>
+        <li><span class="mk">&#8594;</span><span><b>Every number above is from our own business, not a client's.</b> We built the machine for ourselves first and run it daily. Client work started in 2026. You would be a founding client, and that is exactly why the proof here is our own instead of borrowed.</span></li>
+        <li><span class="mk">&#8594;</span><span><b>18 more jobs are built but switched off.</b> We count the 19 that are actually running. Built is not the same as running, and we do not blend the two.</span></li>
+        <li><span class="mk">&#8594;</span><span><b>Lead volume is down from its June peak.</b> 773 leads in June, 394 in July. The chart above is a running total because that is the honest way to show a total &#8212; but the monthly line is not up and to the right, and pretending otherwise would be the first lie on the page.</span></li>
+        <li><span class="mk">&#8594;</span><span><b>Assets are recorded on 15 of the 21 won deals.</b> $1.53M is the sum of what was actually written down. The real figure is higher; we are not going to guess at it for you.</span></li>
+        <li><span class="mk">&#8594;</span><span><b>One channel dominates.</b> 1,642 of 2,272 leads came from Instagram DMs. That is a concentrated bet that worked, not a diversified funnel.</span></li>
+        <li><span class="mk">&#8594;</span><span><b>Some of that traffic was paid.</b> Total site visits peaked in July while a small ad budget was running; the ads are switched off now. Search traffic is the part that kept climbing on its own, which is why it gets its own chart and the total does not.</span></li>
+        <li><span class="mk">&#8594;</span><span><b>Capacity is roughly two installs a month.</b> This is one person with a very good system, not an agency with a bench.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section style="border-top:none;padding-bottom:24px">
+    <div class="final">
+      <h2>Your first system is free.</h2>
+      <p>Take the ten-minute leak audit. Qualify, and we install your first small system on one video call &#8212; missed-call text-back, a follow-up sequence, your socials on autopilot. On your accounts. Yours to keep, even if we never speak again.</p>
+      <a class="btn" href="https://calm-money-bot-production.up.railway.app/ai-intake">Start with the leak audit</a>
+      <span class="fine">No invoice &#183; no catch &#183; two free installs a week</span>
+    </div>
+  </section>
+
+  <footer>
+    <span>Lightwork &#183; Built and run by Marc Pineault &#183; London, Ontario</span>
+    <span><a href="/" style="color:inherit">Home</a> &#183; <a href="/systems/" style="color:inherit">The systems</a> &#183; <a href="/missed-call-calculator/" style="color:inherit">Calculator</a> &#183; figures pulled August 17, 2026</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+  function fmt(n){ return n.toLocaleString('en-US'); }
+
+  function draw(opts){
+    var svg = document.getElementById(opts.svg);
+    var tip = document.getElementById(opts.tip);
+    var box = document.getElementById(opts.box);
+    if(!svg) return;
+
+    var W = opts.w, H = opts.h;
+    var padL = 58, padR = 26, padT = 22, padB = 34;
+    var data = opts.data;
+    var maxY = opts.max;
+    var n = data.length;
+
+    var rec = css('--rec') || '#C7372F';
+    var grid = css('--grid') || '#E7E2D8';
+    var muted = css('--muted') || '#6C675F';
+    var card = css('--card') || '#fff';
+
+    function X(i){ return padL + (W - padL - padR) * (i/(n-1)); }
+    function Y(v){ return padT + (H - padT - padB) * (1 - v/maxY); }
+
+    var parts = [];
+
+    // recessive gridlines + y labels
+    opts.ticks.forEach(function(t){
+      var y = Y(t);
+      parts.push('<line x1="'+padL+'" y1="'+y+'" x2="'+(W-padR)+'" y2="'+y+'" stroke="'+grid+'" stroke-width="1"/>');
+      parts.push('<text x="'+(padL-12)+'" y="'+(y+4)+'" text-anchor="end" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="'+muted+'">'+opts.tickLabel(t)+'</text>');
+    });
+
+    // area + line
+    var line = '', area = '';
+    data.forEach(function(d,i){
+      var cmd = (i===0?'M':'L') + X(i) + ' ' + Y(d.v);
+      line += cmd + ' ';
+    });
+    area = line + 'L ' + X(n-1) + ' ' + Y(0) + ' L ' + X(0) + ' ' + Y(0) + ' Z';
+
+    parts.push('<defs><linearGradient id="g-'+opts.svg+'" x1="0" y1="0" x2="0" y2="1">' +
+      '<stop offset="0%" stop-color="'+rec+'" stop-opacity="0.20"/>' +
+      '<stop offset="100%" stop-color="'+rec+'" stop-opacity="0.02"/></linearGradient></defs>');
+    parts.push('<path d="'+area+'" fill="url(#g-'+opts.svg+')"/>');
+    parts.push('<path class="ln" d="'+line.trim()+'" fill="none" stroke="'+rec+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>');
+
+    // x labels
+    data.forEach(function(d,i){
+      parts.push('<text x="'+X(i)+'" y="'+(H-10)+'" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="11" fill="'+muted+'">'+d.l+'</text>');
+    });
+
+    // markers, endpoint emphasised
+    data.forEach(function(d,i){
+      var last = (i===n-1);
+      parts.push('<circle cx="'+X(i)+'" cy="'+Y(d.v)+'" r="'+(last?6:4.5)+'" fill="'+(last?rec:card)+'" stroke="'+rec+'" stroke-width="2"/>');
+    });
+
+    // direct label on the endpoint only
+    var lastD = data[n-1];
+    parts.push('<text x="'+(X(n-1)-10)+'" y="'+(Y(lastD.v)-16)+'" text-anchor="end" font-family="-apple-system,Segoe UI,sans-serif" font-weight="800" font-size="17" fill="'+rec+'">'+fmt(lastD.v)+'</text>');
+
+    // hover hit targets
+    data.forEach(function(d,i){
+      parts.push('<rect class="hit" data-i="'+i+'" x="'+(X(i)-(W/(n*1.6)))+'" y="'+padT+'" width="'+(W/(n*0.8))+'" height="'+(H-padT-padB)+'" fill="transparent"/>');
+    });
+
+    svg.innerHTML = parts.join('');
+
+    // crosshair
+    var cross = document.createElementNS('http://www.w3.org/2000/svg','line');
+    cross.setAttribute('stroke', rec); cross.setAttribute('stroke-width','1');
+    cross.setAttribute('stroke-dasharray','3 3'); cross.setAttribute('opacity','0');
+    svg.appendChild(cross);
+
+    svg.querySelectorAll('.hit').forEach(function(r){
+      r.addEventListener('mouseenter', function(){
+        var i = +r.getAttribute('data-i'), d = data[i];
+        cross.setAttribute('x1', X(i)); cross.setAttribute('x2', X(i));
+        cross.setAttribute('y1', padT); cross.setAttribute('y2', H-padB);
+        cross.setAttribute('opacity','.65');
+        tip.innerHTML = '<b>'+fmt(d.v)+'</b> ' + opts.unit + '<br>' + d.full;
+        var rect = svg.getBoundingClientRect();
+        tip.style.left = (X(i)/W*rect.width) + 'px';
+        tip.style.top  = (Y(d.v)/H*rect.height) + 'px';
+        tip.style.opacity = 1;
+      });
+    });
+    box.addEventListener('mouseleave', function(){ tip.style.opacity = 0; cross.setAttribute('opacity','0'); });
+
+    // draw-on animation
+    if(!reduce){
+      var path = svg.querySelector('.ln');
+      var len = path.getTotalLength();
+      path.style.strokeDasharray = len; path.style.strokeDashoffset = len;
+      path.style.transition = 'stroke-dashoffset 1.1s cubic-bezier(.22,.61,.36,1)';
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ path.style.strokeDashoffset = 0; }); });
+    }
+  }
+
+  draw({
+    svg:'chart-leads', tip:'tip-leads', box:'box-leads', w:760, h:260, max:2400,
+    ticks:[0,600,1200,1800,2400], tickLabel:function(t){ return t===0?'0':(t/1000).toFixed(1)+'k'; },
+    unit:'leads captured',
+    data:[
+      {l:'Mar', v:22,   full:'as of Mar 31, 2026'},
+      {l:'Apr', v:208,  full:'as of Apr 30, 2026'},
+      {l:'May', v:974,  full:'as of May 31, 2026'},
+      {l:'Jun', v:1747, full:'as of Jun 30, 2026'},
+      {l:'Jul', v:2141, full:'as of Jul 31, 2026'},
+      {l:'Aug', v:2272, full:'as of Aug 17, 2026'}
+    ]
+  });
+
+  draw({
+    svg:'chart-seo', tip:'tip-seo', box:'box-seo', w:760, h:250, max:600,
+    ticks:[0,200,400,600], tickLabel:function(t){ return String(t); },
+    unit:'visits from search',
+    data:[
+      {l:'Mar', v:23,  full:'March 2026'},
+      {l:'Apr', v:101, full:'April 2026'},
+      {l:'May', v:187, full:'May 2026'},
+      {l:'Jun', v:422, full:'June 2026'},
+      {l:'Jul', v:559, full:'July 2026'}
+    ]
+  });
+
+  draw({
+    svg:'chart-foll', tip:'tip-foll', box:'box-foll', w:760, h:240, max:12000,
+    ticks:[0,4000,8000,12000], tickLabel:function(t){ return t===0?'0':(t/1000)+'k'; },
+    unit:'followers',
+    data:[
+      {l:'May 14', v:3099,  full:'May 14, 2026'},
+      {l:'Jul 12', v:7920,  full:'Jul 12, 2026'},
+      {l:'Aug 17', v:10404, full:'Aug 17, 2026'}
+    ]
+  });
+})();
+</script>
+
+</body>
+</html>
