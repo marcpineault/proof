@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://lightworkai.ca/</loc><lastmod>2026-08-17</lastmod></url>
+  <url><loc>https://lightworkai.ca/workshop/</loc><lastmod>2026-08-27</lastmod></url>
+  <url><loc>https://lightworkai.ca/electricians/</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://lightworkai.ca/plumbers/</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://lightworkai.ca/hvac/</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://lightworkai.ca/roofers/</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://lightworkai.ca/landscapers/</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://lightworkai.ca/general-contractors/</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://lightworkai.ca/teams/</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://lightworkai.ca/about/</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://lightworkai.ca/systems/</loc><lastmod>2026-08-14</lastmod></url>
   <url><loc>https://lightworkai.ca/proof/</loc><lastmod>2026-08-17</lastmod></url>
   <url><loc>https://lightworkai.ca/contractors/</loc><lastmod>2026-08-14</lastmod></url>
@@ -12,4 +21,5 @@
   <url><loc>https://lightworkai.ca/vendor-questions/</loc><lastmod>2026-08-12</lastmod></url>
   <url><loc>https://lightworkai.ca/follow-up-pack/</loc><lastmod>2026-08-12</lastmod></url>
   <url><loc>https://lightworkai.ca/five-prompts/</loc><lastmod>2026-08-12</lastmod></url>
+  <url><loc>https://lightworkai.ca/pricing/</loc><lastmod>2026-09-25</lastmod></url>
 </urlset>

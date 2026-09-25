@@ -3,483 +3,331 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lightwork</title>
-<meta name="description" content="We install AI systems inside your business — your tools, your accounts, your team running it. You own everything. Proven on our own business first.">
+<title>Lightwork — London, Ontario&rsquo;s AI Implementation Company</title>
+<meta name="description" content="London, Ontario&#39;s AI implementation company. We train and handhold you and your team to run AI on your real business — leads answered, quotes chased, paperwork gone — until you own the capability, not rent it. Proven on our own business first.">
 <meta name="color-scheme" content="light dark">
 <link rel="canonical" href="https://lightworkai.ca/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
 <style>
   :root{
-    --rec:#C7372F;
-    --rec-soft:#F6E3E1;
-    --paper:#FAF8F4;
-    --ink:#1F2226;
-    --muted:#6C675F;
-    --line:#E2DDD3;
-    --card:#FFFFFF;
-    --wash:#F1EDE5;
-    --amber:#8A6D1F;
-    --amber-wash:#F7F1DF;
+    --rec:#C7372F; --rec-soft:#F6E3E1; --paper:#FAF8F4; --ink:#1F2226;
+    --muted:#6C675F; --line:#E2DDD3; --card:#FFFFFF; --wash:#F1EDE5;
+    --amber:#8A6D1F; --amber-wash:#F7F1DF;
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --rec:#E8635A;
-      --rec-soft:#3A2321;
-      --paper:#141517;
-      --ink:#E9E6DF;
-      --muted:#9C968C;
-      --line:#31322E;
-      --card:#1C1D20;
-      --wash:#222320;
-      --amber:#D9B23A;
-      --amber-wash:#262216;
+      --rec:#E8635A; --rec-soft:#3A2321; --paper:#141517; --ink:#E9E6DF;
+      --muted:#9C968C; --line:#31322E; --card:#1C1D20; --wash:#222320;
+      --amber:#D9B23A; --amber-wash:#262216;
     }
   }
   *{box-sizing:border-box;margin:0;padding:0}
   img{max-width:100%;height:auto;display:block}
-  body{
-    background:var(--paper);color:var(--ink);
+  body{background:var(--paper);color:var(--ink);
     font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-    font-size:17.5px;line-height:1.55;-webkit-font-smoothing:antialiased;
-  }
+    font-size:17.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:var(--rec)}
   :focus-visible{outline:3px solid var(--rec);outline-offset:3px;border-radius:2px}
   .wrap{max-width:1020px;margin:0 auto;padding-inline:22px}
-  .mono{font-family:ui-monospace,"SF Mono",Menlo,monospace}
   .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,monospace}
+
+  /* top bar + nav */
+  .top{border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:10}
+  .topline{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-block:13px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .brand{color:var(--ink);font-weight:700;letter-spacing:.14em;text-decoration:none}
+  .nav{display:flex;align-items:center;gap:22px}
+  .nav a{color:var(--muted);text-decoration:none}
+  .nav a:hover{color:var(--ink)}
+  .nav .navbtn{color:#fff;background:var(--rec);padding:8px 16px;border-radius:999px;letter-spacing:.08em}
+  .nav .navbtn:hover{color:#fff;filter:brightness(1.06)}
+  @media (max-width:720px){ .nav a:not(.navbtn){display:none} }
 
   /* case-file margin rule */
   .filerule,.filename-v{display:none}
-  @media (min-width:1120px){
-    .filerule{display:block;position:fixed;top:0;bottom:0;left:38px;width:4px;border-left:1px solid var(--rec);border-right:1px solid var(--rec);opacity:.55;pointer-events:none}
+  @media (min-width:1160px){
+    .filerule{display:block;position:fixed;top:0;bottom:0;left:38px;width:4px;border-left:1px solid var(--rec);border-right:1px solid var(--rec);opacity:.5;pointer-events:none}
     .filename-v{display:block;position:fixed;left:12px;bottom:28px;writing-mode:vertical-rl;transform:rotate(180deg);
-      font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;
-      color:var(--rec);opacity:.85;pointer-events:none}
+      font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--rec);opacity:.8;pointer-events:none}
   }
-
-  /* top bar */
-  .top{border-bottom:2px solid var(--ink)}
-  .topline{display:flex;justify-content:space-between;align-items:center;padding-block:14px;
-    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  .topline b{color:var(--ink);font-weight:600}
-  .live{display:inline-flex;align-items:center;gap:8px;color:var(--rec);font-weight:600}
-  .recdot{width:8px;height:8px;border-radius:50%;background:var(--rec);animation:pulse 2.1s ease-in-out infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-  @media (prefers-reduced-motion: reduce){.recdot{animation:none}}
 
   /* hero */
-  .hero{padding-block:64px 46px}
-  h1{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    font-weight:800;letter-spacing:-.032em;line-height:.96;
-    font-size:clamp(52px,10.5vw,104px);text-wrap:balance;max-width:11ch;
-  }
+  .hero{padding-block:60px 42px}
+  .eyebrow{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rec);margin-bottom:20px}
+  h1{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.03em;line-height:.98;
+    font-size:clamp(44px,8.5vw,88px);text-wrap:balance;max-width:15ch}
   .pen{position:relative;white-space:nowrap}
-  .pen svg{position:absolute;left:-4%;bottom:-14px;width:108%;height:22px;overflow:visible}
+  .pen svg{position:absolute;left:-4%;bottom:-12px;width:108%;height:20px;overflow:visible}
   .pen svg path{fill:none;stroke:var(--rec);stroke-width:5;stroke-linecap:round}
-  .dek{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:52ch;margin:30px 0 0;text-wrap:pretty}
+  .dek{font-size:clamp(17px,2.3vw,21px);color:var(--muted);max-width:54ch;margin:28px 0 0;text-wrap:pretty}
   .dek b{color:var(--ink)}
-  .cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:32px}
-  .btn{
-    display:inline-block;background:var(--rec);color:#fff;text-decoration:none;
+  .cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:32px}
+  .btn{display:inline-block;background:var(--rec);color:#fff;text-decoration:none;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:16.5px;
-    padding:15px 32px;border-radius:999px;box-shadow:0 10px 24px -8px color-mix(in srgb, var(--rec) 55%, transparent);
-  }
+    padding:15px 32px;border-radius:999px;box-shadow:0 10px 24px -8px color-mix(in srgb, var(--rec) 55%, transparent)}
   .btn:hover{filter:brightness(1.06)}
-  .cta-sub{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:none;border:1.5px solid var(--line);padding:13.5px 26px}
+  .btn.ghost:hover{border-color:var(--ink)}
 
-  /* stat strip */
-  .statwall{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-block:1px solid var(--line);margin-top:56px}
+  /* stat wall */
+  .statcap{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:52px}
+  .statwall{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-block:1px solid var(--line);margin-top:14px}
   @media (max-width:680px){.statwall{grid-template-columns:repeat(2,1fr)}}
-  .stat{background:var(--paper);padding:22px 4px 18px;text-align:center}
-  .stat .n{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;
-    font-size:clamp(28px,4.6vw,42px);font-variant-numeric:tabular-nums;line-height:1}
+  .stat{background:var(--paper);padding:22px 6px 18px;text-align:center}
+  .stat .n{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:clamp(28px,4.6vw,42px)}
   .stat .n em{font-style:normal;color:var(--rec)}
   .stat .d{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:8px}
-  .stamp{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.08em;color:var(--muted);text-align:center;padding:12px 0 0}
-  .stamp b{color:var(--rec);font-weight:600}
 
-  /* sections */
-  section{padding-block:74px}
-  .eyebrow{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--rec);font-weight:600;margin-bottom:10px}
-  h2{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.022em;
-    font-size:clamp(28px,5vw,44px);line-height:1.04;text-wrap:balance;max-width:24ch}
-  .sub{color:var(--muted);font-size:18px;max-width:56ch;margin-top:14px;text-wrap:pretty}
-  .sub b{color:var(--ink)}
-  .rule{border-top:1px solid var(--line)}
+  section{padding-block:52px}
+  section.tint{background:var(--wash);border-block:1px solid var(--line)}
+  .kick{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rec);margin-bottom:14px}
+  h2{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.05;
+    font-size:clamp(28px,4.4vw,40px);text-wrap:balance;max-width:20ch}
+  .lead{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:56ch;margin-top:16px;text-wrap:pretty}
+  .lead b{color:var(--ink)}
 
-  /* exhibits with red-pen annotations */
-  .duo{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
-  @media (min-width:960px){.trio3{grid-template-columns:repeat(3,1fr);gap:22px}}
-  @media (max-width:700px){.duo{grid-template-columns:1fr;max-width:430px;margin-inline:auto}}
-  .shot{position:relative}
-  .frame{position:relative;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 44px -14px rgba(0,0,0,.28)}
-  .ring{
-    position:absolute;border:3px solid var(--rec);border-radius:50%;
-    transform:rotate(-2deg);pointer-events:none;
-    box-shadow:0 0 0 3px color-mix(in srgb, var(--paper) 24%, transparent);
-  }
-  .note{
-    font-style:italic;color:var(--rec);font-size:16.5px;line-height:1.35;
-    margin-top:14px;padding-left:14px;border-left:3px solid var(--rec);
-  }
-  .note .who{display:block;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-style:normal;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+  /* the gap two-up */
+  .gap2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
+  @media (max-width:640px){.gap2{grid-template-columns:1fr}}
+  .gcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px}
+  .gcard h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:19px;margin-bottom:8px}
+  .gcard p{color:var(--muted);font-size:16px}
+  .gcard.hit{border-color:var(--rec);border-width:1.5px}
+  .gcard .tag{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+  .gcard.miss .tag{color:var(--muted)} .gcard.hit .tag{color:var(--rec)}
 
-  .wide{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);margin-top:26px;box-shadow:0 12px 30px -12px rgba(0,0,0,.2)}
-  .caption{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:10px}
-  .caption b{color:var(--rec);font-weight:600}
+  /* ladder */
+  .ladder{margin-top:32px;display:grid;gap:0}
+  .step{display:grid;grid-template-columns:auto 1fr auto;gap:8px 24px;align-items:start;padding:26px 0;border-top:1px solid var(--line)}
+  .step:last-child{border-bottom:1px solid var(--line)}
+  .step .num{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;font-size:26px;color:var(--rec);grid-row:1 / span 2;line-height:1}
+  .step h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:21px}
+  .step .body{grid-column:2;color:var(--muted);font-size:16px;max-width:44ch;margin-top:4px}
+  .step .body b{color:var(--ink)}
+  .step .tag{grid-column:3;grid-row:1 / span 2;align-self:center;text-align:right;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;font-size:17px;white-space:nowrap}
+  .step .tag small{display:block;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-weight:400;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  @media (max-width:620px){.step{grid-template-columns:auto 1fr}.step .body{grid-column:1 / -1}.step .tag{grid-column:1 / -1;grid-row:auto;text-align:left;margin-top:8px}}
 
-  /* proof cta */
-  .proofcta{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap;
-    margin-top:34px;padding:28px 30px;border:1px solid var(--line);border-radius:14px;background:var(--wash)}
-  .proofcta h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;
-    font-size:22px;letter-spacing:-.02em}
-  .proofcta p{color:var(--muted);font-size:16.5px;margin-top:8px;max-width:52ch;text-wrap:pretty}
-  .proofcta p em{font-style:italic;color:var(--ink)}
-  .proofcta .btn{flex-shrink:0}
+  /* results row */
+  .results{margin-top:26px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .rrow{background:var(--paper);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;padding:16px 20px}
+  .rrow .n{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;font-size:24px;color:var(--rec);min-width:2.6em;text-align:right;font-variant-numeric:tabular-nums}
+  .rrow .t{font-size:16px;color:var(--muted)} .rrow .t b{color:var(--ink)}
 
-  /* receipts */
-  .receipts{margin-top:40px;border-top:2px solid var(--ink)}
-  .rrow{display:grid;grid-template-columns:170px 1fr;align-items:baseline;gap:18px;padding:18px 2px;border-bottom:1px solid var(--line)}
-  @media (max-width:560px){.rrow{grid-template-columns:110px 1fr;gap:12px}}
-  .rrow .n{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:clamp(24px,3.6vw,34px);font-variant-numeric:tabular-nums;text-align:right}
-  .rrow .t{font-size:16px;color:var(--muted)}
-  .rrow .t b{color:var(--ink)}
+  /* exhibit */
+  .exhibit{margin-top:26px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .exhibit img{border-bottom:1px solid var(--line)}
+  .exhibit .cap{padding:16px 20px;color:var(--muted);font-size:15px}
+  .exhibit .cap b{color:var(--rec)}
 
-  /* replaces — crossed out */
-  .replace{margin-top:48px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:32px 30px}
-  @media (max-width:560px){.replace{padding:24px 18px}}
-  .replace h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:clamp(22px,3.6vw,30px);margin-bottom:18px}
-  .replace h3 em{font-style:normal;color:var(--rec)}
-  .xrow{display:flex;justify-content:space-between;gap:14px;padding:10px 2px;border-bottom:1px solid var(--line);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:15.5px;color:var(--muted)}
-  .xrow .x{text-decoration:line-through;text-decoration-color:var(--rec);text-decoration-thickness:2.5px}
-  .xrow .p{font-variant-numeric:tabular-nums;white-space:nowrap}
-  .xrow.total{border-bottom:none;color:var(--ink);font-weight:700;padding-top:16px}
-  .xrow.total .p{color:var(--rec);font-size:19px}
-  .replace .fine{font-size:13px;color:var(--muted);font-style:italic;margin-top:12px;font-family:"Iowan Old Style",Palatino,Georgia,serif}
+  /* testimonial */
+  .quote{margin-top:8px;border-left:3px solid var(--rec);padding-left:24px}
+  .quote p.big{font-size:clamp(21px,2.8vw,27px);font-weight:600;line-height:1.35;text-wrap:pretty}
+  .quote .who{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.04em;color:var(--muted);margin-top:16px}
 
-  /* offers */
-  .offers{margin-top:40px;border-top:2px solid var(--ink)}
-  .offer{display:grid;grid-template-columns:1fr auto;gap:4px 22px;padding:20px 2px;border-bottom:1px solid var(--line);align-items:baseline}
-  @media (max-width:560px){.offer{grid-template-columns:1fr}}
-  .offer h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.015em;font-size:19px}
-  .offer p{grid-column:1;font-size:15px;color:var(--muted);max-width:54ch}
-  .offer .price{grid-column:2;grid-row:1/span 2;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:13px;color:var(--rec);white-space:nowrap;text-align:right}
-  @media (max-width:560px){.offer .price{grid-column:1;grid-row:auto;text-align:left;margin-top:4px}}
+  /* who-for */
+  .whofor{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;margin-top:28px}
+  @media (max-width:520px){.whofor{grid-template-columns:1fr}}
+  .who{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color .15s}
+  .who:hover{border-color:var(--rec)}
+  .who h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:18px}
+  .who p{color:var(--muted);font-size:15px;margin-top:6px}
+  .who .go{color:var(--rec);font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;margin-top:12px;display:block}
 
-  a.offer{text-decoration:none;color:inherit}
-  a.offer:hover .t{color:var(--rec)}
-  .honest{
-    background:var(--amber-wash);border:1px solid var(--line);border-left:3px solid var(--amber);
-    border-radius:0 12px 12px 0;padding:18px 22px;margin-top:44px;max-width:66ch;font-size:15.5px;
-  }
-  .honest b{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  /* pricing */
+  .offers{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+  @media (max-width:640px){.offers{grid-template-columns:1fr}}
+  .offer{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;text-decoration:none;color:inherit;display:block}
+  .offer h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:19px}
+  .offer .price{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.06em;color:var(--rec);margin:6px 0 10px;display:block}
+  .offer p{color:var(--muted);font-size:15px}
 
-  /* process steps */
-  .steps{margin-top:40px;border-top:2px solid var(--ink)}
-  .prow{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:20px 2px;border-bottom:1px solid var(--line);align-items:baseline}
-  .prow .pn{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:13px;letter-spacing:.1em;color:var(--rec);font-weight:600}
-  .prow h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.015em;font-size:19px}
-  .prow p{font-size:15px;color:var(--muted);max-width:60ch;margin-top:4px}
-  .prow p b{color:var(--ink)}
+  .honest{margin-top:28px;background:var(--amber-wash);border:1px solid var(--amber);border-radius:10px;padding:18px 22px;font-size:15.5px}
+  .honest b{color:var(--ink)}
 
-  /* ownership manifesto */
-  .own{margin-top:48px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--rec);border-radius:0 16px 16px 0;padding:30px 30px}
-  @media (max-width:560px){.own{padding:22px 18px}}
-  .own h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:clamp(22px,3.6vw,30px);margin-bottom:12px}
-  .own h3 em{font-style:normal;color:var(--rec)}
-  .own p{font-size:16px;color:var(--muted);max-width:64ch}
-  .own p b{color:var(--ink)}
-  .ownrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-  .owntag{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-    border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--ink)}
-  .owntag b{color:var(--rec);font-weight:600}
+  /* final cta */
+  .final{text-align:center;padding-block:64px}
+  .final h2{margin:0 auto;max-width:22ch}
+  .final .cta-row{justify-content:center;margin-top:28px}
 
-  /* client testimonial */
-  .client{margin-top:44px;display:grid;grid-template-columns:1fr;gap:0}
-  .bigquote{font-size:clamp(24px,4.4vw,38px);line-height:1.2;font-style:italic;max-width:26ch;text-wrap:balance}
-  .bigquote .hl{background:linear-gradient(transparent 62%, var(--rec-soft) 62%)}
-  .quotewho{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:18px}
-  .quotewho b{color:var(--ink)}
-  .casecard{margin-top:28px;border:1px solid var(--line);border-radius:14px;background:var(--card);padding:24px 26px}
-  .casecard .ch{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--rec);font-weight:600;margin-bottom:10px}
-  .casecard p{font-size:15.5px;color:var(--muted);max-width:66ch}
-  .casecard p b{color:var(--ink)}
-
-  /* final CTA */
-  .final{background:var(--ink);color:var(--paper);border-radius:18px;padding:52px 30px;text-align:center;margin-block:20px 0}
-  .final h2{color:inherit;margin-inline:auto}
-  .final p{opacity:.7;max-width:44ch;margin:12px auto 26px;font-size:16.5px}
-  .final .cta-sub{color:var(--paper);opacity:.6;margin-top:14px;display:block}
-
-  footer{padding-block:34px 60px;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.06em;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
-
+  footer{border-top:2px solid var(--ink);padding-block:26px}
+  .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .foot a{color:var(--muted);text-decoration:none} .foot a:hover{color:var(--ink)}
 </style>
 </head>
 <body>
-
-<div class="filerule" aria-hidden="true"></div>
-<div class="filename-v" aria-hidden="true">Lightwork · AI Systems · London, Ontario</div>
+<div class="filerule"></div>
+<div class="filename-v">lightwork · ai fluency</div>
 
 <header class="top">
   <div class="wrap topline">
-    <span><b>LIGHTWORK</b> · PROOF OF WORK</span>
-    <span class="live"><span class="recdot"></span>SYSTEM RUNNING</span>
+    <a class="brand" href="/">LIGHTWORK</a>
+    <nav class="nav">
+      <a href="/workshop/">The Workshop</a>
+      <a href="#how">How it works</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/proof/">Proof</a>
+      <a href="/about/">About</a>
+      <a class="navbtn" href="https://calendar.app.google/NUNMq71q6mpXXWWq6">Book</a>
+    </nav>
   </div>
 </header>
 
 <main>
 <div class="wrap hero">
-  <h1>AI that <span class="pen">works<svg viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 12 C 20 18, 45 6, 62 11 S 92 16, 98 9"/></svg></span> for&nbsp;you.</h1>
-  <p class="dek">Not a course. Not a chatbot demo. Not an agency you rent forever. We install systems that <b>answer your leads, chase the follow-up, and book your calendar</b> — on your accounts, your tools, your machines. <b>You own everything.</b> Everything below happened on our own business first.</p>
+  <div class="eyebrow">London, Ontario&rsquo;s AI implementation company</div>
+  <h1>Unleash the power of <span class="pen">AI<svg viewBox="0 0 60 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 13 C 14 18, 34 6, 46 11 S 56 15, 58 10"/></svg></span> on your business.</h1>
+  <p class="dek">Not a course. Not a chatbot demo. Not an agency you rent forever. We sit down with you and your team, on your real tools, and <b>train you to run AI yourself</b> &mdash; leads answered, quotes chased, paperwork gone. We handhold every step, until you <b>own the capability</b>. Everything below happened on our own business first.</p>
   <div class="cta-row">
-    <a class="btn" href="https://calm-money-bot-production.up.railway.app/ai-intake">Get Your First System Free</a>
-    <span class="cta-sub">10-MIN LEAK AUDIT · QUALIFY · WE INSTALL IT LIVE, YOURS TO KEEP</span>
+    <a class="btn" href="https://calendar.app.google/NUNMq71q6mpXXWWq6">Book a workshop</a>
+    <a class="btn ghost" href="/workshop/">See exactly what we do</a>
   </div>
 </div>
-
-<div class="statwall">
-  <div class="stat"><div class="n" data-count="2272">0</div><div class="d">leads since March</div></div>
-  <div class="stat"><div class="n"><span data-count="507">0</span><em>K</em></div><div class="d">views in 30 days</div></div>
-  <div class="stat"><div class="n" data-count="63">0</div><div class="d">meetings booked</div></div>
-  <div class="stat"><div class="n"><em>$</em><span data-count="1.53" data-dec="2">0</span><em>M</em></div><div class="d">new assets closed</div></div>
-</div>
-<div class="stamp">EVERY NUMBER PULLED FROM <b>OUR OWN PRODUCTION DATABASE</b> · AUG 17, 2026</div>
-
-<section class="wrap">
-  <p class="eyebrow">Watch it work</p>
-  <h2>Real leads, handled start to finish. Nobody typed a word.</h2>
-  <p class="sub">They commented on a post. The AI replied in Marc's voice, delivered the goods, captured the email — and in the last one, the lead asks for the meeting <b>herself</b>.</p>
-  <div class="duo trio3">
-    <div class="shot">
-      <div class="frame"><img src="img/dm-capture.jpg" width="640" height="1387" alt="Instagram DM where the AI delivers a guide and captures the lead's email">
-        <span class="ring" style="left:10%;top:45%;width:64%;height:7%"></span>
-      </div>
-      <p class="note"><span class="who">Red circle · the moment that matters</span>Her email, captured by the AI — value first, ask second. (Blurred: she's a real person.)</p>
-    </div>
-    <div class="shot">
-      <div class="frame"><img src="img/dm-booking.jpg" width="640" height="1387" alt="Instagram DM where the AI qualifies the lead and asks for a booking">
-        <span class="ring" style="left:22%;top:55%;width:74%;height:9%"></span>
-      </div>
-      <p class="note"><span class="who">Red circle · the ask</span>It learns she's newly retired and asks for the meeting — politely, at the right moment.</p>
-    </div>
-    <div class="shot">
-      <div class="frame"><img src="img/dm-consult.jpg" width="640" height="994" alt="Instagram DM where a different lead shares her email and asks how to book a private consultation">
-        <span class="ring" style="left:8%;top:86.5%;width:78%;height:10%"></span>
-      </div>
-      <p class="note"><span class="who">Red circle · the outcome</span>A different lead, same machine: email delivered — then she asks for the consultation herself.</p>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<section class="wrap">
-  <p class="eyebrow">And then it books the meeting</p>
-  <h2>The calendar invite nobody typed.</h2>
-  <p class="sub">Same conversation, an hour later. It agreed a time, fixed that time when she caught her own typo, asked for her email — and wrote the event itself. <b>Marc found out the meeting existed when the invite landed.</b></p>
-  <div class="duo">
-    <div class="shot">
-      <div class="frame"><img src="img/booked-calendar.jpg" width="1179" height="2556" alt="Google Calendar event created automatically by the AI, described as booked via Instagram DM" loading="lazy">
-        <span class="ring" style="left:15%;top:63.4%;width:79%;height:9%"></span>
-      </div>
-      <p class="note"><span class="who">Red circle · written by the machine</span>“Booked via IG DM” — and it quotes her own words back as the reason the time was set. Name, email and handle blurred: she's a real person.</p>
-    </div>
-    <div class="shot">
-      <div class="frame"><img src="img/booked-convo-2.jpg" width="1179" height="2556" alt="Instagram DM in which the AI declines to quote fees, agrees a time, and corrects it after the prospect notes a typo" loading="lazy"></div>
-      <p class="note"><span class="who">The exchange behind it</span>Asked for fees, it refused to quote in a DM and pushed to the call. Then handled “Sorry I meant 10:00, typo” without being told twice.</p>
-    </div>
-  </div>
-  <p style="margin-top:26px"><a href="/proof/">See the whole conversation, start to finish →</a></p>
-</section>
-
-<div class="rule"></div>
-
-<section class="wrap">
-  <p class="eyebrow">The audience it feeds on</p>
-  <h2>1,642 leads captured by AI in the DMs — 24/7.</h2>
-  <p class="sub">The machine works a real audience, verified on the platforms' own dashboards: <b>10.3K followers, 506.9K views in the last 30 days.</b></p>
-  <div class="duo">
-    <div class="shot">
-      <div class="frame" style="border-radius:14px"><img src="img/ig-profile.jpg" width="640" height="681" alt="Instagram profile with 10.3K followers and 506.9K views in the last 30 days">
-        <span class="ring" style="left:4%;top:76%;width:90%;height:12%"></span>
-      </div>
-      <p class="caption"><b>The profile</b> · 506.9K views / 30 days</p>
-    </div>
-    <div class="shot">
-      <div class="frame" style="border-radius:14px;background:var(--card)"><img src="img/ig-dashboard.jpg" width="640" height="427" alt="Instagram professional dashboard showing 506.9K views and 2.4K new followers"></div>
-      <p class="caption"><b>IG dashboard</b> · 506.9K views · 2.4K new followers</p>
-    </div>
-  </div>
-  <div class="wide"><img src="img/meta-insights.jpg" width="1425" height="615" alt="Meta Business Suite insights showing 484.3K views and 169.6K accounts reached in 28 days"></div>
-  <p class="caption"><b>Meta's own dashboard</b> · 484.3K views · 169.6K reached · last 28 days</p>
-</section>
-
-<div class="rule"></div>
-
-<section class="wrap">
-  <p class="eyebrow">The receipts</p>
-  <h2>Five months of a machine that never forgets to follow up.</h2>
-  <div class="receipts">
-    <div class="rrow"><div class="n" data-count="1642">0</div><div class="t"><b>leads captured by AI in the DMs</b> — 24/7, in Marc's voice</div></div>
-    <div class="rrow"><div class="n" data-count="2133">0</div><div class="t"><b>email addresses collected</b> — 94% of every lead that came in</div></div>
-    <div class="rrow"><div class="n" data-count="7928">0</div><div class="t"><b>follow-up emails sent</b> — zero written by hand, nobody emailed twice</div></div>
-    <div class="rrow"><div class="n" data-count="614">0</div><div class="t"><b>text messages</b> — booking nudges that land on the calendar, and 1 in 4 gets a reply</div></div>
-    <div class="rrow"><div class="n" data-count="21">0</div><div class="t"><b>deals closed</b> — $1.53M in new client assets, $2.0M more in live pipeline</div></div>
-    <div class="rrow"><div class="n" data-count="19">0</div><div class="t"><b>AI agents and scheduled jobs</b> running right now, watchdog-monitored</div></div>
-  </div>
-
-  <div class="proofcta">
-    <div>
-      <h3>Want to check our work?</h3>
-      <p>The full file is open: seven exhibits, the screenshots behind every claim, the query each number came from — and a list of the things this page does <em>not</em> prove.</p>
-    </div>
-    <a class="btn" href="/proof/">See the receipts in full</a>
-  </div>
-
-  <div class="replace">
-    <h3>Cross these off your payroll: <em>~$12,000/month</em> replaced.</h3>
-    <div class="xrow"><span class="x">AI receptionist service</span><span class="p">$500/mo</span></div>
-    <div class="xrow"><span class="x">Call-coaching software</span><span class="p">$1,200/mo</span></div>
-    <div class="xrow"><span class="x">Part-time executive assistant</span><span class="p">$1,500/mo</span></div>
-    <div class="xrow"><span class="x">Content agency retainer</span><span class="p">$3,000/mo</span></div>
-    <div class="xrow"><span class="x">Fractional COO</span><span class="p">$3,000/mo</span></div>
-    <div class="xrow"><span class="x">CRM + email marketing stack</span><span class="p">$1,100/mo</span></div>
-    <div class="xrow"><span class="x">Monitoring, dashboards, booking tools</span><span class="p">$1,700/mo</span></div>
-    <div class="xrow total"><span>One integrated system instead</span><span class="p">~$12,000/mo replaced</span></div>
-    <p class="fine">Market-typical prices for the equivalent tool or service. Our running cost: an AI subscription and a server.</p>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<section class="wrap">
-  <p class="eyebrow">Client no. 001</p>
-  <div class="client">
-    <p class="bigquote">“He saved me <span class="hl">six grand in one session</span>.”</p>
-    <p class="quotewho"><b>Jason Hastings</b> · Owner, Bang On Construction · $1.3M/yr renovation company · Strathroy, Ontario</p>
-  </div>
-  <div class="casecard">
-    <p class="ch">Case file · in progress</p>
-    <p><b>The build:</b> a site visit becomes a scan, a voice note, and a checklist — and comes back as the <b>design, the estimate, and the client presentation</b>, exported straight into JobTread. What took his designer ten hours happens while the crew drives back. Full case study publishes when the numbers are in — real ones, like everything on this page.</p>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<section class="wrap">
-  <p class="eyebrow">How it works</p>
-  <h2>Fully remote. Your machine, your accounts, our build.</h2>
-  <p class="sub">No site visit, no lock-in, no “platform.” A recorded call and a shared folder replace the boardroom — and the system gets built on <b>your</b> real work, not a demo dataset.</p>
-  <div class="steps">
-    <div class="prow"><span class="pn">01</span><div><h3>Demo call</h3><p>Watch a system get built live on your actual data — not slides. A working build in under an hour, on video.</p></div></div>
-    <div class="prow"><span class="pn">02</span><div><h3>Discovery</h3><p>One recorded call. You walk us through the workflow and screen-share your tools; we set up one shared folder and you drop in a real week of your business — rate sheets, exports, transcripts. <b>That recording is the site visit.</b></p></div></div>
-    <div class="prow"><span class="pn">03</span><div><h3>The build</h3><p>We build and test against your samples at our desk. You get short preview videos as it comes together; you reply with a voice note. No meetings.</p></div></div>
-    <div class="prow"><span class="pn">04</span><div><h3>Install</h3><p>One screen-share session on <b>your machine, your accounts</b>. We connect your tools and run your first real job through the system together. It's live.</p></div></div>
-    <div class="prow"><span class="pn">05</span><div><h3>Parallel week</h3><p>Your team runs it on real work while the old way still exists. Anything rough gets fixed same-day — you're never betting the business on week one.</p></div></div>
-    <div class="prow"><span class="pn">06</span><div><h3>Train &amp; hand off</h3><p>One session per operator: they run three real jobs themselves while we watch. Then the written SOP goes in your drive — including the “if it breaks, do this” page.</p></div></div>
-    <div class="prow"><span class="pn">07</span><div><h3>Graduation</h3><p>Your team runs a full week without us touching anything. That's the finish line — <b>the system is yours, documented, and running.</b> Two weeks of direct support included after.</p></div></div>
-  </div>
-
-  <div class="own">
-    <h3>You own <em>everything.</em></h3>
-    <p>The system runs on <b>your AI subscription, your computers, your accounts.</b> We never hold your logins, nothing is hosted on our side, and there is nothing to cancel if you leave. Fire us the day after handoff and everything keeps working. Most agencies build lock-in — rented dashboards, their GoHighLevel account, your data hostage. <b>We build assets.</b></p>
-    <div class="ownrow">
-      <span class="owntag"><b>✓</b> Your accounts</span>
-      <span class="owntag"><b>✓</b> Your data</span>
-      <span class="owntag"><b>✓</b> Written SOPs</span>
-      <span class="owntag"><b>✓</b> Team trained</span>
-      <span class="owntag"><b>✗</b> No hostage dashboards</span>
-      <span class="owntag"><b>✗</b> Nothing to cancel</span>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<section class="wrap">
-  <p class="eyebrow">Pick your system</p>
-  <h2>Start with the piece that's bleeding.</h2>
-  <p class="sub">Pricing rule of thumb: <b>you pay about one month of what the system saves you in a year.</b> If the math isn't obvious on the first call, we'll tell you not to hire us. And the savings are the small half — a business that runs on documented systems is worth a <b>higher multiple</b> when you sell it than one that runs on the owner's memory.</p>
-  <div class="offers">
-    <div class="offer"><h3>The Inbound Engine</h3><span class="price">$3,500 + $750/MO</span><p>Every call, DM, and form answered in seconds — booked before your competitor picks up.</p></div>
-    <div class="offer"><h3>Database Revival</h3><span class="price">$2,500 · 30 DAYS</span><p>Your old leads and past clients, reactivated. Fastest ROI on the menu.</p></div>
-    <div class="offer"><h3>JobTread Autopilot</h3><span class="price">$10,000 + $1,000/MO</span><p>For contractors: speed-to-lead, follow-ups, and proposals on autopilot.</p></div>
-    <div class="offer"><h3>The Paperwork Machine</h3><span class="price">FROM $5,000</span><p>Documents, notes, and invoice-chasing handled by software instead of your evenings.</p></div>
-    <div class="offer"><h3>The AI Chief of Staff</h3><span class="price">$7,500 + $500/MO</span><p>The full system on this page, installed in your business — with you approving anything that matters.</p></div>
-  </div>
-  <div class="offers" style="border-top:none;margin-top:34px">
-    <a class="offer" href="/systems/"><h3>→ The full systems menu</h3><span class="price">TWO DOORS</span><p>Every system in detail — the ready-to-install growth stack, and how a custom build gets scoped and priced.</p></a>
-    <a class="offer" href="/contractors/"><h3>→ For contractors</h3><span class="price">JOBTREAD-READY</span><p>Speed-to-lead, estimates that build themselves, and the layer JobTread's AI doesn't ship.</p></a>
-    <a class="offer" href="/mortgage-brokers/"><h3>→ For mortgage brokers</h3><span class="price">CASL-COMPLIANT</span><p>The renewal wave is in your database already — mine it before the banks' retention letters land.</p></a>
-    <a class="offer" href="/london/"><h3>→ For London, Ontario</h3><span class="price">LOCAL</span><p>Built and run in London. Live demos at your shop, installs across Southwestern Ontario.</p></a>
-  </div>
-  <div class="casecard" style="margin-top:28px">
-    <p class="ch">The Scoreboard — free with every build, forever</p>
-    <p>Every Monday, a 90-second report on the one number your system moves — estimates out in 24 hours, leads answered in under 5 minutes, jobs booked. <b>Free, for life, because you shouldn't pay for a report about your own system.</b> Want it to keep getting better? <b>Upgrades</b> ships one improvement every month, with a working call and everything kept current as AI tools change — first two months included with any build, month-to-month after, cancel anytime. The free Scoreboard keeps coming either way.</p>
-  </div>
-  <div class="honest"><b>Straight answer on track record:</b> every number on this page is from our own business — we built the machine for ourselves first and run it every day. Client work started in 2026 with Bang On Construction, and their case study publishes when the results are real. You'd be a founding client, and that's why the proof here is our own instead of borrowed.</div>
-</section>
-
-
-<div class="rule"></div>
-
-<section class="wrap">
-  <p class="eyebrow">Steal the playbooks</p>
-  <h2>Free. Actually useful. No email wall.</h2>
-  <p class="sub">Everything below works without hiring anyone — including us. Owners who see what implementing takes tend to call us anyway.</p>
-  <div class="offers">
-    <a class="offer" href="/missed-call-calculator/"><h3>The Missed Call Calculator</h3><span class="price">FREE</span><p>Three inputs, ten seconds — what your unanswered phone costs per year.</p></a>
-    <a class="offer" href="/after-hours-playbook/"><h3>The After-Hours Playbook</h3><span class="price">FREE</span><p>Our missed-call text-back templates and voicemail script. Fix the leak tonight.</p></a>
-    <a class="offer" href="/follow-up-pack/"><h3>The Follow-Up Pack</h3><span class="price">FREE</span><p>The exact 7-touch sequence our machine runs — written out to run by hand.</p></a>
-    <a class="offer" href="/vendor-questions/"><h3>The Vendor BS Detector</h3><span class="price">FREE</span><p>17 questions to ask any AI vendor — and the answers that should scare you.</p></a>
-    <a class="offer" href="/five-prompts/"><h3>The 5 Prompts That Run My Business</h3><span class="price">FREE</span><p>Copy-paste prompts that do real work in ChatGPT or Claude today.</p></a>
-  </div>
-</section>
 
 <div class="wrap">
-  <div class="final">
-    <h2>Your first system is free.</h2>
-    <p>Take the ten-minute Leak Audit. Qualify, and we install your first small system on one video call — a missed-call text-back, a follow-up sequence, your socials on autopilot. On your accounts. Yours to keep, even if we never talk again.</p>
-    <a class="btn" href="https://calm-money-bot-production.up.railway.app/ai-intake">Start With the Leak Audit</a>
-    <span class="cta-sub">NO INVOICE · NO CATCH · 2 FREE INSTALLS A WEEK, FIRST COME FIRST SERVED</span>
+  <div class="statcap">What this power did for our own business first</div>
+  <div class="statwall">
+    <div class="stat"><div class="n" data-count="2272">0</div><div class="d">leads since March</div></div>
+    <div class="stat"><div class="n"><span data-count="507">0</span><em>K</em></div><div class="d">views in 30 days</div></div>
+    <div class="stat"><div class="n" data-count="63">0</div><div class="d">meetings booked</div></div>
+    <div class="stat"><div class="n"><em>$</em><span data-count="1.53" data-dec="2">0</span><em>M</em></div><div class="d">new assets closed</div></div>
   </div>
 </div>
+
+<section>
+  <div class="wrap">
+    <div class="kick">The real gap</div>
+    <h2>The tools aren&rsquo;t the problem. Knowing how to use them is.</h2>
+    <p class="lead">Every owner knows AI matters now. Almost none know where to actually start &mdash; so they buy a subscription that gathers dust, or wait. The software is cheap and getting cheaper. What&rsquo;s rare is <b>fluency</b>: a team that reaches for AI on the real work, every day, without thinking about it.</p>
+    <div class="gap2">
+      <div class="gcard miss"><div class="tag">The usual way</div><h3>Buy a tool, hope it sticks</h3><p>A login nobody opens twice. Six months lost figuring out the wrong setup alone. The owner &ldquo;gets it,&rdquo; the team never does.</p></div>
+      <div class="gcard hit"><div class="tag">The Lightwork way</div><h3>We make your team fluent</h3><p>Live, on your tools, handheld until it works &mdash; everyone leaves using it. Then we keep them current as AI changes, and you own everything.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tint" id="how">
+  <div class="wrap">
+    <div class="kick">How it works</div>
+    <h2>The climb &mdash; from your first workshop to a team that runs on AI.</h2>
+    <p class="lead">Start wherever you are. Most owners start with a team workshop, then have us build the heavy systems, then keep it all current. You&rsquo;re handheld the whole way &mdash; and you own it at every step.</p>
+    <div class="ladder">
+      <div class="step"><div class="num">1</div><h3>The Workshop</h3><div class="body">We train you and your team live, on your real tools &mdash; everyone walks out with something running the same week. <b>This is the front door.</b></div><div class="tag">$150<small>per seat</small></div></div>
+      <div class="step"><div class="num">2</div><h3>The Build</h3><div class="body">We install the heavier systems for you &mdash; the lead-answering, the quote-chasing, the paperwork &mdash; on your accounts, your machines. You own it outright.</div><div class="tag">from $500<small>one-time setup</small></div></div>
+      <div class="step"><div class="num">3</div><h3>Kept Current</h3><div class="body">We keep it running and tuned as the tools change every month, and report the one number it moves. The proof it&rsquo;s working, in your inbox.</div><div class="tag">from $250<small>per month</small></div></div>
+      <div class="step"><div class="num">4</div><h3>You own it</h3><div class="body">Your team runs the whole thing without us. No lock-in, no rented dashboard, nothing to cancel. Fire us and it all keeps working. <b>That&rsquo;s the finish line.</b></div><div class="tag">yours<small>for good</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kick">The proof</div>
+    <h2>We built the machine on ourselves first.</h2>
+    <p class="lead">Before a single client, we ran this on our own business &mdash; leads answered in the DMs, follow-up that never forgets, meetings booked while we slept. Every number here is real and re-pulled from production.</p>
+    <div class="results">
+      <div class="rrow"><div class="n" data-count="1642">0</div><div class="t"><b>leads captured by AI in the DMs</b> &mdash; 24/7, in Marc&rsquo;s voice</div></div>
+      <div class="rrow"><div class="n" data-count="2133">0</div><div class="t"><b>email addresses collected</b> &mdash; 94% of every lead that came in</div></div>
+      <div class="rrow"><div class="n" data-count="7928">0</div><div class="t"><b>follow-up emails sent</b> &mdash; zero written by hand</div></div>
+      <div class="rrow"><div class="n" data-count="21">0</div><div class="t"><b>deals closed</b> &mdash; $1.53M in new client assets, $2.0M more in pipeline</div></div>
+    </div>
+    <div class="exhibit">
+      <img src="img/booked-calendar.jpg" alt="A calendar event written by the AI: 'Booked via IG DM', quoting the prospect's own words." loading="lazy">
+      <p class="cap"><b>Red circle &middot; written by the machine.</b> A lead commented on a post; the AI replied, qualified her, agreed a time and wrote this calendar invite itself. Marc found out the meeting existed when it landed. (Name, email and handle blurred &mdash; she&rsquo;s a real person.)</p>
+    </div>
+    <p style="margin-top:20px"><a href="/proof/">See the full file &mdash; seven exhibits, every screenshot, the query behind each number &rarr;</a></p>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="kick">In their words</div>
+    <div class="quote">
+      <p class="big">&ldquo;A site visit becomes a scan and a voice note &mdash; and comes back as the design, the estimate, and the client presentation, straight into JobTread. What took my designer ten hours happens while the crew drives back.&rdquo;</p>
+      <p class="who">Jason Hastings &middot; Owner, Bang On Construction &middot; $1.3M/yr renovation company &middot; Strathroy, Ontario</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kick">Who it&rsquo;s for</div>
+    <h2>Any business with a team that does the same work every day.</h2>
+    <p class="lead">If your people repeat tasks &mdash; quotes, scheduling, paperwork, follow-up, customer messages &mdash; AI can take a real chunk of it off their plates. We go <b>deepest in the trades</b>, on the exact tools your shop already runs.</p>
+    <div class="whofor">
+      <a class="who" href="/contractors/"><h3>Trades &amp; field service</h3><p>Electricians, plumbers, HVAC, roofers, landscapers, mechanical, GCs. Estimates, dispatch, quote follow-up, job notes &mdash; on Simpro, JobTread, your CRM.</p><span class="go">See the trades build &rarr;</span></a>
+      <a class="who" href="/workshop/"><h3>Any business with a team</h3><p>Offices, agencies, clinics, dealerships, shops. If your team does repeatable work, we train them to run AI on it &mdash; live, on your real tools.</p><span class="go">Book a team workshop &rarr;</span></a>
+      <a class="who" href="/mortgage-brokers/"><h3>Mortgage brokers</h3><p>The renewal wave is in your database already. Mine it before the banks&rsquo; retention letters land &mdash; CASL-compliant.</p><span class="go">See the broker build &rarr;</span></a>
+      <a class="who" href="/london/"><h3>London, Ontario</h3><p>Local, in person when it helps. Sit down with someone who actually ships this &mdash; not an offshore agency.</p><span class="go">Local businesses &rarr;</span></a>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center"><span class="mono" style="color:var(--muted)">By trade:</span><a href="/electricians/" style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;color:var(--rec);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px">Electricians</a><a href="/plumbers/" style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;color:var(--rec);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px">Plumbers</a><a href="/hvac/" style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;color:var(--rec);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px">HVAC</a><a href="/roofers/" style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;color:var(--rec);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px">Roofers</a><a href="/landscapers/" style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;color:var(--rec);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px">Landscapers</a><a href="/general-contractors/" style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;color:var(--rec);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px">General contractors</a></div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="kick">Why us</div>
+    <h2>You learn from the person who actually built it.</h2>
+    <p class="lead">Most &ldquo;AI agencies&rdquo; resell someone else&rsquo;s dashboard and rent it back to you. Lightwork is Marc Pineault &mdash; who built every system on this page on his own business, ships daily, and teaches you to do the same. <b>We build assets, not lock-in.</b> The system runs on your AI subscription, your computers, your accounts. We never hold your logins, and there&rsquo;s nothing to cancel if you leave.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kick">The offer</div>
+    <h2>Start with the piece that&rsquo;s bleeding.</h2>
+    <p class="lead">Rule of thumb: <b>you pay about one month of what it saves you in a year.</b> If the math isn&rsquo;t obvious on the first call, we&rsquo;ll tell you not to hire us.</p>
+    <div class="offers">
+      <a class="offer" href="/workshop/"><h3>The Team Workshop</h3><span class="price">$150 / SEAT</span><p>Get your whole team fluent in one live, hands-on 90 minutes. The front door &mdash; and the fastest proof.</p></a>
+      <a class="offer" href="/pricing/"><h3>Setup + Stay Current</h3><span class="price">SETUP FROM $500 + FROM $250/MO</span><p>We install and keep current the heavy lifting &mdash; lead answering, follow-up, the AI chief of staff.</p></a>
+      <a class="offer" href="/contractors/"><h3>&rarr; For the trades</h3><span class="price">SIMPRO &amp; JOBTREAD</span><p>Shaped to any field-service shop &mdash; electrical, plumbing, HVAC, roofing: estimates, dispatch, and the follow-up that chases itself.</p></a>
+      <a class="offer" href="/mortgage-brokers/"><h3>&rarr; For mortgage brokers</h3><span class="price">CASL-COMPLIANT</span><p>The renewal wave, mined from your own database before the banks get there.</p></a>
+    </div>
+    <div class="honest"><b>Straight answer on track record:</b> every number on this site is from our own business &mdash; we built the machine for ourselves first and run it every day. Client work started in 2026. You&rsquo;d be a founding client, and that&rsquo;s why the proof here is our own instead of borrowed.</div>
+  </div>
+</section>
+
+<section class="final tint">
+  <div class="wrap">
+    <div class="kick" style="text-align:center">Ready</div>
+    <h2>Unleash it on your business.</h2>
+    <div class="cta-row">
+      <a class="btn" href="https://calendar.app.google/NUNMq71q6mpXXWWq6">Book a workshop</a>
+      <a class="btn ghost" href="/proof/">See the proof first</a>
+    </div>
+  </div>
+</section>
 </main>
 
-<footer class="wrap">
-  <span>LIGHTWORK · BUILT AND RUN BY MARC PINEAULT · LONDON, ONTARIO</span>
-  <span><a href="/missed-call-calculator/" style="color:inherit">CALCULATOR</a> · <a href="/ai-receptionist-cost/" style="color:inherit">PRICING GUIDE</a> · FIGURES PULLED AUG 17, 2026</span>
+<footer>
+  <div class="wrap foot">
+    <span><b>LIGHTWORK</b> &middot; Marc Pineault &middot; London, Ontario</span>
+    <span><a href="/workshop/">Workshop</a> &middot; <a href="/pricing/">Pricing</a> &middot; <a href="/systems/">Systems</a> &middot; <a href="/proof/">Proof</a> &middot; <a href="/about/">About</a> &middot; <a href="https://calendar.app.google/NUNMq71q6mpXXWWq6">Book</a></span>
+  </div>
 </footer>
 
 <script>
-(function(){
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function fmt(n,d){return n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d})}
-  function count(el){
-    var target=parseFloat(el.getAttribute('data-count')), d=parseInt(el.getAttribute('data-dec')||'0',10);
-    if(reduce){el.textContent=fmt(target,d);return}
-    var t0=null, dur=1000;
-    function step(t){
-      if(!t0)t0=t;
-      var p=Math.min((t-t0)/dur,1), e=1-Math.pow(1-p,3);
-      el.textContent=fmt(target*e,d);
-      if(p<1)requestAnimationFrame(step);
+  (function(){
+    var els = document.querySelectorAll('[data-count]');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function run(el){
+      var target = parseFloat(el.getAttribute('data-count'));
+      var dec = parseInt(el.getAttribute('data-dec')||'0',10);
+      if(reduce){ el.textContent = target.toLocaleString(undefined,{minimumFractionDigits:dec,maximumFractionDigits:dec}); return; }
+      var start = performance.now(), dur = 1400;
+      function tick(now){
+        var p = Math.min((now-start)/dur,1); var e = 1-Math.pow(1-p,3);
+        el.textContent = (target*e).toLocaleString(undefined,{minimumFractionDigits:dec,maximumFractionDigits:dec});
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
     }
-    requestAnimationFrame(step);
-  }
-  var els=document.querySelectorAll('[data-count]');
-  if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(en){ if(en.isIntersecting){count(en.target);io.unobserve(en.target);} });
-    },{rootMargin:'0px 0px -5% 0px'});
-    els.forEach(function(el){io.observe(el)});
-    setTimeout(function(){els.forEach(function(el){io.unobserve(el);if(el.textContent==='0')count(el);})},2500);
-  }else{
-    els.forEach(count);
-  }
-})();
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(x){ if(x.isIntersecting){ run(x.target); io.unobserve(x.target); } });
+    },{threshold:.4});
+    els.forEach(function(el){ io.observe(el); });
+  })();
 </script>
 </body>
 </html>

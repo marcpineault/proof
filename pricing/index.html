@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing — Lightwork, London Ontario&rsquo;s AI Implementation Company</title>
+<meta name="description" content="Lightwork pricing: a one-time AI setup from $500, then a monthly plan from $250 that keeps your tools current. London, Ontario's AI implementation company. Prices in CAD.">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://lightworkai.ca/pricing/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
+<style>
+  :root{
+    --rec:#C7372F; --rec-soft:#F6E3E1; --paper:#FAF8F4; --ink:#1F2226;
+    --muted:#6C675F; --line:#E2DDD3; --card:#FFFFFF; --wash:#F1EDE5;
+    --amber:#8A6D1F; --amber-wash:#F7F1DF;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --rec:#E8635A; --rec-soft:#3A2321; --paper:#141517; --ink:#E9E6DF;
+      --muted:#9C968C; --line:#31322E; --card:#1C1D20; --wash:#222320;
+      --amber:#D9B23A; --amber-wash:#262216;
+    }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  img{max-width:100%;height:auto;display:block}
+  body{background:var(--paper);color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    font-size:17.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--rec)}
+  :focus-visible{outline:3px solid var(--rec);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:1020px;margin:0 auto;padding-inline:22px}
+  .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,monospace}
+
+  /* top bar + nav */
+  .top{border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:10}
+  .topline{display:flex;justify-content:space-between;align-items:center;gap:18px;padding-block:13px;
+    font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .brand{color:var(--ink);font-weight:700;letter-spacing:.14em;text-decoration:none}
+  .nav{display:flex;align-items:center;gap:22px}
+  .nav a{color:var(--muted);text-decoration:none}
+  .nav a:hover{color:var(--ink)}
+  .nav .navbtn{color:#fff;background:var(--rec);padding:8px 16px;border-radius:999px;letter-spacing:.08em}
+  .nav .navbtn:hover{color:#fff;filter:brightness(1.06)}
+  @media (max-width:720px){ .nav a:not(.navbtn){display:none} }
+
+  /* case-file margin rule */
+  .filerule,.filename-v{display:none}
+  @media (min-width:1160px){
+    .filerule{display:block;position:fixed;top:0;bottom:0;left:38px;width:4px;border-left:1px solid var(--rec);border-right:1px solid var(--rec);opacity:.5;pointer-events:none}
+    .filename-v{display:block;position:fixed;left:12px;bottom:28px;writing-mode:vertical-rl;transform:rotate(180deg);
+      font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--rec);opacity:.8;pointer-events:none}
+  }
+
+  /* hero */
+  .hero{padding-block:60px 42px}
+  .eyebrow{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rec);margin-bottom:20px}
+  h1{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.03em;line-height:.98;
+    font-size:clamp(44px,8.5vw,88px);text-wrap:balance;max-width:15ch}
+  .pen{position:relative;white-space:nowrap}
+  .pen svg{position:absolute;left:-4%;bottom:-12px;width:108%;height:20px;overflow:visible}
+  .pen svg path{fill:none;stroke:var(--rec);stroke-width:5;stroke-linecap:round}
+  .dek{font-size:clamp(17px,2.3vw,21px);color:var(--muted);max-width:54ch;margin:28px 0 0;text-wrap:pretty}
+  .dek b{color:var(--ink)}
+  .cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:32px}
+  .btn{display:inline-block;background:var(--rec);color:#fff;text-decoration:none;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:16.5px;
+    padding:15px 32px;border-radius:999px;box-shadow:0 10px 24px -8px color-mix(in srgb, var(--rec) 55%, transparent)}
+  .btn:hover{filter:brightness(1.06)}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:none;border:1.5px solid var(--line);padding:13.5px 26px}
+  .btn.ghost:hover{border-color:var(--ink)}
+
+  /* stat wall */
+  .statcap{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:52px}
+  .statwall{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-block:1px solid var(--line);margin-top:14px}
+  @media (max-width:680px){.statwall{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--paper);padding:22px 6px 18px;text-align:center}
+  .stat .n{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:clamp(28px,4.6vw,42px)}
+  .stat .n em{font-style:normal;color:var(--rec)}
+  .stat .d{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+
+  section{padding-block:52px}
+  section.tint{background:var(--wash);border-block:1px solid var(--line)}
+  .kick{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rec);margin-bottom:14px}
+  h2{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.05;
+    font-size:clamp(28px,4.4vw,40px);text-wrap:balance;max-width:20ch}
+  .lead{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:56ch;margin-top:16px;text-wrap:pretty}
+  .lead b{color:var(--ink)}
+
+  /* the gap two-up */
+  .gap2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:30px}
+  @media (max-width:640px){.gap2{grid-template-columns:1fr}}
+  .gcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px}
+  .gcard h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:19px;margin-bottom:8px}
+  .gcard p{color:var(--muted);font-size:16px}
+  .gcard.hit{border-color:var(--rec);border-width:1.5px}
+  .gcard .tag{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+  .gcard.miss .tag{color:var(--muted)} .gcard.hit .tag{color:var(--rec)}
+
+  /* ladder */
+  .ladder{margin-top:32px;display:grid;gap:0}
+  .step{display:grid;grid-template-columns:auto 1fr auto;gap:8px 24px;align-items:start;padding:26px 0;border-top:1px solid var(--line)}
+  .step:last-child{border-bottom:1px solid var(--line)}
+  .step .num{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;font-size:26px;color:var(--rec);grid-row:1 / span 2;line-height:1}
+  .step h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:21px}
+  .step .body{grid-column:2;color:var(--muted);font-size:16px;max-width:44ch;margin-top:4px}
+  .step .body b{color:var(--ink)}
+  .step .tag{grid-column:3;grid-row:1 / span 2;align-self:center;text-align:right;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;font-size:17px;white-space:nowrap}
+  .step .tag small{display:block;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-weight:400;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  @media (max-width:620px){.step{grid-template-columns:auto 1fr}.step .body{grid-column:1 / -1}.step .tag{grid-column:1 / -1;grid-row:auto;text-align:left;margin-top:8px}}
+
+  /* results row */
+  .results{margin-top:26px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .rrow{background:var(--paper);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;padding:16px 20px}
+  .rrow .n{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;font-size:24px;color:var(--rec);min-width:2.6em;text-align:right;font-variant-numeric:tabular-nums}
+  .rrow .t{font-size:16px;color:var(--muted)} .rrow .t b{color:var(--ink)}
+
+  /* exhibit */
+  .exhibit{margin-top:26px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .exhibit img{border-bottom:1px solid var(--line)}
+  .exhibit .cap{padding:16px 20px;color:var(--muted);font-size:15px}
+  .exhibit .cap b{color:var(--rec)}
+
+  /* testimonial */
+  .quote{margin-top:8px;border-left:3px solid var(--rec);padding-left:24px}
+  .quote p.big{font-size:clamp(21px,2.8vw,27px);font-weight:600;line-height:1.35;text-wrap:pretty}
+  .quote .who{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.04em;color:var(--muted);margin-top:16px}
+
+  /* who-for */
+  .whofor{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;margin-top:28px}
+  @media (max-width:520px){.whofor{grid-template-columns:1fr}}
+  .who{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color .15s}
+  .who:hover{border-color:var(--rec)}
+  .who h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:18px}
+  .who p{color:var(--muted);font-size:15px;margin-top:6px}
+  .who .go{color:var(--rec);font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;margin-top:12px;display:block}
+
+  /* pricing */
+  .offers{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+  @media (max-width:640px){.offers{grid-template-columns:1fr}}
+  .offer{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px;text-decoration:none;color:inherit;display:block}
+  .offer h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:19px}
+  .offer .price{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.06em;color:var(--rec);margin:6px 0 10px;display:block}
+  .offer p{color:var(--muted);font-size:15px}
+
+  .honest{margin-top:28px;background:var(--amber-wash);border:1px solid var(--amber);border-radius:10px;padding:18px 22px;font-size:15.5px}
+  .honest b{color:var(--ink)}
+
+  /* final cta */
+  .final{text-align:center;padding-block:64px}
+  .final h2{margin:0 auto;max-width:22ch}
+  .final .cta-row{justify-content:center;margin-top:28px}
+
+  footer{border-top:2px solid var(--ink);padding-block:26px}
+  .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .foot a{color:var(--muted);text-decoration:none} .foot a:hover{color:var(--ink)}
+
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+  @media (max-width:760px){.tiers{grid-template-columns:1fr}}
+  .tier{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px 22px;display:flex;flex-direction:column;gap:10px}
+  .tier.pick{border-color:var(--rec);border-width:1.5px}
+  .tier .flag{align-self:flex-start;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--rec);border:1px solid var(--rec);border-radius:999px;padding:2px 10px}
+  .tier h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:20px}
+  .tier .amt{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:38px;line-height:1;font-variant-numeric:tabular-nums}
+  .tier .amt small{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-weight:400;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-left:6px}
+  .tier .fit{color:var(--muted);font-size:15px}
+  .tier ul{padding-left:18px;font-size:15.5px;display:grid;gap:5px}
+  .yearly{margin-top:18px;background:var(--wash);border:1px solid var(--line);border-radius:10px;padding:16px 20px;font-size:16px}
+  .tablewrap{overflow-x:auto;margin-top:26px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:16px}
+  th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line)}
+  th{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:400}
+  td.n{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  .fine{color:var(--muted);font-size:14.5px;margin-top:10px}
+  .math p{font-size:17px;margin-top:8px;max-width:60ch}
+</style>
+</head>
+<body>
+<div class="filerule"></div>
+<div class="filename-v">lightwork · pricing</div>
+
+<header class="top">
+  <div class="wrap topline">
+    <a class="brand" href="/">LIGHTWORK</a>
+    <nav class="nav">
+      <a href="/workshop/">The Workshop</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/proof/">Proof</a>
+      <a href="/about/">About</a>
+      <a class="navbtn" href="https://calendar.app.google/NUNMq71q6mpXXWWq6">Book</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div class="eyebrow">London, Ontario&rsquo;s AI implementation company</div>
+  <h1>Pricing.</h1>
+  <p class="dek">One afternoon with us saves you <b>a year or more</b> of figuring AI out alone. We set it up inside the tools you already use, show you and your team how to run it, and <b>keep it current every month</b> as the tools change. Everything stays on your accounts.</p>
+  <div class="cta-row">
+    <a class="btn" href="https://calendar.app.google/NUNMq71q6mpXXWWq6">Book a free game plan call</a>
+  </div>
+</div>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="kick">Step 1 &middot; One-time</div>
+    <h2>The setup.</h2>
+    <p class="lead">Pick the size that fits. It&rsquo;s all set up on your accounts and <b>stays yours</b>, even if we stop working together.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Quick Start</h3>
+        <div class="amt">$500</div>
+        <p class="fit">Owner-operators and small offices, 1&ndash;3 people.</p>
+        <ul>
+          <li>One 3-hour working session, in person or on a call</li>
+          <li>The right AI tools picked and set up (most are free or about $30/mo)</li>
+          <li>Connected to your email, calendar and files</li>
+          <li>Your first real task automated before we finish</li>
+          <li>A one-page &ldquo;how we use AI here&rdquo; guide</li>
+        </ul>
+      </div>
+      <div class="tier pick">
+        <span class="flag">Most teams</span>
+        <h3>Team Setup</h3>
+        <div class="amt">$2,500</div>
+        <p class="fit">Businesses with staff, 4&ndash;15 people.</p>
+        <ul>
+          <li>Everything in Quick Start</li>
+          <li>Your business brain: your prices, how you write, who does what, in one place AI reads from</li>
+          <li>Two workflows built on your real work: quotes, follow-up, scheduling or email</li>
+          <li>A hands-on training session for your team</li>
+          <li>Two weeks of direct support</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <h3>Full Install</h3>
+        <div class="amt">$7,500<small>and up</small></div>
+        <p class="fit">Owners taking hours off admin, bookkeeping or estimating.</p>
+        <ul>
+          <li>Everything in Team Setup</li>
+          <li>Systems across three departments, like sales, admin and books</li>
+          <li>Connected to your job software, CRM or accounting</li>
+          <li>Each key person set up with their own workflows</li>
+          <li>A weekly scoreboard on the one number it moves</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kick">Step 2 &middot; Monthly</div>
+    <h2>Stay current.</h2>
+    <p class="lead">AI changes every month. Keeping up is a full-time job, so we do it for you. <b>Your first month is included with any setup.</b> Cancel anytime.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Check-in</h3>
+        <div class="amt">$250<small>/ month</small></div>
+        <p class="fit">Keep what you have working and up to date.</p>
+        <ul>
+          <li>One 1-hour check-in a month</li>
+          <li>Your setup updated when tools change</li>
+          <li>The monthly Lightwork tools email: what&rsquo;s new and what&rsquo;s worth using</li>
+          <li>Unlimited email questions, answered within one business day</li>
+        </ul>
+      </div>
+      <div class="tier pick">
+        <span class="flag">Best value</span>
+        <h3>Check-in Plus</h3>
+        <div class="amt">$400<small>/ month</small></div>
+        <p class="fit">For teams actively rolling AI out.</p>
+        <ul>
+          <li>Everything in Check-in</li>
+          <li>Two check-ins a month instead of one</li>
+          <li>A small new automation added each month</li>
+          <li>New staff set up and shown the ropes</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <h3>Build Partner</h3>
+        <div class="amt">$750<small>/ month</small></div>
+        <p class="fit">For Full Install clients who want it to keep improving.</p>
+        <ul>
+          <li>Everything in Check-in Plus</li>
+          <li>One real improvement built and shipped every month</li>
+          <li>Your business brain reviewed and kept accurate</li>
+          <li>Weekly scoreboard report on your number</li>
+          <li>Priority help, same-day replies</li>
+        </ul>
+      </div>
+    </div>
+    <div class="yearly"><b>Pay yearly, get two months free.</b> Check-in $2,500/yr &middot; Check-in Plus $4,000/yr &middot; Build Partner $7,500/yr.</div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="kick">What owners usually pick</div>
+    <h2>Year one, all in.</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Business</th><th>Setup</th><th>Monthly</th><th>Year one</th></tr></thead>
+        <tbody>
+          <tr><td>Solo clinic or practice</td><td>Quick Start</td><td>Check-in</td><td class="n">$3,250</td></tr>
+          <tr><td>Trades company, 8 staff</td><td>Team Setup</td><td>Check-in Plus</td><td class="n">$6,900</td></tr>
+          <tr><td>Logistics or construction, 10+ staff</td><td>Full Install</td><td>Build Partner</td><td class="n">$15,750</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">Year one = setup + 11 paid months (the first month is included). Prices in CAD, plus HST.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap math">
+    <div class="kick">How we price the big jobs</div>
+    <h2>You pay about one month of what it saves you in a year.</h2>
+    <p>Saving $1,000 a week of admin time &rarr; about a $4,000 setup.</p>
+    <p>Taking half the load off a $70,000 bookkeeper &rarr; a Full Install that pays for itself in under three months.</p>
+    <p>If the math doesn&rsquo;t work on our first call, we&rsquo;ll tell you not to hire us.</p>
+    <p style="margin-top:20px"><a href="/systems/">Looking for a specific system, like the Inbound Engine or Database Revival? See the systems menu &rarr;</a></p>
+  </div>
+</section>
+
+<section class="final tint">
+  <div class="wrap">
+    <div class="kick" style="text-align:center">Start here</div>
+    <h2>A free 30-minute game plan call.</h2>
+    <p class="lead" style="margin:16px auto 0;text-align:center">We find where AI pays in your business and which setup fits. No pitch if it doesn&rsquo;t.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://calendar.app.google/NUNMq71q6mpXXWWq6">Book the call</a>
+      <a class="btn ghost" href="/proof/">See the proof first</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span><b>LIGHTWORK</b> &middot; Marc Pineault &middot; London, Ontario</span>
+    <span><a href="/workshop/">Workshop</a> &middot; <a href="/pricing/">Pricing</a> &middot; <a href="/systems/">Systems</a> &middot; <a href="/proof/">Proof</a> &middot; <a href="/about/">About</a> &middot; <a href="https://calendar.app.google/NUNMq71q6mpXXWWq6">Book</a></span>
+  </div>
+</footer>
+</body>
+</html>

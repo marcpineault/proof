@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI for Electricians — Quote, Dispatch & Follow-Up on Autopilot | Lightwork</title>
+<meta name="description" content="We train your electrical shop to run AI on quoting, dispatch, permits and service-call follow-up — on Simpro, ServiceTitan or your CRM. Live workshop, $150 a seat.">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://lightworkai.ca/electricians/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
+<style>
+  :root{--rec:#C7372F;--rec-soft:#F6E3E1;--paper:#FAF8F4;--ink:#1F2226;--muted:#6C675F;--line:#E2DDD3;--card:#FFFFFF;--wash:#F1EDE5;--amber:#8A6D1F;--amber-wash:#F7F1DF}
+  @media (prefers-color-scheme: dark){:root{--rec:#E8635A;--rec-soft:#3A2321;--paper:#141517;--ink:#E9E6DF;--muted:#9C968C;--line:#31322E;--card:#1C1D20;--wash:#222320;--amber:#D9B23A;--amber-wash:#262216}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  img{max-width:100%;height:auto;display:block}
+  body{background:var(--paper);color:var(--ink);font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:17.5px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--rec)}
+  :focus-visible{outline:3px solid var(--rec);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:940px;margin:0 auto;padding-inline:22px}
+  .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  .mono{font-family:ui-monospace,"SF Mono",Menlo,monospace}
+  .top{border-bottom:2px solid var(--ink);position:sticky;top:0;background:var(--paper);z-index:10}
+  .topline{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:13px}
+  .brand{color:var(--ink);font-weight:700;letter-spacing:.14em;text-decoration:none;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px}
+  .nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  .nav a{color:var(--muted);text-decoration:none}.nav a:hover{color:var(--ink)}
+  .nav .navbtn{color:#fff;background:var(--rec);padding:7px 15px;border-radius:999px}.nav .navbtn:hover{color:#fff}
+  .hero{padding-block:52px 34px}
+  .eyebrow{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rec);margin-bottom:16px}
+  h1{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1.0;font-size:clamp(36px,6.5vw,62px);text-wrap:balance;max-width:16ch}
+  .byline{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:20px}
+  .byline b{color:var(--rec)}
+  .dek{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:54ch;margin:24px 0 0;text-wrap:pretty}.dek b{color:var(--ink)}
+  .cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:30px}
+  .btn{display:inline-block;background:var(--rec);color:#fff;text-decoration:none;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:16px;padding:14px 28px;border-radius:999px;box-shadow:0 10px 24px -8px color-mix(in srgb,var(--rec) 55%,transparent)}
+  .btn:hover{filter:brightness(1.06)}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:none;border:1.5px solid var(--line);padding:12.5px 24px}.btn.ghost:hover{border-color:var(--ink)}
+  section{padding-block:44px}
+  section.tint{background:var(--wash);border-block:1px solid var(--line)}
+  .kick{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rec);margin-bottom:12px}
+  h2{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.06;font-size:clamp(26px,4vw,36px);text-wrap:balance;max-width:20ch}
+  .lead{font-size:clamp(16.5px,1.9vw,19px);color:var(--muted);max-width:56ch;margin-top:14px;text-wrap:pretty}.lead b{color:var(--ink)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:26px}
+  .cardi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px}
+  .cardi h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:18px;margin-bottom:6px}
+  .cardi p{color:var(--muted);font-size:15px}
+  .tools{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .tool{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.04em;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 16px}
+  .offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:24px}
+  .offer{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px;text-decoration:none;color:inherit;display:block}
+  .offer.hit{border-color:var(--rec);border-width:1.5px}
+  .offer h3{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:700;font-size:18px}
+  .offer .price{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;letter-spacing:.06em;color:var(--rec);margin:6px 0 10px;display:block}
+  .offer p{color:var(--muted);font-size:15px}
+  .honest{margin-top:24px;background:var(--amber-wash);border:1px solid var(--amber);border-radius:10px;padding:16px 20px;font-size:15px}.honest b{color:var(--ink)}
+  .also{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+  .also a{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:12px;color:var(--rec);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:8px 16px}
+  .also a:hover{border-color:var(--rec)}
+  footer{border-top:2px solid var(--ink);padding-block:24px;margin-top:8px}
+  .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .foot a{color:var(--muted);text-decoration:none}.foot a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap topline"><a class="brand" href="/">LIGHTWORK</a><nav class="nav"><a href="/workshop/">Workshop</a><a href="/proof/">Proof</a><a href="/systems/">Systems</a><a class="navbtn" href="https://calendar.app.google/NUNMq71q6mpXXWWq6">Book</a></nav></div></header>
+<main>
+<div class="wrap hero">
+  <div class="eyebrow">AI fluency for electrical contractors</div>
+  <h1>AI for electricians who are done quoting at 9pm.</h1>
+  <p class="byline">RESIDENTIAL &middot; COMMERCIAL &middot; SERVICE &middot; <b>SIMPRO &amp; SERVICETITAN-READY</b></p>
+  <p class="dek">Every quote, permit and service-call follow-up is a form someone types by hand &mdash; and the owner is the bottleneck. We train you and your team to hand that work to AI, on the tools you already run, until it&rsquo;s off your plate for good.</p>
+  <div class="cta-row">
+    <a class="btn" href="https://calendar.app.google/NUNMq71q6mpXXWWq6">Book a workshop</a>
+    <a class="btn ghost" href="/proof/">See the proof</a>
+  </div>
+</div>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="kick">The bottleneck</div>
+    <h2>You&rsquo;re the fastest estimator in the shop &mdash; so nothing ships without you.</h2>
+    <p class="lead">Quotes wait on the owner. Service calls don&rsquo;t get chased. Permits and inspection paperwork eat the office&rsquo;s afternoon. The work is there; the throughput is capped by how many forms one or two people can push through in a day. That&rsquo;s exactly what AI clears &mdash; if your team actually knows how to use it.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kick">What we build with you</div>
+    <h2>Your team, running AI on the daily work.</h2>
+    <p class="lead">We don&rsquo;t hand you a tool and wish you luck. We sit with your crew and your office, on your real jobs, and set each of these up until it works &mdash; then you own it.</p>
+    <div class="cards"><div class="cardi"><h3>Quotes from a photo + voice note</h3><p>Snap the panel, talk through the job on the drive back &mdash; the estimate is drafted before you&rsquo;re at the next call.</p></div><div class="cardi"><h3>Service-call follow-up that chases itself</h3><p>Every quote that didn&rsquo;t get a yet gets a polite nudge, automatically, in your voice &mdash; the money that used to leak out.</p></div><div class="cardi"><h3>Dispatch &amp; scheduling messages</h3><p>Customer &ldquo;we&rsquo;re on our way&rdquo; texts, reschedules and confirmations drafted in seconds, not typed one by one.</p></div><div class="cardi"><h3>Permits &amp; inspection paperwork</h3><p>The repetitive forms filled from the job data you already have &mdash; the office gets its afternoon back.</p></div><div class="cardi"><h3>Job notes into clean reports</h3><p>Field notes and photos turned into a tidy customer summary and the next-step list, ready to send.</p></div><div class="cardi"><h3>A weekly read on the numbers</h3><p>Quote conversion, jobs booked, what&rsquo;s stuck &mdash; in plain English, every Monday.</p></div></div>
+  </div>
+</section>
+
+<section class="tint">
+  <div class="wrap">
+    <div class="kick">On your tools</div>
+    <h2>Built on the software you already run.</h2>
+    <p class="lead">No new platform to learn, no data hostage. We wire AI into what your shop uses today.</p>
+    <div class="tools"><span class="tool">Simpro</span><span class="tool">ServiceTitan</span><span class="tool">Jobber</span><span class="tool">Housecall Pro</span><span class="tool">QuickBooks</span><span class="tool">Your CRM</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kick">Start here</div>
+    <h2>Start with a team workshop.</h2>
+    <p class="lead">The fastest proof: 90 minutes, your whole team, on your real jobs. Everyone walks out using it. Then we build the heavier systems and keep them current as the tools change.</p>
+    <div class="offers">
+      <a class="offer hit" href="/workshop/"><h3>The Team Workshop</h3><span class="price">$150 / SEAT</span><p>Get your office and field crew fluent in one live, hands-on 90 minutes. The front door &mdash; and the fastest win.</p></a>
+      <a class="offer" href="/pricing/"><h3>The Systems Build</h3><span class="price">SETUP FROM $500 + FROM $250/MO</span><p>We install and keep current the heavy lifting &mdash; quoting, dispatch, follow-up, paperwork. You own it.</p></a>
+    </div>
+    <div class="honest"><b>Straight answer:</b> every number on this site is from our own business &mdash; we built the machine for ourselves first and run it daily. You&rsquo;d be a founding client, and that&rsquo;s why the proof is our own instead of borrowed. <a href="/proof/">See the receipts &rarr;</a></div>
+    <div class="also"><span class="mono" style="color:var(--muted);align-self:center">Other trades:</span><a href="/plumbers/">Plumbers &rarr;</a><a href="/hvac/">HVAC &rarr;</a><a href="/roofers/">Roofers &rarr;</a><a href="/landscapers/">Landscapers &rarr;</a><a href="/general-contractors/">General contractors &rarr;</a><a href="/contractors/">All trades &rarr;</a></div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap foot"><span><b style="color:var(--ink)">LIGHTWORK</b> &middot; Marc Pineault &middot; London, Ontario</span><span><a href="/">Home</a> &middot; <a href="/workshop/">Workshop</a> &middot; <a href="/proof/">Proof</a> &middot; <a href="https://calendar.app.google/NUNMq71q6mpXXWWq6">Book</a></span></div></footer>
+</body>
+</html>
