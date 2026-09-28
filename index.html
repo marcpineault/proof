@@ -114,6 +114,8 @@
   .rrow{background:var(--paper);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;padding:16px 20px}
   .rrow .n{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;font-size:24px;color:var(--rec);min-width:2.6em;text-align:right;font-variant-numeric:tabular-nums}
   .rrow .t{font-size:16px;color:var(--muted)} .rrow .t b{color:var(--ink)}
+  a.vlink{text-decoration:none;color:inherit;transition:background .15s} a.vlink:hover{background:var(--card)} a.vlink:hover .t b{color:var(--rec)}
+  #verify .rrow{background:var(--card)} #verify a.vlink:hover{background:var(--paper)}
 
   /* exhibit */
   .exhibit{margin-top:26px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
@@ -186,12 +188,12 @@
 </div>
 
 <div class="wrap">
-  <div class="statcap">What this power did for our own business first</div>
+  <div class="statcap">What it did for our own business first &middot; <a href="#verify" style="color:inherit">check every number</a></div>
   <div class="statwall">
-    <div class="stat"><div class="n" data-count="2272">0</div><div class="d">leads since March</div></div>
-    <div class="stat"><div class="n"><span data-count="507">0</span><em>K</em></div><div class="d">views in 30 days</div></div>
-    <div class="stat"><div class="n" data-count="63">0</div><div class="d">meetings booked</div></div>
-    <div class="stat"><div class="n"><em>$</em><span data-count="1.53" data-dec="2">0</span><em>M</em></div><div class="d">new assets closed</div></div>
+    <div class="stat"><div class="n" data-count="2796">0</div><div class="d">leads since March</div></div>
+    <div class="stat"><div class="n" data-count="86">0</div><div class="d">meetings booked</div></div>
+    <div class="stat"><div class="n"><em>$</em><span data-count="20">0</span><em>K</em></div><div class="d">revenue closed</div></div>
+    <div class="stat"><div class="n" data-count="9510">0</div><div class="d">follow-ups, none by hand</div></div>
   </div>
 </div>
 
@@ -225,12 +227,12 @@
   <div class="wrap">
     <div class="kick">The proof</div>
     <h2>We built the machine on ourselves first.</h2>
-    <p class="lead">Before a single client, we ran this on our own business &mdash; leads answered in the DMs, follow-up that never forgets, meetings booked while we slept. Every number here is real and re-pulled from production.</p>
+    <p class="lead">Before a single client, we ran this on our own business, <b>Glacier Financial</b> (Marc&rsquo;s retirement-planning practice) &mdash; leads answered in the DMs, follow-up that never forgets, meetings booked while we slept. Every number here is real, re-pulled from production on September 28, 2026.</p>
     <div class="results">
-      <div class="rrow"><div class="n" data-count="1642">0</div><div class="t"><b>leads captured by AI in the DMs</b> &mdash; 24/7, in Marc&rsquo;s voice</div></div>
-      <div class="rrow"><div class="n" data-count="2133">0</div><div class="t"><b>email addresses collected</b> &mdash; 94% of every lead that came in</div></div>
-      <div class="rrow"><div class="n" data-count="7928">0</div><div class="t"><b>follow-up emails sent</b> &mdash; zero written by hand</div></div>
-      <div class="rrow"><div class="n" data-count="21">0</div><div class="t"><b>deals closed</b> &mdash; $1.53M in new client assets, $2.0M more in pipeline</div></div>
+      <div class="rrow"><div class="n" data-count="2224">0</div><div class="t"><b>leads captured by AI in the DMs</b> &mdash; 24/7, in Marc&rsquo;s voice</div></div>
+      <div class="rrow"><div class="n" data-count="2652">0</div><div class="t"><b>email addresses collected</b> &mdash; 95% of every lead that came in</div></div>
+      <div class="rrow"><div class="n" data-count="9510">0</div><div class="t"><b>follow-up emails sent</b> &mdash; zero written by hand</div></div>
+      <div class="rrow"><div class="n">$20K</div><div class="t"><b>in revenue closed from 10 paying clients</b> &mdash; $14.3K of it from leads the AI found and worked in the DMs. $13.2K already in the bank.</div></div>
     </div>
     <div class="exhibit">
       <img src="img/booked-calendar.jpg" alt="A calendar event written by the AI: 'Booked via IG DM', quoting the prospect's own words." loading="lazy">
@@ -240,7 +242,25 @@
   </div>
 </section>
 
-<section class="tint">
+<section class="tint" id="verify">
+  <div class="wrap">
+    <div class="kick">Check it yourself</div>
+    <h2>Don&rsquo;t take our word for it. Every account is public.</h2>
+    <p class="lead">This is the real business the machine runs on. Open any link and the numbers are right there, counted by the platforms themselves, not by us.</p>
+    <div class="results">
+      <a class="rrow vlink" href="https://www.instagram.com/marcdoesfinance/" target="_blank" rel="noopener"><div class="n">12.5K</div><div class="t"><b>Instagram @marcdoesfinance &rarr;</b> the account the AI answers DMs on. 3,099 followers in May, 12,457 today.</div></a>
+      <a class="rrow vlink" href="https://www.instagram.com/reel/Da8p7OyDlhB/" target="_blank" rel="noopener"><div class="n">211K</div><div class="t"><b>Top reel &rarr;</b> written against what performed, filmed by an AI avatar, posted by the scheduler. View count is Instagram&rsquo;s.</div></a>
+      <a class="rrow vlink" href="https://www.instagram.com/reel/DXk_EivAEkX/" target="_blank" rel="noopener"><div class="n">161K</div><div class="t"><b>Second reel &rarr;</b> 3,138 comments. Each &ldquo;RRIF&rdquo; is someone asking for the guide, and the AI answers them in the DMs.</div></a>
+      <a class="rrow vlink" href="https://www.instagram.com/reel/DX7sdIcky6v/" target="_blank" rel="noopener"><div class="n">144K</div><div class="t"><b>Third reel &rarr;</b> same engine, same result. Three posts over 140K views each.</div></a>
+      <a class="rrow vlink" href="https://glacierfinancial.ca/resources" target="_blank" rel="noopener"><div class="n">279</div><div class="t"><b>glacierfinancial.ca &rarr;</b> the business itself, with 279 articles published by the search engine we built.</div></a>
+      <a class="rrow vlink" href="https://www.tiktok.com/@marcdoesfinance" target="_blank" rel="noopener"><div class="n">TikTok</div><div class="t"><b>@marcdoesfinance &rarr;</b> same engine, second platform.</div></a>
+      <a class="rrow vlink" href="https://www.linkedin.com/in/marcpineault" target="_blank" rel="noopener"><div class="n">Marc</div><div class="t"><b>LinkedIn &rarr;</b> who built it, and who you&rsquo;d be working with.</div></a>
+    </div>
+    <p style="margin-top:20px"><a href="/proof/">The full file, with the database query behind each number &rarr;</a></p>
+  </div>
+</section>
+
+<section>
   <div class="wrap">
     <div class="kick">In their words</div>
     <div class="quote">
@@ -250,7 +270,7 @@
   </div>
 </section>
 
-<section>
+<section class="tint">
   <div class="wrap">
     <div class="kick">Who it&rsquo;s for</div>
     <h2>Any business with a team that does the same work every day.</h2>
@@ -265,7 +285,7 @@
   </div>
 </section>
 
-<section class="tint">
+<section>
   <div class="wrap">
     <div class="kick">Why us</div>
     <h2>You learn from the person who actually built it.</h2>
@@ -273,7 +293,7 @@
   </div>
 </section>
 
-<section>
+<section class="tint">
   <div class="wrap">
     <div class="kick">The offer</div>
     <h2>Start with the piece that&rsquo;s bleeding.</h2>
@@ -284,11 +304,11 @@
       <a class="offer" href="/contractors/"><h3>&rarr; For the trades</h3><span class="price">SIMPRO &amp; JOBTREAD</span><p>Shaped to any field-service shop &mdash; electrical, plumbing, HVAC, roofing: estimates, dispatch, and the follow-up that chases itself.</p></a>
       <a class="offer" href="/mortgage-brokers/"><h3>&rarr; For mortgage brokers</h3><span class="price">CASL-COMPLIANT</span><p>The renewal wave, mined from your own database before the banks get there.</p></a>
     </div>
-    <div class="honest"><b>Straight answer on track record:</b> every number on this site is from our own business &mdash; we built the machine for ourselves first and run it every day. Client work started in 2026. You&rsquo;d be a founding client, and that&rsquo;s why the proof here is our own instead of borrowed.</div>
+    <div class="honest"><b>Straight answer on track record:</b> every number on this site is from our own business, Glacier Financial &mdash; we built the machine for ourselves first and run it every day. Client work started in 2026. You&rsquo;d be a founding client, and that&rsquo;s why the proof here is our own instead of borrowed.</div>
   </div>
 </section>
 
-<section class="final tint">
+<section class="final">
   <div class="wrap">
     <div class="kick" style="text-align:center">Ready</div>
     <h2>Unleash it on your business.</h2>
