@@ -1,0 +1,27 @@
+{
+  "default": "https://glacierfinancial.ca/business",
+  "map": {
+    "/": "https://glacierfinancial.ca/business",
+    "/workshop": "https://glacierfinancial.ca/business",
+    "/electricians": "https://glacierfinancial.ca/business",
+    "/plumbers": "https://glacierfinancial.ca/business",
+    "/hvac": "https://glacierfinancial.ca/business",
+    "/roofers": "https://glacierfinancial.ca/business",
+    "/landscapers": "https://glacierfinancial.ca/business",
+    "/general-contractors": "https://glacierfinancial.ca/business",
+    "/teams": "https://glacierfinancial.ca/business",
+    "/about": "https://glacierfinancial.ca/business",
+    "/systems": "https://glacierfinancial.ca/business",
+    "/proof": "https://glacierfinancial.ca/business",
+    "/contractors": "https://glacierfinancial.ca/business",
+    "/mortgage-brokers": "https://glacierfinancial.ca/business",
+    "/london": "https://glacierfinancial.ca/business",
+    "/ai-receptionist-cost": "https://glacierfinancial.ca/business",
+    "/missed-call-calculator": "https://glacierfinancial.ca/business",
+    "/after-hours-playbook": "https://glacierfinancial.ca/business",
+    "/vendor-questions": "https://glacierfinancial.ca/business",
+    "/follow-up-pack": "https://glacierfinancial.ca/business",
+    "/five-prompts": "https://glacierfinancial.ca/business",
+    "/pricing": "https://glacierfinancial.ca/business"
+  }
+}

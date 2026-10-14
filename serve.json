@@ -1,0 +1,114 @@
+{
+  "redirects": [
+    {
+      "source": "/workshop",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/electricians",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/plumbers",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/hvac",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/roofers",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/landscapers",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/general-contractors",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/teams",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/about",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/systems",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/proof",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/contractors",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/mortgage-brokers",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/london",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/ai-receptionist-cost",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/missed-call-calculator",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/after-hours-playbook",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/vendor-questions",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/follow-up-pack",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/five-prompts",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/pricing",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    },
+    {
+      "source": "/",
+      "destination": "https://glacierfinancial.ca/business",
+      "type": 301
+    }
+  ]
+}
