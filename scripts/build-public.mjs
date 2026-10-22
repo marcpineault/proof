@@ -9,7 +9,7 @@ const output = join(root, 'public');
 // scripts, configuration, dependency manifests and dotfiles stay outside public.
 const siteDirectories = [
   'about', 'after-hours-playbook', 'ai-receptionist-cost', 'contractors',
-  'electricians', 'five-prompts', 'follow-up-pack', 'general-contractors',
+  'electricians', 'five-prompts', 'follow-up-pack', 'for', 'general-contractors',
   'hvac', 'img', 'landscapers', 'london', 'missed-call-calculator',
   'mortgage-brokers', 'plumbers', 'posts', 'pricing', 'proof', 'roofers',
   'systems', 'teams', 'vendor-questions', 'workshop',
