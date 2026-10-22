@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Your AI setup, Adam · Lightwork</title>
+<meta property="og:title" content="Your AI setup, Adam">
+<meta property="og:description" content="Run 300% Media with AI. Pay only for the result.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JKYBNNPSLF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JKYBNNPSLF');</script>
+<script>document.documentElement.classList.add("js");</script>
+<style>
+:root {
+  --paper: #FAF8F4;
+  --ink: #1F2226;
+  --card: #FFFFFF;
+  --line: #E2DDD3;
+  --muted: #6C675F;
+  --wash: #F1EDE5;
+  --red: #C7372F;
+  --red-soft: #F6E3E1;
+  --amber: #8A6D1F;
+  color-scheme: light;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #141517;
+    --ink: #E9E6DF;
+    --card: #1C1E21;
+    --line: #2E3135;
+    --muted: #A29C92;
+    --wash: #1F2124;
+    --red: #E8635A;
+    --red-soft: #3A2321;
+    --amber: #D9B23A;
+    color-scheme: dark;
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { overflow-x: clip; background: var(--paper); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+h1, h2, h3, p, ol, ul { margin: 0; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; touch-action: manipulation; }
+a { color: inherit; touch-action: manipulation; }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.wrap {
+  width: min(760px, calc(100% - 32px - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  margin-inline: auto;
+  padding-top: env(safe-area-inset-top);
+}
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 22px 0 18px;
+  border-bottom: 1px solid var(--line);
+}
+.lockup { color: var(--ink); line-height: 0; }
+.lockup svg { display: block; width: 158px; height: auto; max-width: 100%; }
+.lockup text { fill: currentColor; }
+.lockup .logo-ring { fill: none; stroke: var(--red); }
+.kicker, .lbl {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.hero { padding: 28px 0 36px; }
+h1, h2, h3, .amt, .out-big, .sign, .field-val {
+  font-family: var(--serif);
+  font-weight: 600;
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 2.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+.lede {
+  margin-top: 16px;
+  font-size: 1.125rem;
+  line-height: 1.45;
+  max-width: 36rem;
+}
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 460px;
+  margin-top: 32px;
+}
+.stats > * { min-width: 0; }
+.stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 16px 12px 14px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.amt {
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.block { padding: 48px 0; border-top: 1px solid var(--line); }
+h2 {
+  font-size: clamp(1.65rem, 3.5vw, 2.15rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.intro { margin-top: 12px; max-width: 40rem; }
+.timeline { list-style: none; margin: 26px 0 0; padding: 0; }
+.step {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  column-gap: 12px;
+  position: relative;
+  padding-bottom: 26px;
+}
+.step:last-child { padding-bottom: 0; }
+.step-idx {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  padding-top: 5px;
+}
+.step::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 26px;
+  bottom: 2px;
+  width: 1px;
+  background: var(--line);
+}
+.step:last-child::after { display: none; }
+.step h3 {
+  font-size: 1.28rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.step p { margin-top: 4px; }
+.picker { margin-top: 26px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.chip {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  min-height: 44px;
+  padding: 10px 12px;
+  text-align: left;
+  line-height: 1.3;
+}
+.chip[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.field { margin-top: 22px; }
+.field-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.field-val { font-size: 1.35rem; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 44px;
+  margin: 2px 0 0;
+  background: transparent;
+  cursor: pointer;
+}
+.range::-webkit-slider-runnable-track { height: 2px; background: var(--muted); }
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  margin-top: -10px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.range::-moz-range-track { height: 2px; background: var(--muted); border: 0; }
+.range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.output {
+  margin-top: 28px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 20px 18px 18px;
+}
+.out-big {
+  margin-top: 8px;
+  font-size: clamp(1.8rem, 6vw, 2.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+#num { font-variant-numeric: tabular-nums; }
+.out-lines p { margin-top: 6px; }
+.out-rule {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.parts {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+.part {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 16px 16px 18px;
+}
+.part .amt { margin: 10px 0 8px; font-size: clamp(1.45rem, 4vw, 1.85rem); }
+.ask { margin-top: 22px; }
+.toggle {
+  display: inline-flex;
+  border: 1px solid var(--ink);
+  margin-top: 10px;
+}
+.toggle button { min-height: 44px; padding: 10px 18px; }
+.toggle button + button { border-left: 1px solid var(--ink); }
+.toggle button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.pay-out { margin-top: 14px; max-width: 40rem; }
+.promise {
+  margin-top: 26px;
+  background: var(--red-soft);
+  padding: 16px 16px 18px;
+}
+.promise .lbl { color: var(--ink); }
+.promise p + p { margin-top: 8px; }
+.note-wrap { margin-top: 14px; padding: 8px 6px; }
+.ideas { list-style: none; padding: 0; margin-top: 18px; }
+.ideas li {
+  position: relative;
+  padding: 14px 0 14px 22px;
+  border-top: 1px solid var(--line);
+}
+.ideas li:last-child { border-bottom: 1px solid var(--line); }
+.ideas li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 21px;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid var(--red);
+  border-radius: 50%;
+}
+.owns p + p {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+.start {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 6px 4px 2px;
+  counter-reset: start;
+}
+.start li {
+  counter-increment: start;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  column-gap: 8px;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+.start li:last-child { border-bottom: 1px solid var(--line); }
+.start li::before {
+  content: counter(start);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  min-height: 44px;
+}
+.addr {
+  font-family: var(--mono);
+  font-size: 0.92em;
+  white-space: nowrap;
+}
+.ref {
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  border: 1px dashed var(--muted);
+  padding: 8px 10px;
+  white-space: nowrap;
+}
+.copy {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  min-height: 44px;
+  min-width: 4.75rem;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+}
+.after { margin-top: 16px; max-width: 38rem; }
+.after + .after { margin-top: 8px; }
+.sign { margin-top: 28px; font-size: 1.85rem; letter-spacing: -0.02em; }
+.foot {
+  border-top: 1px solid var(--line);
+  padding: 22px 0 calc(28px + env(safe-area-inset-bottom));
+}
+.foot p {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.foot p + p { margin-top: 6px; }
+.foot a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.marked { position: relative; }
+.marked { display: inline-block; white-space: nowrap; }
+.pen {
+  position: absolute;
+  left: -27%;
+  top: -46%;
+  width: 155%;
+  height: 192%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+.pen path {
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+}
+.js .reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.js .reveal.in { opacity: 1; transform: none; }
+.js .reveal.in:nth-child(2) { transition-delay: 0.07s; }
+.js .reveal.in:nth-child(3) { transition-delay: 0.14s; }
+.js .reveal.in:nth-child(4) { transition-delay: 0.21s; }
+.js .reveal.in:nth-child(5) { transition-delay: 0.28s; }
+.js .pen path {
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 1.15s ease;
+}
+.js .marked.in .pen path { stroke-dashoffset: 0; }
+@media (min-width: 800px) {
+  .top { flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; padding-top: 28px; }
+  .kicker { text-align: right; }
+  .amt { font-size: 1.7rem; }
+  .block { padding: 72px 0; }
+  .parts { grid-template-columns: 1fr 1fr; }
+}
+@media (hover: hover) {
+  .chip:hover, .copy:hover { border-color: var(--ink); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal,
+  .js .reveal.in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .js .pen path,
+  .js .marked.in .pen path {
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="lockup">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 170" width="380" height="170" role="img" aria-label="Lightwork">
+        <text x="190" y="105" text-anchor="middle" font-family="'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif" font-size="60" font-weight="600" letter-spacing="-0.5" fill="currentColor">Lightwork</text>
+        <path class="logo-ring" d="M 92 40 C 150 24, 262 22, 322 42 C 360 55, 364 90, 330 112 C 288 138, 164 146, 92 130 C 40 118, 18 92, 38 64 C 56 42, 118 30, 180 27 C 212 25, 254 28, 284 34" fill="none" stroke="#C7372F" stroke-width="6.5" stroke-linecap="round" transform="rotate(-2 190 85)"/>
+      </svg>
+    </div>
+    <p class="kicker">PREPARED FOR ADAM DEYELL · 300% MEDIA · OCTOBER 22, 2026</p>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Adam, run 300% Media with AI. Pay only for the result.</h1>
+      <p class="lede">More money and fewer problems. A business you can run with AI, so you get a lot of your time back.</p>
+      <div class="stats">
+        <div class="stat">
+          <p class="amt">$100 + HST</p>
+          <p class="lbl">to start</p>
+        </div>
+        <div class="stat">
+          <p class="amt"><span class="marked">$900 + HST<svg class="pen" viewBox="0 0 380 170" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path fill="none" pathLength="100" vector-effect="non-scaling-stroke" stroke-linecap="round" d="M 92 40 C 150 24, 262 22, 322 42 C 360 55, 364 90, 330 112 C 288 138, 164 146, 92 130 C 40 118, 18 92, 38 64 C 56 42, 118 30, 180 27 C 212 25, 254 28, 284 34" transform="rotate(-2 190 85)"/></svg></span></p>
+          <p class="lbl">only when it works</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>How it works</h2>
+      <ol class="timeline">
+        <li class="step reveal">
+          <div class="step-idx">1</div>
+          <div>
+            <h3>You say yes.</h3>
+            <p>E-transfer $113 to start. We book your first session.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <div class="step-idx">2</div>
+          <div>
+            <h3>We set up your assistant.</h3>
+            <p>On your accounts, connected to your email, calendar and files. You try it on real work right away.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <div class="step-idx">3</div>
+          <div>
+            <h3>We pick your number.</h3>
+            <p>One number that shows it's working, like hours a week back. We write it down before anything is built.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <div class="step-idx">4</div>
+          <div>
+            <h3>We build on your biggest time sink.</h3>
+            <p>Real work, not a demo. You learn to run it yourself, with email help from me whenever you get stuck.</p>
+          </div>
+        </li>
+        <li class="step reveal">
+          <div class="step-idx">5</div>
+          <div>
+            <h3>Day 30: we check the number.</h3>
+            <p>Hit it, and the $900 is due. Miss it, and you don't pay it.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block">
+      <h2>Pick your number</h2>
+      <p class="intro">Try it out. We set the real one together at your first session.</p>
+      <div class="picker">
+        <p class="lbl" id="task-label">Where does your time go?</p>
+        <div class="chips" role="group" aria-labelledby="task-label">
+          <button type="button" class="chip" aria-pressed="true">Email and follow-ups</button>
+          <button type="button" class="chip" aria-pressed="false">Quotes and proposals</button>
+          <button type="button" class="chip" aria-pressed="false">Scheduling shoots</button>
+          <button type="button" class="chip" aria-pressed="false">Client updates</button>
+          <button type="button" class="chip" aria-pressed="false">Invoices and chasing payments</button>
+          <button type="button" class="chip" aria-pressed="false">Something else</button>
+        </div>
+        <div class="field">
+          <div class="field-head">
+            <label class="lbl" for="hours">Hours a week back</label>
+            <span class="field-val" id="hours-val" aria-hidden="true">5</span>
+          </div>
+          <input class="range" id="hours" type="range" min="1" max="15" step="1" value="5">
+        </div>
+      </div>
+      <div class="output" id="output">
+        <p class="lbl">YOUR NUMBER</p>
+        <p class="out-big" aria-hidden="true"><span class="marked"><span id="num">5</span> <span id="hours-word">hours</span><svg class="pen" viewBox="0 0 380 170" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path fill="none" pathLength="100" vector-effect="non-scaling-stroke" stroke-linecap="round" d="M 92 40 C 150 24, 262 22, 322 42 C 360 55, 364 90, 330 112 C 288 138, 164 146, 92 130 C 40 118, 18 92, 38 64 C 56 42, 118 30, 180 27 C 212 25, 254 28, 284 34" transform="rotate(-2 190 85)"/></svg></span> a week back</p>
+        <div class="out-lines" aria-hidden="true">
+          <p id="line-task">on email and follow-ups.</p>
+          <p id="line-math">That's 20 hours a month, about 33 full workdays a year.</p>
+          <p class="out-rule">Hit it by day 30: you pay the $900 + HST. Miss it: you pay nothing more.</p>
+        </div>
+        <p class="sr-only" id="live" aria-live="polite">5 hours a week back on email and follow-ups. That's 20 hours a month, about 33 full workdays a year. Hit it by day 30: you pay the $900 + HST. Miss it: you pay nothing more.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>You only pay for the result</h2>
+      <div class="parts">
+        <div class="part">
+          <p class="lbl">PART 1 · TO START</p>
+          <p class="amt">$100 + HST ($113)</p>
+          <p>We set up your assistant and pick your number.</p>
+        </div>
+        <div class="part">
+          <p class="lbl">PART 2 · THE RESULT</p>
+          <p class="amt">$900 + HST ($1,017)</p>
+          <p>Due only when we hit that number and you're running it yourself, within 30 days of your first session.</p>
+        </div>
+      </div>
+      <div class="ask">
+        <p class="lbl" id="hit-label">Did we hit your number?</p>
+        <div class="toggle" role="group" aria-labelledby="hit-label">
+          <button type="button" id="pay-yes" aria-pressed="true">Yes</button>
+          <button type="button" id="pay-no" aria-pressed="false">Not yet</button>
+        </div>
+        <p class="pay-out" id="pay-out" aria-live="polite">You pay the $900 + HST ($1,017). Total for the setup: $1,000 + HST ($1,130).</p>
+      </div>
+      <div class="promise">
+        <p class="lbl">MY PROMISE</p>
+        <p>The $900 is for the result, not my time. <span class="marked">No number hit, no $900.<svg class="pen" viewBox="0 0 380 170" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path fill="none" pathLength="100" vector-effect="non-scaling-stroke" stroke-linecap="round" d="M 92 40 C 150 24, 262 22, 322 42 C 360 55, 364 90, 330 112 C 288 138, 164 146, 92 130 C 40 118, 18 92, 38 64 C 56 42, 118 30, 180 27 C 212 25, 254 28, 284 34" transform="rotate(-2 190 85)"/></svg></span></p>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Ideas we could start with</h2>
+      <div class="note-wrap">
+        <p>Ideas, not promises. You pick at your first session.</p>
+      </div>
+      <ul class="ideas">
+        <li>A proposal draft from your discovery call notes, in your style.</li>
+        <li>Follow-ups that go out on time, so warm leads don't go cold.</li>
+        <li>Shoot plans and shot lists from a client brief.</li>
+        <li>A weekly one-page view of jobs, money in and what's waiting on whom.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>It's yours</h2>
+      <div class="owns" style="margin-top: 18px;">
+        <p>Runs on your accounts, in your name. If we stop working together, it keeps working.</p>
+        <p>Your own Claude plan: a monthly subscription you pay to Anthropic directly, not to me. Set so your information is never used to train AI models.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Ready to start?</h2>
+      <div>
+        <ol class="start">
+          <li>
+            <div class="line">
+              <span>E-transfer $113 to <span class="addr">mpineault1@gmail.com</span></span>
+              <button type="button" class="copy" data-copy="mpineault1@gmail.com" aria-live="polite"><span class="copy-label">Copy</span><span class="sr-only"> mpineault1@gmail.com</span></button>
+            </div>
+          </li>
+          <li>
+            <div class="line">
+              <span>Put this in the message:</span>
+              <span class="ref">300MEDIA-0006</span>
+              <button type="button" class="copy" data-copy="300MEDIA-0006" aria-live="polite"><span class="copy-label">Copy</span><span class="sr-only"> 300MEDIA-0006</span></button>
+            </div>
+          </li>
+          <li>
+            <div class="line"><span>Then we book your first session.</span></div>
+          </li>
+        </ol>
+      </div>
+      <p class="after">Want to talk it over first? Coffee is on for Tuesday, October 27 at 10:00 am.</p>
+      <p class="after">Questions? Just reply to my email.</p>
+      <p class="sign">Marc</p>
+    </section>
+  </main>
+  <footer class="foot">
+    <p>Marc Pineault · Lightwork · London, Ontario</p>
+    <p><a href="/">lightworkai.ca</a></p>
+  </footer>
+</div>
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var slider = document.getElementById("hours");
+  var sliderVal = document.getElementById("hours-val");
+  var numEl = document.getElementById("num");
+  var hoursWord = document.getElementById("hours-word");
+  var lineTask = document.getElementById("line-task");
+  var lineMath = document.getElementById("line-math");
+  var live = document.getElementById("live");
+  var chips = Array.prototype.slice.call(document.querySelectorAll(".chip"));
+  var current = 5;
+  var shown = 5;
+  var frame = 0;
+  var seen = false;
+  var touched = false;
+
+  function selectedTask() {
+    var i;
+    for (i = 0; i < chips.length; i++) {
+      if (chips[i].getAttribute("aria-pressed") === "true") return chips[i].textContent.trim();
+    }
+    return "Email and follow-ups";
+  }
+
+  function phraseFor(task) {
+    if (task === "Something else") return "on the thing that eats your week.";
+    return "on " + task.toLowerCase() + ".";
+  }
+
+  function updateCopy() {
+    var n = current;
+    var word = n === 1 ? "hour" : "hours";
+    var hours = n * 4;
+    var days = Math.round((n * 52) / 8);
+    var phrase = phraseFor(selectedTask());
+    var math = "That's " + hours + " hours a month, about " + days + " full workdays a year.";
+    lineTask.textContent = phrase;
+    lineMath.textContent = math;
+    sliderVal.textContent = String(n);
+    live.textContent = n + " " + word + " a week back " + phrase + " " + math + " Hit it by day 30: you pay the $900 + HST. Miss it: you pay nothing more.";
+  }
+
+  function setInstant(n) {
+    shown = n;
+    numEl.textContent = String(n);
+    hoursWord.textContent = n === 1 ? "hour" : "hours";
+  }
+
+  function animateTo(target) {
+    var from = shown;
+    var startTime = 0;
+    var token = ++frame;
+    if (from === target) {
+      setInstant(target);
+      return;
+    }
+    function tick(now) {
+      var t, eased, val;
+      if (token !== frame) return;
+      if (!startTime) startTime = now;
+      t = Math.min(1, (now - startTime) / 680);
+      eased = 1 - Math.pow(1 - t, 3);
+      val = Math.round(from + (target - from) * eased);
+      shown = val;
+      numEl.textContent = String(val);
+      hoursWord.textContent = val === 1 ? "hour" : "hours";
+      if (t < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function playIntroCount() {
+    if (seen) return;
+    seen = true;
+    if (!reduce && !touched) {
+      shown = 0;
+      numEl.textContent = "0";
+      hoursWord.textContent = "hours";
+      animateTo(current);
+    } else {
+      setInstant(current);
+    }
+  }
+
+  chips.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      if (btn.getAttribute("aria-pressed") === "true") return;
+      chips.forEach(function (other) { other.setAttribute("aria-pressed", "false"); });
+      btn.setAttribute("aria-pressed", "true");
+      updateCopy();
+    });
+  });
+
+  slider.addEventListener("input", function () {
+    var n = parseInt(slider.value, 10);
+    if (!n || n < 1) n = 1;
+    if (n > 15) n = 15;
+    touched = true;
+    current = n;
+    updateCopy();
+    if (seen && !reduce) animateTo(current);
+    else setInstant(current);
+  });
+
+  var payYes = document.getElementById("pay-yes");
+  var payNo = document.getElementById("pay-no");
+  var payOut = document.getElementById("pay-out");
+  function setPay(yes) {
+    payYes.setAttribute("aria-pressed", yes ? "true" : "false");
+    payNo.setAttribute("aria-pressed", yes ? "false" : "true");
+    payOut.textContent = yes
+      ? "You pay the $900 + HST ($1,017). Total for the setup: $1,000 + HST ($1,130)."
+      : "You pay nothing more. Total: $100 + HST ($113).";
+  }
+  payYes.addEventListener("click", function () { setPay(true); });
+  payNo.addEventListener("click", function () { setPay(false); });
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).catch(function () { return fallbackCopy(text); });
+    }
+    return fallbackCopy(text);
+  }
+  function fallbackCopy(text) {
+    return new Promise(function (resolve, reject) {
+      var area = document.createElement("textarea");
+      var ok = false;
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.top = "0";
+      area.style.left = "0";
+      area.style.opacity = "0";
+      document.body.appendChild(area);
+      area.focus();
+      area.select();
+      area.setSelectionRange(0, text.length);
+      try { ok = document.execCommand("copy"); } catch (err) { ok = false; }
+      document.body.removeChild(area);
+      if (ok) resolve();
+      else reject();
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".copy"), function (btn) {
+    var timer = 0;
+    btn.addEventListener("click", function () {
+      copyText(btn.getAttribute("data-copy")).then(function () {
+        var label = btn.querySelector(".copy-label");
+        label.textContent = "Copied";
+        window.clearTimeout(timer);
+        timer = window.setTimeout(function () { label.textContent = "Copy"; }, 1400);
+      }, function () {});
+    });
+  });
+
+  if ("IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("in");
+        if (entry.target.id === "output") playIntroCount();
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.35 });
+    Array.prototype.forEach.call(document.querySelectorAll(".reveal, .marked"), function (el) {
+      io.observe(el);
+    });
+  } else {
+    Array.prototype.forEach.call(document.querySelectorAll(".reveal, .marked"), function (el) {
+      el.classList.add("in");
+    });
+    seen = true;
+  }
+})();
+</script>
+</body>
+</html>
