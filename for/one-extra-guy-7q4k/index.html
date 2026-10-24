@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Your scope of work, Ryan · Lightwork</title>
-<meta property="og:title" content="Your scope of work, Ryan · Lightwork">
-<meta property="og:description" content="Scope of Work v5, October 24, 2026, for Ryan Gonyou, One Extra Guy and Your Hot Tub Guy.">
+<title>Ryan, here's the plan · Lightwork</title>
+<meta property="og:title" content="Ryan, here's the plan · Lightwork">
+<meta property="og:description" content="Start with hot tubs. You pay for the build week by week. After that, I only get paid when your books show the money.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2738%27 fill=%27%23C7372F%27/%3E%3C/svg%3E">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKYBNNPSLF"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JKYBNNPSLF');</script>
@@ -42,23 +42,37 @@
   }
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { overflow-x: clip; background: var(--paper); }
+html { overflow-x: clip; background: var(--paper); scroll-padding-bottom: 130px; }
 body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
-  padding-bottom: calc(124px + env(safe-area-inset-bottom));
+  padding-bottom: calc(128px + env(safe-area-inset-bottom));
+  overflow-wrap: break-word;
 }
 h1, h2, h3, p, ol, ul { margin: 0; }
 button, input, summary { font: inherit; color: inherit; }
 button { background: none; border: 0; padding: 0; cursor: pointer; touch-action: manipulation; }
 a { color: inherit; touch-action: manipulation; }
+img { max-width: 100%; height: auto; }
 :focus { outline: none; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.skip {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  transform: translateY(-160%);
+  background: var(--card);
+  color: var(--ink);
+  padding: 10px 12px;
+  z-index: 20;
+  border-radius: 8px;
+}
+.skip:focus { transform: none; }
 .sr-only {
   position: absolute;
   width: 1px;
@@ -71,7 +85,7 @@ a { color: inherit; touch-action: manipulation; }
   border: 0;
 }
 .wrap {
-  width: min(760px, calc(100% - 32px - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  width: min(1040px, calc(100% - 32px - env(safe-area-inset-left) - env(safe-area-inset-right)));
   margin-inline: auto;
   padding-top: env(safe-area-inset-top);
 }
@@ -79,161 +93,328 @@ a { color: inherit; touch-action: manipulation; }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 14px;
-  padding: 22px 0 18px;
-  border-bottom: 1px solid var(--line);
+  gap: 16px;
+  padding: 22px 0 8px;
 }
+.top-side { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
 .lockup { color: var(--ink); line-height: 0; }
 .lockup svg { display: block; width: 158px; height: auto; max-width: 100%; }
 .lockup text { fill: currentColor; }
 .lockup .logo-ring { fill: none; stroke: var(--red); }
 .kicker, .lbl {
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
   line-height: 1.45;
 }
-.hero { padding: 28px 0 8px; }
-h1, h2, h3, .amt, .out-big, .sign, .field-val, .wk-amt {
+.hero { padding: 36px 0 48px; }
+h1, h2, h3, .amt, .out-big, .sign, .field-val, .stat strong, .stop-no, .step-k {
   font-family: var(--serif);
   font-weight: 600;
 }
 h1 {
-  font-size: clamp(2rem, 5vw, 2.9rem);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.55rem, 6.4vw, 4.35rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
   text-wrap: balance;
+  max-width: 11em;
 }
+h1 .line { display: block; }
+.hot { color: var(--red); }
 .sub {
-  margin-top: 16px;
-  font-size: 1.0625rem;
+  margin-top: 18px;
+  font-size: 1.2rem;
   line-height: 1.45;
-  max-width: 38rem;
+  max-width: 34rem;
 }
-.facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 22px 0 0;
+.stats {
+  display: grid;
+  gap: 12px;
+  margin: 32px 0 0;
   padding: 0;
   list-style: none;
 }
-.facts li {
-  border: 1px solid var(--line);
+.stat {
   background: var(--card);
-  padding: 10px 12px;
-  line-height: 1.35;
-  max-width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 18px 18px;
+  min-width: 0;
 }
-.block { padding: 48px 0; border-top: 1px solid var(--line); }
-h2 {
-  font-size: clamp(1.65rem, 3.5vw, 2.15rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+.stat strong {
+  display: block;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
   text-wrap: balance;
 }
-.intro { margin-top: 12px; max-width: 40rem; }
-.intro + .intro { margin-top: 10px; }
+.stat span {
+  display: block;
+  margin-top: 8px;
+  line-height: 1.35;
+  font-size: 1rem;
+}
+.stat.is-cap { box-shadow: inset 0 3px 0 var(--red); }
+.block { padding: 56px 0; border-top: 1px solid var(--line); }
+h2 {
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  max-width: 16em;
+}
+.fine > summary h2 {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+  font-size: clamp(1.7rem, 3.6vw, 2.45rem);
+}
+.fine-body h2 {
+  max-width: none;
+  margin-top: 36px;
+  font-size: clamp(1.55rem, 3vw, 2.05rem);
+}
+.intro { margin-top: 14px; max-width: 38rem; font-size: 1.05rem; }
+.road, .branch, .loop, .strip, .gallery {
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+}
+.road { margin-top: 32px; }
+.stop {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  column-gap: 14px;
+  row-gap: 6px;
+  position: relative;
+  padding-bottom: 28px;
+}
+.stop::before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 52px;
+  bottom: 0;
+  width: 2px;
+  background: var(--line);
+}
+.stop:last-child::before { content: none; }
+.stop-no {
+  grid-row: 1 / span 3;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  background: var(--card);
+  display: grid;
+  place-items: center;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 1;
+}
+.stop.is-now .stop-no {
+  background: var(--ink);
+  color: var(--paper);
+}
+.stop.is-goal .stop-no {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+.stop h3 {
+  font-size: clamp(1.28rem, 2.4vw, 1.65rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.stop .say { max-width: 40rem; }
+.tag {
+  justify-self: start;
+  margin-top: 2px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--wash);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+.stop.is-goal .tag { background: var(--card); }
+.branch-title {
+  margin-top: 12px;
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  letter-spacing: -0.02em;
+}
+.branch {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+.branch li, .research, .loop li, .strip li, .shot, .stat, .calc-piece, .ceiling, .fine, .versus-card {
+  min-width: 0;
+}
+.branch li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px 16px 18px;
+}
+.branch h3 {
+  font-size: 1.28rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.branch p { margin-top: 8px; }
+.gallery {
+  display: grid;
+  gap: 26px;
+  margin-top: 26px;
+}
+.shot-btn {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--card);
+  text-align: left;
+  color: inherit;
+}
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px;
+  background: var(--wash);
+  border-bottom: 1px solid var(--line);
+}
+.chrome i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c8c2b6;
+  display: block;
+}
+.chrome i:first-child { background: var(--red); }
+.shot-btn img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  background: var(--wash);
+}
+.shot figcaption, .research p {
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.shot.is-phone .shot-btn {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+.phone {
+  display: block;
+  width: min(250px, 78%);
+  margin: 4px auto 0;
+  padding: 12px 10px 14px;
+  background: #1F2226;
+  border-radius: 32px;
+}
+.phone::before {
+  content: "";
+  display: block;
+  width: 74px;
+  height: 8px;
+  margin: 2px auto 10px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.38);
+}
+.phone img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 14px;
+  background: var(--wash);
+}
+.research {
+  background: var(--wash);
+  border-radius: 18px;
+  padding: 22px 18px 20px;
+}
+.research p {
+  margin-top: 0;
+  max-width: 36rem;
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.loop, .strip { display: grid; gap: 10px; }
+.loop li, .strip li {
+  position: relative;
+  background: var(--wash);
+  border-radius: 16px;
+  padding: 16px 16px 18px;
+}
+.strip li { background: var(--card); border: 1px solid var(--line); }
+.step-k {
+  display: block;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--red);
+  margin-bottom: 6px;
+}
+.loop h3, .strip h3 {
+  font-size: 1.28rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.loop p { margin-top: 6px; font-size: 0.98rem; }
+.loop li:not(:last-child)::after,
+.strip li:not(:last-child)::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 14px;
+  margin: 12px auto -6px;
+  background: var(--red);
+}
+.again {
+  margin-top: 16px;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
 .card {
   background: var(--card);
   border: 1px solid var(--line);
+  border-radius: 16px;
   padding: 16px 16px 18px;
   margin-top: 18px;
 }
-.card p + p { margin-top: 10px; }
-.told p + p { margin-top: 14px; }
-.deal {
-  display: grid;
-  gap: 12px;
-  margin-top: 22px;
-}
-.deal-card {
-  background: var(--wash);
-  border: 1px solid var(--line);
-  padding: 16px 16px 14px;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.deal-card.is-now,
-.deal-card.is-on {
-  background: var(--card);
-  border-color: var(--ink);
-}
-.deal-card h3 {
-  font-size: 1.45rem;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-}
-.deal-card .one { max-width: 40rem; }
-.deal-pay { color: var(--ink); }
-.max-line {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 1.35rem;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-}
-.max-line span {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  color: var(--muted);
-}
-.switch {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 44px;
-  margin-top: auto;
-  padding-top: 6px;
-  cursor: pointer;
-  width: fit-content;
-  max-width: 100%;
-}
-.switch input {
-  appearance: none;
-  width: 52px;
-  height: 32px;
-  margin: 0;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-  background: transparent;
-  position: relative;
-  flex: 0 0 auto;
-  cursor: pointer;
-}
-.switch input::after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--ink);
-}
-.switch input:checked { background: var(--ink); }
-.switch input:checked::after {
-  transform: translateX(20px);
-  background: var(--paper);
-}
-.switch input:disabled { cursor: default; opacity: 1; }
-.switch input:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .ceiling {
   margin-top: 22px;
   background: var(--card);
   border: 1px solid var(--ink);
+  border-radius: 18px;
   padding: 18px 16px 16px;
 }
 .ceiling.is-top { background: var(--red-soft); }
 .ceiling.is-top .lbl,
-.versus-card.is-pick .lbl,
-.friday.is-live .wk-hst { color: var(--ink); }
+.versus-card.is-pick .lbl { color: var(--ink); }
 .ceiling .out-big {
   margin-top: 6px;
   font-size: clamp(2.4rem, 8vw, 3.4rem);
@@ -251,8 +432,8 @@ fieldset {
   margin-top: 14px;
   background: var(--card);
   border: 1px solid var(--line);
+  border-radius: 18px;
   padding: 16px 16px 18px;
-  min-width: 0;
 }
 .calc-piece.is-off { background: var(--wash); }
 .calc-head {
@@ -270,10 +451,7 @@ fieldset {
   margin-top: 4px;
   text-wrap: balance;
 }
-.piece-total {
-  text-align: right;
-  flex: 0 0 auto;
-}
+.piece-total { text-align: right; flex: 0 0 auto; }
 .piece-total .amt {
   font-size: 1.45rem;
   letter-spacing: -0.03em;
@@ -339,7 +517,7 @@ fieldset {
   justify-content: space-between;
   gap: 12px;
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: 11px;
   letter-spacing: 0.06em;
   color: var(--muted);
 }
@@ -370,8 +548,8 @@ fieldset {
 .versus-card {
   border: 1px solid var(--line);
   background: var(--paper);
+  border-radius: 14px;
   padding: 12px 12px 14px;
-  min-width: 0;
 }
 .versus-card.is-pick {
   background: var(--red-soft);
@@ -384,14 +562,8 @@ fieldset {
   line-height: 1.1;
   font-variant-numeric: tabular-nums;
 }
-.versus-card .pick {
-  margin-top: 8px;
-  font-weight: 600;
-}
-.note {
-  margin-top: 12px;
-  color: var(--ink);
-}
+.versus-card .pick { margin-top: 8px; font-weight: 600; }
+.note { margin-top: 12px; }
 .checks { margin-top: 8px; }
 .check {
   display: flex;
@@ -409,93 +581,64 @@ fieldset {
   flex: 0 0 auto;
   accent-color: var(--ink);
 }
-.timeline { list-style: none; margin: 26px 0 0; padding: 0; }
-.step {
-  display: grid;
-  grid-template-columns: 92px 1fr;
-  column-gap: 12px;
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-top: 12px;
+  cursor: pointer;
+  width: fit-content;
+  max-width: 100%;
+}
+.switch input {
+  appearance: none;
+  width: 52px;
+  height: 32px;
+  margin: 0;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: transparent;
   position: relative;
-  padding-bottom: 22px;
+  flex: 0 0 auto;
+  cursor: pointer;
 }
-.step:last-child { padding-bottom: 0; }
-.step-idx {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--red);
-  padding-top: 3px;
-}
-.step::after {
+.switch input::after {
   content: "";
   position: absolute;
-  left: 0;
-  top: 22px;
-  bottom: 0;
-  width: 0;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--ink);
 }
-.step h3 {
-  font-size: 1.28rem;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+.switch input:checked { background: var(--ink); }
+.switch input:checked::after {
+  transform: translateX(20px);
+  background: var(--paper);
 }
-.fridays {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 6px;
-  margin: 18px 0 0;
-  padding: 0;
-  list-style: none;
-}
-.friday {
-  position: relative;
-  border: 1px solid var(--line);
+.switch input:disabled { cursor: default; }
+.switch input:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.fine {
   background: var(--card);
-  min-width: 0;
-  text-align: center;
-  padding: 10px 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  margin-top: 8px;
 }
-.friday.is-live {
-  background: var(--red-soft);
-  border-color: var(--red);
+.fine > summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 16px;
+  min-height: 64px;
 }
-.flag {
-  display: block;
-  min-height: 1.3em;
-  font-family: var(--mono);
-  font-size: 8.5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-.wk {
-  display: block;
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.friday.is-live .wk { color: var(--ink); }
-.wk-amt {
-  display: block;
-  margin-top: 4px;
-  font-size: clamp(0.95rem, 2.4vw, 1.35rem);
-  letter-spacing: -0.03em;
-  font-variant-numeric: tabular-nums;
-}
-.wk-hst {
-  display: block;
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
+.fine > summary::-webkit-details-marker { display: none; }
+.fine-body { padding: 0 16px 8px; }
 .piece {
   margin-top: 12px;
   background: var(--card);
   border: 1px solid var(--line);
+  border-radius: 16px;
 }
 .piece summary {
   list-style: none;
@@ -505,7 +648,7 @@ fieldset {
 }
 .piece summary::-webkit-details-marker { display: none; }
 .piece summary h3 {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
@@ -517,14 +660,16 @@ fieldset {
 }
 .acc-state {
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted);
   white-space: nowrap;
 }
-.acc-state::before { content: "Hide"; }
-.piece:not([open]) .acc-state::before { content: "Show"; }
+.piece .acc-state::before,
+.fine > summary .acc-state::before { content: "Hide"; }
+.piece:not([open]) .acc-state::before,
+.fine:not([open]) > summary .acc-state::before { content: "Show"; }
 .piece-body { padding: 0 16px 18px; overflow-wrap: break-word; }
 .piece-body p + p { margin-top: 10px; }
 .ladder {
@@ -574,6 +719,7 @@ fieldset {
 .promise {
   margin-top: 16px;
   background: var(--red-soft);
+  border-radius: 16px;
   padding: 16px 16px 18px;
 }
 .promise .lbl { color: var(--ink); }
@@ -584,8 +730,8 @@ fieldset {
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  margin-top: 16px;
   padding: 10px 16px;
+  border-radius: 999px;
   border: 1px solid var(--ink);
   background: var(--ink);
   color: var(--paper);
@@ -617,15 +763,17 @@ ol.terms li::marker {
   font-size: 0.95rem;
   letter-spacing: 0.04em;
   border: 1px dashed var(--muted);
+  border-radius: 10px;
   padding: 8px 10px;
 }
 .copy {
   font-family: var(--sans);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   min-height: 44px;
   min-width: 4.75rem;
   padding: 8px 12px;
   border: 1px solid var(--line);
+  border-radius: 999px;
   background: var(--card);
   color: var(--ink);
 }
@@ -648,12 +796,15 @@ ol.terms li::marker {
   right: 0;
   bottom: 0;
   z-index: 5;
-  background: var(--card);
+  background: color-mix(in srgb, var(--card) 92%, transparent);
   border-top: 2px solid var(--ink);
   padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
 }
+@supports not (background: color-mix(in srgb, white 50%, black)) {
+  .bar { background: var(--card); }
+}
 .bar-inner {
-  width: min(760px, 100%);
+  width: min(1040px, 100%);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -693,6 +844,42 @@ ol.terms li::marker {
   stroke-dasharray: 100;
   stroke-dashoffset: 0;
 }
+dialog#light {
+  width: min(960px, calc(100% - 24px));
+  max-height: calc(100dvh - 24px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  background: var(--card);
+  color: var(--ink);
+  overflow: auto;
+}
+dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
+.light-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 0;
+  position: sticky;
+  top: 0;
+}
+.light-close {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+}
+#light img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 140px);
+  object-fit: contain;
+  background: var(--wash);
+}
+#light-cap { padding: 12px 16px 16px; }
 .js .reveal {
   opacity: 0;
   transform: translateY(12px);
@@ -705,29 +892,65 @@ ol.terms li::marker {
 }
 .js .marked.in .pen path,
 .js .marked.on .pen path { stroke-dashoffset: 0; }
-@media (max-width: 420px) {
-  .step { grid-template-columns: 1fr; row-gap: 2px; }
+@media (min-width: 760px) {
+  .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .gallery { grid-template-columns: 1fr 1fr; gap: 28px 22px; }
+  .research { grid-column: 1 / -1; }
 }
-@media (min-width: 720px) {
-  .fridays { grid-template-columns: repeat(7, minmax(0, 1fr)); }
-  .wk { font-size: 10px; }
-  .flag { font-size: 9.5px; }
+@media (min-width: 840px) {
+  .top { flex-direction: row; align-items: center; justify-content: space-between; padding-top: 28px; }
+  .top-side { align-items: flex-end; }
+  .block { padding: 84px 0; }
+  .hero { padding-top: 48px; }
+  .stop {
+    grid-template-columns: 64px minmax(0, 1fr) auto;
+    column-gap: 20px;
+    align-items: start;
+    padding-bottom: 34px;
+  }
+  .stop-no { width: 64px; height: 64px; font-size: 1.5rem; grid-row: 1 / span 2; }
+  .stop::before { left: 31px; top: 64px; }
+  .stop h3 { grid-column: 2; grid-row: 1; }
+  .stop .say { grid-column: 2; grid-row: 2; }
+  .stop .tag { grid-column: 3; grid-row: 1 / span 2; align-self: center; margin-top: 0; }
+  .branch { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 }
-@media (min-width: 800px) {
-  .top { flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; padding-top: 28px; }
-  .kicker { text-align: right; }
-  .block { padding: 72px 0; }
-  .deal { grid-template-columns: 1fr 1fr; }
-  .deal-card.is-now { grid-column: 1 / -1; }
-  .step { grid-template-columns: 110px 1fr; }
+@media (min-width: 980px) {
+  .strip { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+  .strip li:not(:last-child)::after {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    margin: 0;
+    background: none;
+    border-right: 2px solid var(--red);
+    border-bottom: 2px solid var(--red);
+    top: 50%;
+    right: -11px;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+@media (min-width: 1100px) {
+  .loop { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+  .loop li:not(:last-child)::after {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    margin: 0;
+    background: none;
+    border-right: 2px solid var(--red);
+    border-bottom: 2px solid var(--red);
+    top: 50%;
+    right: -11px;
+    transform: translateY(-50%) rotate(-45deg);
+  }
 }
 @media (hover: hover) {
-  .copy:hover { border-color: var(--ink); }
+  .copy:hover, .shot-btn:hover { border-color: var(--ink); }
 }
 @media (prefers-reduced-motion: reduce) {
   .js .reveal,
   .js .reveal.in { opacity: 1; transform: none; transition: none; }
-  .js .hero .pen path,
   .js .marked.on .pen path { stroke-dashoffset: 0; transition: none; }
   .switch input::after { transition: none; }
 }
@@ -745,20 +968,21 @@ ol.terms li::marker {
     color-scheme: light;
   }
   html, body { background: #fff; overflow: visible; }
-  body { padding-bottom: 0; font-size: 12.5pt; }
+  body { padding-bottom: 0; font-size: 12pt; }
   .wrap { width: 100%; }
-  .bar, .print-btn, .copy, .acc-state { display: none !important; }
+  .bar, .print-btn, .copy, .acc-state, .skip, dialog { display: none !important; }
   .js .reveal { opacity: 1 !important; transform: none !important; }
-  .js .hero .pen path,
   .js .marked.on .pen path { stroke-dashoffset: 0 !important; }
   .block { padding: 22px 0; break-inside: auto; }
-  .piece, .deal-card, .calc-piece, .friday, .step, .ceiling { break-inside: avoid; }
+  .piece, .stop, .stat, .calc-piece, .ceiling, .shot, .branch li { break-inside: avoid; }
   details > *:not(summary) { display: block !important; }
   a { text-decoration: none; }
+  .loop, .strip, .gallery, .stats, .branch { break-inside: avoid; }
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the plan</a>
 <div class="wrap">
   <header class="top">
     <div class="lockup">
@@ -767,88 +991,225 @@ ol.terms li::marker {
         <path class="logo-ring" d="M 92 40 C 150 24, 262 22, 322 42 C 360 55, 364 90, 330 112 C 288 138, 164 146, 92 130 C 40 118, 18 92, 38 64 C 56 42, 118 30, 180 27 C 212 25, 254 28, 284 34" fill="none" stroke="#C7372F" stroke-width="6.5" stroke-linecap="round" transform="rotate(-2 190 85)"/>
       </svg>
     </div>
-    <p class="kicker">Prepared for Ryan Gonyou · One Extra Guy · October 24, 2026</p>
+    <div class="top-side">
+      <p class="kicker">Prepared for Ryan Gonyou · October 24, 2026</p>
+      <button type="button" class="print-btn" id="print">Print / save as PDF</button>
+    </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">Ryan, start with hot tubs. Pay as it's built, then <span class="marked"><span>only for results</span><svg class="pen" viewBox="0 0 380 170" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path fill="none" pathLength="100" vector-effect="non-scaling-stroke" stroke-linecap="round" d="M 92 40 C 150 24, 262 22, 322 42 C 360 55, 364 90, 330 112 C 288 138, 164 146, 92 130 C 40 118, 18 92, 38 64 C 56 42, 118 30, 180 27 C 212 25, 254 28, 284 34" transform="rotate(-2 190 85)"/></svg></span>.</h1>
-      <p class="sub">Scope of Work v5, October 24, 2026, prepared for Ryan Gonyou, One Extra Guy · Your Hot Tub Guy.</p>
-      <ul class="facts">
-        <li>$1,000 a week to build</li>
-        <li>Results paid only from your books</li>
-        <li>You add each piece when you're ready</li>
+      <h1 id="hero-title">Ryan, here's the plan. <span class="line">Start with <span class="hot">hot tubs</span>.</span></h1>
+      <p class="sub">You pay for the build week by week. After that, I only get paid when your books show the money.</p>
+      <ul class="stats">
+        <li class="stat">
+          <strong>3 weeks</strong>
+          <span>New hot tub site and booking live</span>
+        </li>
+        <li class="stat">
+          <strong>$1,000 a week</strong>
+          <span>For 7 weeks, then the build is paid</span>
+        </li>
+        <li class="stat is-cap">
+          <strong>$141,000</strong>
+          <span>The most you could ever pay me, for everything. It can't go higher.</span>
+        </li>
       </ul>
     </section>
 
-    <section class="block" aria-labelledby="told-title">
-      <h2 id="told-title">What you told me</h2>
-      <div class="card told">
-        <p>One Extra Guy runs well without you. Dave handles the day to day, and you haven't done any sales or marketing in six years because you never needed to. Now the market is levelling out and it's time to get proactive. You have room for about a third more work without adding trucks, people or space, so every new customer goes almost straight to the bottom line.</p>
-        <p><b>What you want, in your words:</b> one more big customer without becoming the salesperson; Your Hot Tub Guy at <b>$200,000</b> a year; phones handled by AI starting in January with Beau running it, and nobody let go before Christmas; and to learn this yourself.</p>
+    <section class="block" id="roadmap" aria-labelledby="road-title">
+      <h2 id="road-title">Your roadmap</h2>
+      <ol class="road">
+        <li class="stop is-now reveal">
+          <div class="stop-no" aria-hidden="true">1</div>
+          <h3>This week · You say yes.</h3>
+          <p class="say">We sign, and your $1,000 + HST a week starts.</p>
+          <p class="tag">$1,000/wk starts</p>
+        </li>
+        <li class="stop reveal">
+          <div class="stop-no" aria-hidden="true">2</div>
+          <h3>Day 3 · Book button fixed.</h3>
+          <p class="say">Your website, domain, Google and ad logins are in your name. Last year's hot tub sales get locked in.</p>
+          <p class="tag">included</p>
+        </li>
+        <li class="stop reveal">
+          <div class="stop-no" aria-hidden="true">3</div>
+          <h3>Week 3 · New site and booking live.</h3>
+          <p class="say">People pick a tub, ask for a date and reach Beau. Ads start at $500 to $1,000 for the first month, on your card.</p>
+          <p class="tag">included</p>
+        </li>
+        <li class="stop reveal">
+          <div class="stop-no" aria-hidden="true">4</div>
+          <h3>Week 7 · Build paid off.</h3>
+          <p class="say">$7,000 total. From here, I only get paid on results.</p>
+          <p class="tag">$7,000 done</p>
+        </li>
+        <li class="stop reveal">
+          <div class="stop-no" aria-hidden="true">5</div>
+          <h3>Day 90 · We look at what's working.</h3>
+          <p class="say">Check-ins every 2 weeks until then. We keep what works and fix what doesn't.</p>
+          <p class="tag">$0</p>
+        </li>
+        <li class="stop reveal">
+          <div class="stop-no" aria-hidden="true">6</div>
+          <h3>Every quarter · Results check.</h3>
+          <p class="say">We compare your hot tub sales with last year ($98,500). For each $10,000 more, I get $1,300.</p>
+          <p class="tag">$1,300 per $10K</p>
+        </li>
+        <li class="stop is-goal reveal">
+          <div class="stop-no" aria-hidden="true">7</div>
+          <h3>The goal · Your Hot Tub Guy at $200,000 a year.</h3>
+          <p class="say">Your goal, in your words. At that point my hot tub fee tops out at $20,000 total.</p>
+          <p class="tag">max $20,000</p>
+        </li>
+      </ol>
+
+      <h3 class="branch-title">Add when you're ready</h3>
+      <ul class="branch">
+        <li class="reveal">
+          <h3>New customer for One Extra Guy</h3>
+          <p>$0 up front. Outreach starts 3 weeks after you say go.</p>
+        </li>
+        <li class="reveal">
+          <h3>AI call centre</h3>
+          <p>For January. $0 until every check passes.</p>
+        </li>
+        <li class="reveal">
+          <h3>Learn AI yourself</h3>
+          <p>$5,000 when you add it. Four lessons.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="block" id="built" aria-labelledby="built-title">
+      <h2 id="built-title">I didn't wait. Here's what's already built.</h2>
+      <p class="intro">These are working samples with made-up data. Nothing has been sent to anyone, and nothing goes live until you say yes.</p>
+      <div class="gallery">
+        <figure class="shot reveal">
+          <button type="button" class="shot-btn" data-cap="Your new Your Hot Tub Guy website (sample)">
+            <span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="img/site-desk.jpg" width="1600" height="1000" alt="Sample of the new Your Hot Tub Guy website on a desktop screen" loading="lazy">
+          </button>
+          <figcaption>Your new Your Hot Tub Guy website (sample)</figcaption>
+        </figure>
+        <figure class="shot reveal">
+          <button type="button" class="shot-btn" data-cap="Six quick questions help people pick the right tub">
+            <span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="img/finder.jpg" width="1600" height="1000" alt="Sample tub finder asking six questions, starting with the occasion" loading="lazy">
+          </button>
+          <figcaption>Six quick questions help people pick the right tub</figcaption>
+        </figure>
+        <figure class="shot reveal">
+          <button type="button" class="shot-btn" data-cap="A request form for rentals, moves, removals and storage">
+            <span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="img/request.jpg" width="1600" height="1000" alt="Sample request form for a hot tub rental, move, removal or storage" loading="lazy">
+          </button>
+          <figcaption>A request form for rentals, moves, removals and storage</figcaption>
+        </figure>
+        <figure class="shot reveal">
+          <button type="button" class="shot-btn" data-cap="Every request lands in one list for Beau">
+            <span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="img/queue.jpg" width="1600" height="1000" alt="Sample list where every hot tub request lands for Beau" loading="lazy">
+          </button>
+          <figcaption>Every request lands in one list for Beau</figcaption>
+        </figure>
+        <figure class="shot reveal">
+          <button type="button" class="shot-btn" data-cap="Call centre sample: a customer books their delivery window by text">
+            <span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
+            <img src="img/desk.jpg" width="1600" height="1000" alt="Sample call centre desk where a customer books a delivery window by text. Nothing is sent." loading="lazy">
+          </button>
+          <figcaption>Call centre sample: a customer books their delivery window by text</figcaption>
+        </figure>
+        <figure class="shot is-phone reveal">
+          <button type="button" class="shot-btn" data-cap="It works on a phone">
+            <span class="phone">
+              <img src="img/site-phone.jpg" width="390" height="780" alt="The same Your Hot Tub Guy sample website on a phone" loading="lazy">
+            </span>
+          </button>
+          <figcaption>It works on a phone</figcaption>
+        </figure>
+        <article class="research reveal">
+          <p>New customer research: 20 target companies looked at, the first 8 picked, and the first calls planned. You'll see the list once we start.</p>
+        </article>
       </div>
     </section>
 
-    <section class="block" aria-labelledby="deal-title">
-      <h2 id="deal-title">The deal at a glance</h2>
-      <p class="intro">We start with one piece: Your Hot Tub Guy. You pay for the build week by week, not in one lump. After that, I get paid like a commission: only when your own books show the money.</p>
-      <p class="intro">If a result doesn't happen, you never pay for it. Once a quarter I send one statement from your numbers. It has an invoice only if something was reached.</p>
-      <p class="intro"><b>Add when you're ready.</b> Each piece below starts only when we both say yes in writing. An email from each of us counts.</p>
+    <section class="block" id="money" aria-labelledby="money-title">
+      <h2 id="money-title">How hot tubs turn into money.</h2>
+      <ol class="loop">
+        <li class="reveal">
+          <span class="step-k">01</span>
+          <h3>Attract</h3>
+          <p>Search, maps, referrals.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-k">02</span>
+          <h3>Help them choose</h3>
+          <p>The tub finder.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-k">03</span>
+          <h3>Capture</h3>
+          <p>A request with the date and the spot.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-k">04</span>
+          <h3>Convert</h3>
+          <p>Beau checks the fit and quotes.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-k">05</span>
+          <h3>Deliver</h3>
+          <p>Book it and get paid.</p>
+        </li>
+        <li class="reveal">
+          <span class="step-k">06</span>
+          <h3>Repeat</h3>
+          <p>A follow-up and the next booking.</p>
+        </li>
+      </ol>
+      <p class="again">Then it repeats.</p>
+    </section>
 
-      <div class="deal">
-        <article class="deal-card is-now">
-          <p class="lbl">Piece 1 · Start now</p>
-          <h3>Your Hot Tub Guy</h3>
-          <p class="one">A new website with booking that works, ads, videos, emails to past renters, and a realtor storage lane. You and Tyson do the tubs.</p>
-          <p class="deal-pay">$1,000 + HST a week for 7 weeks ($7,000 + HST). Then $1,300 for every $10,000 your hot tub sales rise above last year, up to $13,000.</p>
-          <p class="max-line">$20,000 <span>+ HST max</span></p>
-          <label class="switch">
-            <input type="checkbox" role="switch" checked disabled aria-disabled="true">
-            <span>Always on. This one cannot be switched off.</span>
-          </label>
-        </article>
-
-        <article class="deal-card is-on" id="card-nbc">
-          <p class="lbl">Piece 2 · Add when ready</p>
-          <h3>Next big customer</h3>
-          <p class="one">We build the buyer list, reach out in your name, and book meetings with you. You take the meetings and close.</p>
-          <p class="deal-pay">$0 up front. A meeting alone is $0. Then the lower of 5% of what they pay you, or 25% of your profit after direct costs.</p>
-          <p class="max-line">$100,000 <span>+ HST max</span></p>
-          <label class="switch">
-            <input type="checkbox" id="g-nbc" role="switch" checked>
-            <span>Count it in the total</span>
-          </label>
-        </article>
-
-        <article class="deal-card" id="card-call">
-          <p class="lbl">Piece 3 · Add when ready</p>
-          <h3>AI call centre</h3>
-          <p class="one">Customers get a text to pick their delivery window. If they don't answer, an AI call books it. Beau runs it.</p>
-          <p class="deal-pay">$0 until every check passes. Then $4,000 + HST at each step. Go-live not before January 5, 2027.</p>
-          <p class="max-line">$16,000 <span>+ HST max</span></p>
-          <label class="switch">
-            <input type="checkbox" id="g-call" role="switch">
-            <span>Count it in the total</span>
-          </label>
-        </article>
-
-        <article class="deal-card" id="card-lessons">
-          <p class="lbl">Piece 4 · Add when ready</p>
-          <h3>You using AI with confidence</h3>
-          <p class="one">Claude on your phone and computer, then four one-hour lessons. Done when you can pull a list, write a reply, and read a manifest.</p>
-          <p class="deal-pay">$5,000 + HST when you add it. Nothing before that.</p>
-          <p class="max-line">$5,000 <span>+ HST max</span></p>
-          <label class="switch">
-            <input type="checkbox" id="g-lessons" role="switch">
-            <span>Count it in the total</span>
-          </label>
-        </article>
-      </div>
+    <section class="block" id="customer" aria-labelledby="customer-title">
+      <h2 id="customer-title">How a new customer happens (when you add it).</h2>
+      <ol class="strip">
+        <li class="reveal">
+          <span class="step-k">01</span>
+          <h3>Find the right companies</h3>
+        </li>
+        <li class="reveal">
+          <span class="step-k">02</span>
+          <h3>Get a real conversation</h3>
+        </li>
+        <li class="reveal">
+          <span class="step-k">03</span>
+          <h3>Book you a meeting</h3>
+        </li>
+        <li class="reveal">
+          <span class="step-k">04</span>
+          <h3>A paid trial</h3>
+        </li>
+        <li class="reveal">
+          <span class="step-k">05</span>
+          <h3>Steady work</h3>
+        </li>
+      </ol>
+      <p class="intro">You take the meetings and close. I only get paid from money a new customer actually pays you.</p>
     </section>
 
     <section class="block" id="play" aria-labelledby="play-title">
-      <h2 id="play-title">Play with it</h2>
+      <h2 id="play-title">Play with the numbers</h2>
       <p class="intro">Move the sliders. Every amount here is Canadian dollars, before HST. HST is added to every payment. The total changes as you go.</p>
+
+      <div hidden>
+        <article id="card-nbc"></article>
+        <article id="card-call"></article>
+        <article id="card-lessons"></article>
+        <input type="checkbox" id="g-nbc" checked>
+        <input type="checkbox" id="g-call">
+        <input type="checkbox" id="g-lessons">
+      </div>
 
       <div class="ceiling" id="ceiling">
         <p class="lbl">My max</p>
@@ -991,210 +1352,168 @@ ol.terms li::marker {
       <p class="sr-only" id="live" aria-live="polite">You'd pay me $23,500 + HST. Most you could ever pay for the pieces that are on: $120,000 + HST. With all four pieces on, the ceiling is $141,000 + HST.</p>
     </section>
 
-    <section class="block" aria-labelledby="weeks-title">
-      <h2 id="weeks-title">The first 3 weeks</h2>
-      <p class="intro">Hot tubs. The build is 7 weeks, $1,000 + HST a week, by e-transfer each Friday. The new site goes live at week 3, before the build is fully paid.</p>
-      <ol class="timeline">
-        <li class="step reveal">
-          <div class="step-idx">Days 1–3</div>
-          <div>
-            <h3>The book button, and the logins.</h3>
-            <p>Book button on Your Hot Tub Guy fixed. Website, domain, Google and ad logins in your name. Read-only QuickBooks, last year's hot tub sales locked in.</p>
-          </div>
-        </li>
-        <li class="step reveal">
-          <div class="step-idx">Weeks 1–2</div>
-          <div>
-            <h3>Videos, past renters, realtors.</h3>
-            <p>Videos start. Emails to past renters. Realtor storage lane set up.</p>
-          </div>
-        </li>
-        <li class="step reveal">
-          <div class="step-idx">Week 3</div>
-          <div>
-            <h3>The site is live.</h3>
-            <p>New hot tub website and booking live, ads start.</p>
-          </div>
-        </li>
-        <li class="step reveal">
-          <div class="step-idx">Next</div>
-          <div>
-            <h3>Later pieces start on their own day.</h3>
-            <p>When you add a piece, its own dates start that day. For a January call centre, add it by early December so we can build and test it on our own phones first. Nothing changes for your team before Christmas.</p>
-          </div>
-        </li>
-      </ol>
-      <ol class="fridays" aria-label="Seven Friday payments of $1,000 plus HST">
-        <li class="friday"><span class="flag" aria-hidden="true"></span><span class="wk">Week 1</span><span class="wk-amt">$1,000</span><span class="wk-hst">+ HST</span></li>
-        <li class="friday"><span class="flag" aria-hidden="true"></span><span class="wk">Week 2</span><span class="wk-amt">$1,000</span><span class="wk-hst">+ HST</span></li>
-        <li class="friday is-live"><span class="flag">Site live</span><span class="wk">Week 3</span><span class="wk-amt">$1,000</span><span class="wk-hst">+ HST</span></li>
-        <li class="friday"><span class="flag" aria-hidden="true"></span><span class="wk">Week 4</span><span class="wk-amt">$1,000</span><span class="wk-hst">+ HST</span></li>
-        <li class="friday"><span class="flag" aria-hidden="true"></span><span class="wk">Week 5</span><span class="wk-amt">$1,000</span><span class="wk-hst">+ HST</span></li>
-        <li class="friday"><span class="flag" aria-hidden="true"></span><span class="wk">Week 6</span><span class="wk-amt">$1,000</span><span class="wk-hst">+ HST</span></li>
-        <li class="friday"><span class="flag" aria-hidden="true"></span><span class="wk">Week 7</span><span class="wk-amt">$1,000</span><span class="wk-hst">+ HST</span></li>
-      </ol>
-      <p class="note">7 weeks × $1,000 = $7,000 + HST for the build.</p>
-    </section>
-
-    <section class="block" aria-labelledby="pieces-title">
-      <h2 id="pieces-title">Each piece in full</h2>
-      <p class="intro">The same scope, written out. Open on this page, and open when you print.</p>
-
-      <details class="piece" open>
+    <section class="block" id="fine-print" aria-labelledby="fine-title">
+      <details class="fine" id="fine">
         <summary>
           <div class="acc-row">
-            <p class="lbl">Piece 1 · Start now</p>
+            <h2 id="fine-title">The fine print: the full scope and terms</h2>
             <span class="acc-state"></span>
           </div>
-          <h3>Your Hot Tub Guy</h3>
         </summary>
-        <div class="piece-body">
-          <p><b>Done for you.</b> A new website with booking that works, ads, videos, emails to past renters, and a realtor storage lane. You and Tyson do the tubs.</p>
-          <p><b>We start with one piece: Your Hot Tub Guy. You pay for the build week by week, not in one lump. After that, I get paid like a commission: only when your own books show the money.</b></p>
-          <table class="ladder">
-            <tbody>
-              <tr><td><b>The build, paid weekly:</b> 7 weeks, starting the week you sign</td><td>$1,000 + HST a week</td></tr>
-              <tr><td>Total for the build (website, booking, funnel, emails, ads set-up, videos)</td><td>$7,000 + HST</td></tr>
-              <tr><td>Results, only as new hot tub sales show up in your books</td><td>up to $13,000</td></tr>
-              <tr class="sum"><td>Most you can pay for hot tubs</td><td>$20,000 + HST</td></tr>
-            </tbody>
-          </table>
-          <p class="ex">If a result doesn't happen, you never pay for it. Once a quarter I send one statement from your numbers. It has an invoice only if something was reached.</p>
-          <p><b>How results are counted:</b> your hot tub sales for the last 12 months, checked at the end of each quarter, compared with Nov 2025 to Oct 2026 (never below $98,500). Every hot tub job counts: rentals, moves, removals, storage and dealer work, even if it's billed through One Extra Guy. Your bookkeeper tags hot tub jobs "YHTG". Jobs you turn away don't count.</p>
-          <table class="ladder">
-            <tbody>
-              <tr><td>The build: $1,000 a week for 7 weeks, starting the week you sign</td><td>$7,000</td></tr>
-              <tr><td>For every $10,000 your 12-month hot tub sales rise above last year</td><td>$1,300</td></tr>
-              <tr class="sum"><td>Most you can pay for this piece</td><td>$20,000</td></tr>
-            </tbody>
-          </table>
-          <p class="ex"><b>Example:</b> sales go from $98,500 to $150,000 (+$51,500) = 5 × $1,300 = $6,500. At +$100,000 (about $200,000 a year) it tops out. You only pay on new highs, never twice for the same $10,000. Counted until March 31, 2028.</p>
-          <p class="ex"><b>Weekly payments:</b> by e-transfer each Friday. The new website, booking and tracking go live within 3 weeks of signing, before the build is fully paid. If you end this piece before the 7 payments are made, the rest of the $7,000 is due once the site is live.</p>
-        </div>
-      </details>
+        <div class="fine-body">
+          <h2 id="pieces-title">Each piece in full</h2>
+          <p class="intro">The same scope, written out. Open on this page, and open when you print.</p>
 
-      <details class="piece" open>
-        <summary>
-          <div class="acc-row">
-            <p class="lbl">Piece 2 · Add when ready</p>
-            <span class="acc-state"></span>
+          <details class="piece" open>
+            <summary>
+              <div class="acc-row">
+                <p class="lbl">Piece 1 · Start now</p>
+                <span class="acc-state"></span>
+              </div>
+              <h3>Your Hot Tub Guy</h3>
+            </summary>
+            <div class="piece-body">
+              <p><b>Done for you.</b> A new website with booking that works, ads, videos, emails to past renters, and a realtor storage lane. You and Tyson do the tubs.</p>
+              <p><b>We start with one piece: Your Hot Tub Guy. You pay for the build week by week, not in one lump. After that, I get paid like a commission: only when your own books show the money.</b></p>
+              <table class="ladder">
+                <tbody>
+                  <tr><td><b>The build, paid weekly:</b> 7 weeks, starting the week you sign</td><td>$1,000 + HST a week</td></tr>
+                  <tr><td>Total for the build (website, booking, funnel, emails, ads set-up, videos)</td><td>$7,000 + HST</td></tr>
+                  <tr><td>Results, only as new hot tub sales show up in your books</td><td>up to $13,000</td></tr>
+                  <tr class="sum"><td>Most you can pay for hot tubs</td><td>$20,000 + HST</td></tr>
+                </tbody>
+              </table>
+              <p class="ex">If a result doesn't happen, you never pay for it. Once a quarter I send one statement from your numbers. It has an invoice only if something was reached.</p>
+              <p><b>How results are counted:</b> your hot tub sales for the last 12 months, checked at the end of each quarter, compared with Nov 2025 to Oct 2026 (never below $98,500). Every hot tub job counts: rentals, moves, removals, storage and dealer work, even if it's billed through One Extra Guy. Your bookkeeper tags hot tub jobs "YHTG". Jobs you turn away don't count.</p>
+              <table class="ladder">
+                <tbody>
+                  <tr><td>The build: $1,000 a week for 7 weeks, starting the week you sign</td><td>$7,000</td></tr>
+                  <tr><td>For every $10,000 your 12-month hot tub sales rise above last year</td><td>$1,300</td></tr>
+                  <tr class="sum"><td>Most you can pay for this piece</td><td>$20,000</td></tr>
+                </tbody>
+              </table>
+              <p class="ex"><b>Example:</b> sales go from $98,500 to $150,000 (+$51,500) = 5 × $1,300 = $6,500. At +$100,000 (about $200,000 a year) it tops out. You only pay on new highs, never twice for the same $10,000. Counted until March 31, 2028.</p>
+              <p class="ex"><b>Weekly payments:</b> by e-transfer each Friday. The new website, booking and tracking go live within 3 weeks of signing, before the build is fully paid. If you end this piece before the 7 payments are made, the rest of the $7,000 is due once the site is live.</p>
+            </div>
+          </details>
+
+          <details class="piece" open>
+            <summary>
+              <div class="acc-row">
+                <p class="lbl">Piece 2 · Add when ready</p>
+                <span class="acc-state"></span>
+              </div>
+              <h3>Next big customer for One Extra Guy</h3>
+            </summary>
+            <div class="piece-body">
+              <p><b>Done for you.</b> We build the buyer list (furniture and home retailers, delivery networks like GoBolt that need a Southwest Ontario partner, cross-docking), reach out in your name, and book meetings with you. Outreach starts within 3 weeks of the day you add this piece, and you see the list every week. I prep you before your first meeting. <b>You take the meetings and close.</b></p>
+              <p><b>What counts:</b> any new delivery, warehousing or cross-docking customer whose first invoice is after this piece starts, except your current customers, Urban Barn, and the ones you list here as already in talks: ______________________________. Hot tub work counts under piece 1 only.</p>
+              <table class="ladder">
+                <tbody>
+                  <tr><td>Up front</td><td>$0</td></tr>
+                  <tr><td>A meeting or an appointment on its own</td><td>$0</td></tr>
+                  <tr><td>From new customers: the lower of 5% of what they pay you (collected, before HST) or 25% of the profit you make on them after direct costs (drivers, trucks, fuel, helpers)</td><td>as it's collected</td></tr>
+                  <tr class="sum"><td>Most you can pay for this piece</td><td>$100,000</td></tr>
+                </tbody>
+              </table>
+              <p class="ex"><b>Example:</b> a new customer pays you $200,000 in a year and you keep $50,000 after direct costs. 5% = $10,000, 25% of profit = $12,500, so you pay the lower: $10,000. Before outreach starts we sign the in-talks list and how direct costs are counted. Payments count until December 31, 2028.</p>
+            </div>
+          </details>
+
+          <details class="piece" open>
+            <summary>
+              <div class="acc-row">
+                <p class="lbl">Piece 3 · Add when ready</p>
+                <span class="acc-state"></span>
+              </div>
+              <h3>AI call centre (January)</h3>
+            </summary>
+            <div class="piece-body">
+              <p>Customers get a text to pick their delivery window. If they don't answer, an AI call books it. Beau runs it as office manager and handles the exceptions. You approve every script, we test on one store for 2 weeks first, and Beau has an off switch. Nothing changes for your team before Christmas. Who stays on the phones is always your call.</p>
+              <p><b>Before any money for this piece, all of these must happen:</b> your routing software can give us delivery windows (or Beau keeps a daily window sheet); Structube says yes in writing (we aim for December 15; the last day is January 31, 2027); Dave's November numbers and how we count are signed; the monthly texting and calling bill is capped in writing; and the yearly saving is shown at $10,000 or more. If any of these fail, this piece ends and you owe nothing.</p>
+              <p><b>How results are counted:</b> deliveries the new system books first (by text reply or AI call) before any staff call, as a 4-week rolling average over at least 300 orders. Direct Funnel texts never count.</p>
+              <table class="ladder">
+                <tbody>
+                  <tr><td>Start, as soon as every check above passes (go-live not before January 5, 2027)</td><td>$4,000</td></tr>
+                  <tr><td>System books 5 of every 10 deliveries</td><td>$4,000</td></tr>
+                  <tr><td>System books 7 of every 10</td><td>$4,000</td></tr>
+                  <tr><td>Staff booking calls fall under 25 per 100 orders</td><td>$4,000</td></tr>
+                  <tr class="sum"><td>Most you can pay for this piece</td><td>$16,000</td></tr>
+                </tbody>
+              </table>
+              <p class="ex">Target: 7 of 10 by the end of March 2027. Results keep counting until March 31, 2028, so a slow month never costs either of us.</p>
+            </div>
+          </details>
+
+          <details class="piece" open>
+            <summary>
+              <div class="acc-row">
+                <p class="lbl">Piece 4 · Whenever you're ready</p>
+                <span class="acc-state"></span>
+              </div>
+              <h3>You using AI with confidence</h3>
+            </summary>
+            <div class="piece-body">
+              <p>Claude set up on your phone and computer in the first week after you add it, then four one-hour lessons within 30 days. <b>Done when you can do three things yourself:</b> pull a contact list, write a customer reply, and read a manifest. Extra time after that is $250 an hour.</p>
+              <table class="ladder">
+                <tbody>
+                  <tr><td>When you add it</td><td>$5,000</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+
+          <h2 id="bring-title">What you bring</h2>
+          <ul class="bring">
+            <li><b>Ads:</b> first month at $500 to $1,000 on your card, then month to month on your yes. Any ad that costs more than $250 per booked job gets stopped.</li>
+            <li><b>Tools, paid by you at cost:</b> website hosting; your Claude plan (about $30 a month) if you add lessons; and, if you add it, the call centre's texting and calling (about $600 to $700 a month, capped in writing before it starts). Video costs come out of my fee.</li>
+            <li><b>Access:</b> read-only QuickBooks (or your bookkeeper sends two reports each quarter), and the website, domain, Google and ad logins in your name.</li>
+            <li><b>Your team:</b> Beau answers hot tub leads within 1 business hour. If you add those pieces: you take the sales meetings we book within a week, and you send Structube one letter (we write it).</li>
+          </ul>
+
+          <h2 id="promise-title">What I promise, with dates</h2>
+          <div class="promise">
+            <p class="lbl">Dates</p>
+            <ul>
+              <li>Hot tubs: book button fixed within 3 days of signing. New site and booking live within 3 weeks.</li>
+              <li>Hot tub videos: 2 a week for 12 weeks, then 1 a week to June 30, 2027. Check-ins every 2 weeks for 12 weeks, then monthly to June 30, 2027. 60 days of fixes after each system goes live.</li>
+              <li>When you add a piece: outreach starts within 3 weeks and 300+ buyers are contacted within 6 weeks, then outreach stays active for 6 months and monthly after that to December 2027. Your 4 lessons are done within 30 days.</li>
+            </ul>
+            <p class="note">My dates move if something I need from you is late (term 7).</p>
           </div>
-          <h3>Next big customer for One Extra Guy</h3>
-        </summary>
-        <div class="piece-body">
-          <p><b>Done for you.</b> We build the buyer list (furniture and home retailers, delivery networks like GoBolt that need a Southwest Ontario partner, cross-docking), reach out in your name, and book meetings with you. Outreach starts within 3 weeks of the day you add this piece, and you see the list every week. I prep you before your first meeting. <b>You take the meetings and close.</b></p>
-          <p><b>What counts:</b> any new delivery, warehousing or cross-docking customer whose first invoice is after this piece starts, except your current customers, Urban Barn, and the ones you list here as already in talks: ______________________________. Hot tub work counts under piece 1 only.</p>
-          <table class="ladder">
-            <tbody>
-              <tr><td>Up front</td><td>$0</td></tr>
-              <tr><td>A meeting or an appointment on its own</td><td>$0</td></tr>
-              <tr><td>From new customers: the lower of 5% of what they pay you (collected, before HST) or 25% of the profit you make on them after direct costs (drivers, trucks, fuel, helpers)</td><td>as it's collected</td></tr>
-              <tr class="sum"><td>Most you can pay for this piece</td><td>$100,000</td></tr>
-            </tbody>
-          </table>
-          <p class="ex"><b>Example:</b> a new customer pays you $200,000 in a year and you keep $50,000 after direct costs. 5% = $10,000, 25% of profit = $12,500, so you pay the lower: $10,000. Before outreach starts we sign the in-talks list and how direct costs are counted. Payments count until December 31, 2028.</p>
-        </div>
-      </details>
 
-      <details class="piece" open>
-        <summary>
-          <div class="acc-row">
-            <p class="lbl">Piece 3 · Add when ready</p>
-            <span class="acc-state"></span>
-          </div>
-          <h3>AI call centre (January)</h3>
-        </summary>
-        <div class="piece-body">
-          <p>Customers get a text to pick their delivery window. If they don't answer, an AI call books it. Beau runs it as office manager and handles the exceptions. You approve every script, we test on one store for 2 weeks first, and Beau has an off switch. Nothing changes for your team before Christmas. Who stays on the phones is always your call.</p>
-          <p><b>Before any money for this piece, all of these must happen:</b> your routing software can give us delivery windows (or Beau keeps a daily window sheet); Structube says yes in writing (we aim for December 15; the last day is January 31, 2027); Dave's November numbers and how we count are signed; the monthly texting and calling bill is capped in writing; and the yearly saving is shown at $10,000 or more. If any of these fail, this piece ends and you owe nothing.</p>
-          <p><b>How results are counted:</b> deliveries the new system books first (by text reply or AI call) before any staff call, as a 4-week rolling average over at least 300 orders. Direct Funnel texts never count.</p>
-          <table class="ladder">
-            <tbody>
-              <tr><td>Start, as soon as every check above passes (go-live not before January 5, 2027)</td><td>$4,000</td></tr>
-              <tr><td>System books 5 of every 10 deliveries</td><td>$4,000</td></tr>
-              <tr><td>System books 7 of every 10</td><td>$4,000</td></tr>
-              <tr><td>Staff booking calls fall under 25 per 100 orders</td><td>$4,000</td></tr>
-              <tr class="sum"><td>Most you can pay for this piece</td><td>$16,000</td></tr>
-            </tbody>
-          </table>
-          <p class="ex">Target: 7 of 10 by the end of March 2027. Results keep counting until March 31, 2028, so a slow month never costs either of us.</p>
-        </div>
-      </details>
-
-      <details class="piece" open>
-        <summary>
-          <div class="acc-row">
-            <p class="lbl">Piece 4 · Whenever you're ready</p>
-            <span class="acc-state"></span>
-          </div>
-          <h3>You using AI with confidence</h3>
-        </summary>
-        <div class="piece-body">
-          <p>Claude set up on your phone and computer in the first week after you add it, then four one-hour lessons within 30 days. <b>Done when you can do three things yourself:</b> pull a contact list, write a customer reply, and read a manifest. Extra time after that is $250 an hour.</p>
-          <table class="ladder">
-            <tbody>
-              <tr><td>When you add it</td><td>$5,000</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
-    </section>
-
-    <section class="block" aria-labelledby="bring-title">
-      <h2 id="bring-title">What you bring</h2>
-      <ul class="bring">
-        <li><b>Ads:</b> first month at $500 to $1,000 on your card, then month to month on your yes. Any ad that costs more than $250 per booked job gets stopped.</li>
-        <li><b>Tools, paid by you at cost:</b> website hosting; your Claude plan (about $30 a month) if you add lessons; and, if you add it, the call centre's texting and calling (about $600 to $700 a month, capped in writing before it starts). Video costs come out of my fee.</li>
-        <li><b>Access:</b> read-only QuickBooks (or your bookkeeper sends two reports each quarter), and the website, domain, Google and ad logins in your name.</li>
-        <li><b>Your team:</b> Beau answers hot tub leads within 1 business hour. If you add those pieces: you take the sales meetings we book within a week, and you send Structube one letter (we write it).</li>
-      </ul>
-    </section>
-
-    <section class="block" aria-labelledby="promise-title">
-      <h2 id="promise-title">What I promise, with dates</h2>
-      <div class="promise">
-        <p class="lbl">Dates</p>
-        <ul>
-          <li>Hot tubs: book button fixed within 3 days of signing. New site and booking live within 3 weeks.</li>
-          <li>Hot tub videos: 2 a week for 12 weeks, then 1 a week to June 30, 2027. Check-ins every 2 weeks for 12 weeks, then monthly to June 30, 2027. 60 days of fixes after each system goes live.</li>
-          <li>When you add a piece: outreach starts within 3 weeks and 300+ buyers are contacted within 6 weeks, then outreach stays active for 6 months and monthly after that to December 2027. Your 4 lessons are done within 30 days.</li>
-        </ul>
-        <p class="note">My dates move if something I need from you is late (term 7).</p>
-      </div>
-    </section>
-
-    <section class="block" aria-labelledby="terms-title">
-      <h2 id="terms-title">Terms</h2>
-      <p class="intro">All 17 terms, in order. You can close this block on screen. Print opens everything.</p>
-      <button type="button" class="print-btn" id="print">Print / save as PDF</button>
-      <details class="piece" id="terms-details" open>
-        <summary>
-          <div class="acc-row">
-            <p class="lbl">The whole agreement</p>
-            <span class="acc-state"></span>
-          </div>
-          <h3>17 terms</h3>
-        </summary>
-        <div class="piece-body">
-          <ol class="terms">
-            <li><b>Who this is between.</b> Marc Pineault, carrying on business as Lightwork (London, Ontario; HST 128271928 RT0001), called "Lightwork" or "I", and One Extra Guy Inc., including its Your Hot Tub Guy business, called "One Extra Guy" or "you". Ryan Gonyou signs for One Extra Guy and confirms he has the authority to.</li>
-            <li><b>No guarantee of results.</b> The targets, examples and estimates in this scope are goals, not promises. Results depend on you, your team, your customers and others I don't control, like Structube, delivery networks, ad platforms and buyers. That's why most of my pay depends on results: you pay a result payment only when the result happens.</li>
-            <li><b>Not advice, and separate from Glacier.</b> Lightwork doesn't give legal, tax, accounting, employment, insurance or financial advice. Who you hire, keep or let go is your decision, and so are the employment-law duties that come with it. Lightwork is separate from Glacier Financial and Investia; nothing here is financial, investment or retirement advice. Bookkeeping and accounting are not part of this work.</li>
-            <li><b>You are the sender.</b> Every email, text and call made for you, including AI calls, goes out in your business's name as your message. You approve each template, script and claim before it's used. You confirm that what you tell me and approve is true, that you have the right to share the customer information you give me and to contact those people, and that you follow the laws on email, texts, calls and privacy and your contracts with Structube and other customers. I follow the process we agree (One Extra Guy named, an unsubscribe, quiet hours, records, a separate sending address, Structube never named without its OK) and stop any message when you ask. Videos are labelled when AI is used.</li>
-            <li><b>Your responsibility for claims.</b> You will cover Lightwork and Marc Pineault for any claim, fine, penalty or cost, including reasonable legal fees, that comes from messages, scripts or claims you approved; the customer information you shared or your right to contact people; your staffing decisions; your contracts with your customers; or your breaking this agreement. This has no limit.</li>
-            <li><b>Limit on my responsibility.</b> My total responsibility for anything about this agreement is limited to the fees you paid me under it in the 12 months before the claim. I'm not responsible for lost profits or revenue, lost or reduced customer accounts, indirect losses, fines from messages you approved, or outages, changes, bans or price changes by outside tools such as Google, Meta, GoDaddy, Twilio, ElevenLabs and Anthropic. AI can make mistakes: you or Beau review what goes out, and Beau has an off switch.</li>
-            <li><b>Dates depend on your part too.</b> Each of my dates moves by the same number of days if logins, approvals, information or decisions I need from you arrive late, or if something outside either of our control gets in the way. If I still miss one of my dates, you may end that piece by written notice. That stops future payments for the piece; it doesn't refund payments already made.</li>
-            <li><b>How results are counted.</b> You keep accurate books, tag hot tub jobs "YHTG", and give me read-only QuickBooks or the two reports each quarter. Once a quarter I may check the numbers against your invoices. If a statement was short by more than 5%, you pay the difference and the reasonable cost of the check. A number not questioned within 14 days is final.</li>
-            <li><b>No going around the fees.</b> Revenue counts wherever it's billed: One Extra Guy Inc., Your Hot Tub Guy, a related or new company, a buyer of the business, or cash. Moving jobs, customers or billing to avoid a payment isn't allowed.</li>
-            <li><b>Invoices.</b> HST is added to every payment. Invoices are due in 14 days. Late amounts carry interest of 1.5% a month (19.56% a year). If an invoice is 14 days late, work pauses until it's paid. Up-front payments, weekly build payments and work steps are not refundable.</li>
-            <li><b>Ending early.</b> Either of us can end this with 30 days' written notice, or right away if the other breaks a main term and doesn't fix it within 14 days of written notice. When it ends, you pay for work steps already done, results already reached, and results reached within 90 days after notice. If you end it, other than for my breaking it, new customers who were on my outreach list before the end and become customers within 12 months after it still count for piece 2, up to its limit and end date.</li>
-            <li><b>Pausing or selling.</b> You can pause by telling me in writing; result deadlines stretch by the length of the pause. If either business is sold, results reached up to the closing date are paid at closing, and the rest ends.</li>
-            <li><b>Ownership.</b> Once a piece's up-front or build payments are made in full (or, for a piece with nothing up front, once it starts), what I build for you in it is yours: website, domain, content, lists, scripts and your data, on your accounts and in your name. I keep my own tools, templates, prompts, methods and know-how, and you can keep using the ones built into your work. If we stop, what's built keeps running; later fixes are $250 an hour. With your OK on the wording, Lightwork may share One Extra Guy as a case study.</li>
-            <li><b>Your information.</b> I'm your service provider. I use your information only for this work, keep it reasonably secure, tell you promptly if it's exposed, and delete my copies when we're done (except billing records). Some tools we use store data in the United States. No customer data goes into a new tool without your OK. We each keep the other's private business information confidential.</li>
-            <li><b>How we work together.</b> Lightwork is an independent contractor. Result payments are fees for work, not a share of your business; this isn't a partnership, joint venture or job. Lightwork may work for other businesses, may use helpers and subcontractors (and stays responsible for their work), and may move this agreement to a corporation Marc Pineault controls. You may move it only to a buyer of the business who takes it on in writing.</li>
-            <li><b>Disagreements.</b> We talk first. If that doesn't settle it within 14 days, we try a mediator in London, Ontario and share the cost. Ontario law applies, and the courts in London, Ontario decide anything left.</li>
-            <li><b>The whole deal.</b> This scope and these terms are our whole agreement and replace anything said before. Piece 1 starts at signing. Pieces 2, 3 and 4 start only when we both agree in writing (an email from each of us counts), and then these terms apply to them. Changes must be in writing; an email from each of us counts. If one part can't be enforced, the rest still stands. Electronic signatures count. Terms 5, 6, 8 to 11, 13 and 14 keep applying after this ends.</li>
-          </ol>
+          <h2 id="terms-title">Terms</h2>
+          <p class="intro">All 17 terms, in order. You can close this block on screen. Print opens everything.</p>
+          <details class="piece" id="terms-details" open>
+            <summary>
+              <div class="acc-row">
+                <p class="lbl">The whole agreement</p>
+                <span class="acc-state"></span>
+              </div>
+              <h3>17 terms</h3>
+            </summary>
+            <div class="piece-body">
+              <ol class="terms">
+                <li><b>Who this is between.</b> Marc Pineault, carrying on business as Lightwork (London, Ontario; HST 128271928 RT0001), called "Lightwork" or "I", and One Extra Guy Inc., including its Your Hot Tub Guy business, called "One Extra Guy" or "you". Ryan Gonyou signs for One Extra Guy and confirms he has the authority to.</li>
+                <li><b>No guarantee of results.</b> The targets, examples and estimates in this scope are goals, not promises. Results depend on you, your team, your customers and others I don't control, like Structube, delivery networks, ad platforms and buyers. That's why most of my pay depends on results: you pay a result payment only when the result happens.</li>
+                <li><b>Not advice, and separate from Glacier.</b> Lightwork doesn't give legal, tax, accounting, employment, insurance or financial advice. Who you hire, keep or let go is your decision, and so are the employment-law duties that come with it. Lightwork is separate from Glacier Financial and Investia; nothing here is financial, investment or retirement advice. Bookkeeping and accounting are not part of this work.</li>
+                <li><b>You are the sender.</b> Every email, text and call made for you, including AI calls, goes out in your business's name as your message. You approve each template, script and claim before it's used. You confirm that what you tell me and approve is true, that you have the right to share the customer information you give me and to contact those people, and that you follow the laws on email, texts, calls and privacy and your contracts with Structube and other customers. I follow the process we agree (One Extra Guy named, an unsubscribe, quiet hours, records, a separate sending address, Structube never named without its OK) and stop any message when you ask. Videos are labelled when AI is used.</li>
+                <li><b>Your responsibility for claims.</b> You will cover Lightwork and Marc Pineault for any claim, fine, penalty or cost, including reasonable legal fees, that comes from messages, scripts or claims you approved; the customer information you shared or your right to contact people; your staffing decisions; your contracts with your customers; or your breaking this agreement. This has no limit.</li>
+                <li><b>Limit on my responsibility.</b> My total responsibility for anything about this agreement is limited to the fees you paid me under it in the 12 months before the claim. I'm not responsible for lost profits or revenue, lost or reduced customer accounts, indirect losses, fines from messages you approved, or outages, changes, bans or price changes by outside tools such as Google, Meta, GoDaddy, Twilio, ElevenLabs and Anthropic. AI can make mistakes: you or Beau review what goes out, and Beau has an off switch.</li>
+                <li><b>Dates depend on your part too.</b> Each of my dates moves by the same number of days if logins, approvals, information or decisions I need from you arrive late, or if something outside either of our control gets in the way. If I still miss one of my dates, you may end that piece by written notice. That stops future payments for the piece; it doesn't refund payments already made.</li>
+                <li><b>How results are counted.</b> You keep accurate books, tag hot tub jobs "YHTG", and give me read-only QuickBooks or the two reports each quarter. Once a quarter I may check the numbers against your invoices. If a statement was short by more than 5%, you pay the difference and the reasonable cost of the check. A number not questioned within 14 days is final.</li>
+                <li><b>No going around the fees.</b> Revenue counts wherever it's billed: One Extra Guy Inc., Your Hot Tub Guy, a related or new company, a buyer of the business, or cash. Moving jobs, customers or billing to avoid a payment isn't allowed.</li>
+                <li><b>Invoices.</b> HST is added to every payment. Invoices are due in 14 days. Late amounts carry interest of 1.5% a month (19.56% a year). If an invoice is 14 days late, work pauses until it's paid. Up-front payments, weekly build payments and work steps are not refundable.</li>
+                <li><b>Ending early.</b> Either of us can end this with 30 days' written notice, or right away if the other breaks a main term and doesn't fix it within 14 days of written notice. When it ends, you pay for work steps already done, results already reached, and results reached within 90 days after notice. If you end it, other than for my breaking it, new customers who were on my outreach list before the end and become customers within 12 months after it still count for piece 2, up to its limit and end date.</li>
+                <li><b>Pausing or selling.</b> You can pause by telling me in writing; result deadlines stretch by the length of the pause. If either business is sold, results reached up to the closing date are paid at closing, and the rest ends.</li>
+                <li><b>Ownership.</b> Once a piece's up-front or build payments are made in full (or, for a piece with nothing up front, once it starts), what I build for you in it is yours: website, domain, content, lists, scripts and your data, on your accounts and in your name. I keep my own tools, templates, prompts, methods and know-how, and you can keep using the ones built into your work. If we stop, what's built keeps running; later fixes are $250 an hour. With your OK on the wording, Lightwork may share One Extra Guy as a case study.</li>
+                <li><b>Your information.</b> I'm your service provider. I use your information only for this work, keep it reasonably secure, tell you promptly if it's exposed, and delete my copies when we're done (except billing records). Some tools we use store data in the United States. No customer data goes into a new tool without your OK. We each keep the other's private business information confidential.</li>
+                <li><b>How we work together.</b> Lightwork is an independent contractor. Result payments are fees for work, not a share of your business; this isn't a partnership, joint venture or job. Lightwork may work for other businesses, may use helpers and subcontractors (and stays responsible for their work), and may move this agreement to a corporation Marc Pineault controls. You may move it only to a buyer of the business who takes it on in writing.</li>
+                <li><b>Disagreements.</b> We talk first. If that doesn't settle it within 14 days, we try a mediator in London, Ontario and share the cost. Ontario law applies, and the courts in London, Ontario decide anything left.</li>
+                <li><b>The whole deal.</b> This scope and these terms are our whole agreement and replace anything said before. Piece 1 starts at signing. Pieces 2, 3 and 4 start only when we both agree in writing (an email from each of us counts), and then these terms apply to them. Changes must be in writing; an email from each of us counts. If one part can't be enforced, the rest still stands. Electronic signatures count. Terms 5, 6, 8 to 11, 13 and 14 keep applying after this ends.</li>
+              </ol>
+            </div>
+          </details>
         </div>
       </details>
     </section>
@@ -1229,6 +1548,14 @@ ol.terms li::marker {
     </p>
   </div>
 </div>
+
+<dialog id="light" aria-labelledby="light-cap">
+  <div class="light-bar">
+    <button type="button" class="light-close" id="light-close">Close</button>
+  </div>
+  <img id="light-img" alt="">
+  <p id="light-cap"></p>
+</dialog>
 
 <script>
 (function () {
@@ -1493,8 +1820,6 @@ ol.terms li::marker {
   document.getElementById("calc").addEventListener("submit", function (e) { e.preventDefault(); });
 
   document.getElementById("print").addEventListener("click", function () {
-    var nodes = document.querySelectorAll("details");
-    Array.prototype.forEach.call(nodes, function (d) { d.open = true; });
     window.print();
   });
 
@@ -1566,6 +1891,33 @@ ol.terms li::marker {
   }
 
   render();
+})();
+</script>
+<script>
+(function () {
+  var light = document.getElementById("light");
+  var lightImg = document.getElementById("light-img");
+  var lightCap = document.getElementById("light-cap");
+  var closeBtn = document.getElementById("light-close");
+  function openLight(btn) {
+    var img = btn.querySelector("img");
+    lightImg.src = img.getAttribute("src");
+    lightImg.alt = img.alt;
+    lightCap.textContent = btn.getAttribute("data-cap") || "";
+    if (light.showModal) light.showModal();
+    else light.setAttribute("open", "");
+  }
+  function closeLight() {
+    if (light.close) light.close();
+    else light.removeAttribute("open");
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".shot-btn"), function (btn) {
+    btn.addEventListener("click", function () { openLight(btn); });
+  });
+  closeBtn.addEventListener("click", closeLight);
+  light.addEventListener("click", function (e) {
+    if (e.target === light) closeLight();
+  });
 })();
 </script>
 </body>
