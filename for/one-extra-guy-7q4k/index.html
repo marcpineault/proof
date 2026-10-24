@@ -42,7 +42,7 @@
   }
 }
 *, *::before, *::after { box-sizing: border-box; }
-html { overflow-x: clip; background: var(--paper); scroll-padding-bottom: 130px; }
+html { overflow-x: clip; background: var(--paper); scroll-padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
 body {
   margin: 0;
   background: var(--paper);
@@ -51,7 +51,7 @@ body {
   font-size: 18px;
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
-  padding-bottom: calc(128px + env(safe-area-inset-bottom));
+  padding-bottom: 0;
   overflow-wrap: break-word;
 }
 h1, h2, h3, p, ol, ul { margin: 0; }
@@ -158,6 +158,7 @@ h1 .line { display: block; }
 }
 .stat.is-cap { box-shadow: inset 0 3px 0 var(--red); }
 .block { padding: 56px 0; border-top: 1px solid var(--line); }
+#play { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
 h2 {
   font-size: clamp(2rem, 4.2vw, 3rem);
   line-height: 1.08;
@@ -283,6 +284,10 @@ h2 {
   background: var(--card);
   text-align: left;
   color: inherit;
+  position: relative;
+}
+.zoom-hint {
+  display: none;
 }
 .chrome {
   display: flex;
@@ -337,7 +342,7 @@ h2 {
   border-radius: 99px;
   background: rgba(255, 255, 255, 0.38);
 }
-.phone img {
+.shot-btn .phone img {
   display: block;
   width: 100%;
   aspect-ratio: 9 / 16;
@@ -346,10 +351,34 @@ h2 {
   border-radius: 14px;
   background: var(--wash);
 }
+.shot-dots {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+}
+.shot-dot {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+}
+.shot-dot::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+}
+.shot-dot.is-on::after { background: var(--ink); }
 .research {
   background: var(--wash);
   border-radius: 18px;
   padding: 22px 18px 20px;
+  margin-top: 26px;
 }
 .research p {
   margin-top: 0;
@@ -751,6 +780,42 @@ ol.terms li::marker {
   font-size: 0.78rem;
   color: var(--muted);
 }
+.next-card {
+  margin-top: 18px;
+  max-width: 28rem;
+  background: var(--card);
+  border: 1px solid var(--ink);
+  border-radius: 18px;
+  padding: 18px 16px 16px;
+}
+.next-say {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.45rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.next-card .copy {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14px;
+  min-height: 48px;
+  padding: 12px 16px;
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 17px;
+  font-weight: 600;
+}
+.next-card .print-bottom {
+  display: flex;
+  width: 100%;
+  margin-top: 10px;
+  background: transparent;
+  color: var(--ink);
+}
 .reply {
   display: flex;
   flex-wrap: wrap;
@@ -796,32 +861,47 @@ ol.terms li::marker {
   right: 0;
   bottom: 0;
   z-index: 5;
-  background: color-mix(in srgb, var(--card) 92%, transparent);
-  border-top: 2px solid var(--ink);
-  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  max-width: 100%;
+  background: var(--card);
+  border-top: 1px solid var(--ink);
+  box-shadow: 0 -8px 24px rgba(20, 21, 23, 0.16);
+  padding-bottom: env(safe-area-inset-bottom);
+  transform: translateY(120%);
+  transition: transform 0.28s ease;
+  pointer-events: none;
 }
-@supports not (background: color-mix(in srgb, white 50%, black)) {
-  .bar { background: var(--card); }
+.bar.is-on {
+  transform: translateY(0);
+  pointer-events: auto;
 }
 .bar-inner {
-  width: min(1040px, 100%);
+  width: min(1040px, calc(100% - 32px - env(safe-area-inset-left) - env(safe-area-inset-right)));
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 16px;
+  height: 60px;
+  max-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
+.bar p {
+  margin: 0;
+  min-width: 0;
+  font-size: 15px;
+  line-height: 1.15;
+}
+.bar p:last-child { text-align: right; }
 .bar .amt {
-  display: block;
-  margin-top: 2px;
-  font-size: clamp(1.25rem, 4.6vw, 1.85rem);
-  letter-spacing: -0.03em;
-  line-height: 1.05;
+  display: inline;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  line-height: 1;
   font-variant-numeric: tabular-nums;
 }
 .bar .hst {
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
+  font-size: 13px;
+  letter-spacing: 0.04em;
   color: var(--muted);
 }
 .marked { position: relative; display: inline-block; white-space: nowrap; }
@@ -845,41 +925,70 @@ ol.terms li::marker {
   stroke-dashoffset: 0;
 }
 dialog#light {
-  width: min(960px, calc(100% - 24px));
-  max-height: calc(100dvh - 24px);
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  inset: 0;
   padding: 0;
   border: 0;
-  border-radius: 18px;
-  background: var(--card);
-  color: var(--ink);
-  overflow: auto;
+  border-radius: 0;
+  background: #141517;
+  color: #E9E6DF;
+  overflow: hidden;
 }
-dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
-.light-bar {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px 10px 0;
-  position: sticky;
-  top: 0;
+dialog#light::backdrop { background: rgba(20, 21, 23, 0.92); }
+.light-zoom {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y pinch-zoom;
+  padding: 72px 0 96px;
 }
 .light-close {
-  min-height: 44px;
+  position: absolute;
+  z-index: 3;
+  top: max(10px, env(safe-area-inset-top));
+  right: max(10px, env(safe-area-inset-right));
+  width: 44px;
+  height: 44px;
   min-width: 44px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--paper);
+  min-height: 44px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #FAF8F4;
+  color: #1F2226;
+  font-size: 26px;
+  line-height: 1;
 }
 #light img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: none;
   height: auto;
-  max-height: calc(100dvh - 140px);
-  object-fit: contain;
-  background: var(--wash);
+  max-height: none;
+  touch-action: pan-x pan-y pinch-zoom;
+  background: transparent;
 }
-#light-cap { padding: 12px 16px 16px; }
+#light-cap {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: rgba(20, 21, 23, 0.82);
+  color: #E9E6DF;
+  font-size: 16px;
+  line-height: 1.35;
+  pointer-events: none;
+}
 .js .reveal {
   opacity: 0;
   transform: translateY(12px);
@@ -948,11 +1057,160 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
 @media (hover: hover) {
   .copy:hover, .shot-btn:hover { border-color: var(--ink); }
 }
+@media (max-width: 699px) {
+  body { font-size: 17px; line-height: 1.45; }
+  .top .print-btn { display: none; }
+  .kicker, .lbl, .acc-state, .range-ends, .foot p, .tag, ol.terms li::marker {
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+  .tag { letter-spacing: 0.02em; }
+  .hero { padding: 18px 0 28px; }
+  .sub, .intro { font-size: 17px; }
+  .stats { gap: 8px; margin-top: 18px; }
+  .stat { padding: 12px 12px 11px; border-radius: 14px; }
+  .stat strong { font-size: 1.55rem; }
+  .stat span { margin-top: 4px; font-size: 16px; line-height: 1.3; }
+  .stat.is-cap { background: var(--red-soft); }
+  .stat.is-cap strong { font-size: 2.05rem; }
+  .gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gallery::-webkit-scrollbar { display: none; }
+  .shot {
+    flex: 0 0 88%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  .js .gallery .reveal { opacity: 1; transform: none; }
+  .shot figcaption { font-size: 16px; }
+  .phone { width: 100%; margin: 0; }
+  .zoom-hint {
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    z-index: 1;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: rgba(20, 21, 23, 0.8);
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .shot.is-phone .zoom-hint { bottom: 22px; }
+  .shot-dots { display: flex; }
+  .loop {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .loop li { padding: 10px 10px 12px; border-radius: 12px; }
+  .loop li:not(:last-child)::after,
+  .strip li:not(:last-child)::after { content: none; display: none; }
+  .loop h3 { font-size: 1.08rem; }
+  .loop p { margin-top: 4px; font-size: 16px; line-height: 1.3; }
+  .step-k { font-size: 14px; letter-spacing: 0.03em; margin-bottom: 2px; }
+  .again { margin-top: 10px; font-size: 1.15rem; }
+  .strip {
+    gap: 0;
+    margin-top: 14px;
+    margin-left: 0;
+  }
+  .strip li {
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    padding: 7px 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+  }
+  .strip li::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--line);
+  }
+  .strip li:first-child::before { top: 50%; }
+  .strip li:last-child::before { bottom: 50%; }
+  .strip .step-k {
+    position: relative;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    background: var(--card);
+    border: 1.5px solid var(--red);
+    border-radius: 50%;
+    font-size: 13px;
+  }
+  .strip h3 { font-size: 1.12rem; }
+  .switch { width: 100%; min-height: 44px; min-width: 44px; padding: 6px 0; }
+  .check {
+    width: 100%;
+    min-height: 44px;
+    align-items: center;
+    padding: 10px 2px;
+  }
+  .check input {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-top: 0;
+    border: 1.5px solid var(--ink);
+    border-radius: 6px;
+    background: var(--card);
+  }
+  .check input:checked { background: var(--ink); border-color: var(--ink); }
+  .check input:checked::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--paper);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .bar p, .bar .amt, .bar .hst { font-size: 13px; letter-spacing: 0.01em; }
+  .bar .amt { letter-spacing: -0.02em; }
+  .next-card { max-width: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   .js .reveal,
   .js .reveal.in { opacity: 1; transform: none; transition: none; }
   .js .marked.on .pen path { stroke-dashoffset: 0; transition: none; }
   .switch input::after { transition: none; }
+  .bar, .gallery { transition: none; }
+  .gallery { scroll-behavior: auto; }
 }
 @media print {
   :root {
@@ -970,7 +1228,7 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
   html, body { background: #fff; overflow: visible; }
   body { padding-bottom: 0; font-size: 12pt; }
   .wrap { width: 100%; }
-  .bar, .print-btn, .copy, .acc-state, .skip, dialog { display: none !important; }
+  .bar, .print-btn, .copy, .acc-state, .skip, .shot-dots, .zoom-hint, dialog { display: none !important; }
   .js .reveal { opacity: 1 !important; transform: none !important; }
   .js .marked.on .pen path { stroke-dashoffset: 0 !important; }
   .block { padding: 22px 0; break-inside: auto; }
@@ -978,6 +1236,13 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
   details > *:not(summary) { display: block !important; }
   a { text-decoration: none; }
   .loop, .strip, .gallery, .stats, .branch { break-inside: avoid; }
+  .gallery {
+    display: grid !important;
+    height: auto !important;
+    grid-template-columns: 1fr 1fr;
+    overflow: visible !important;
+  }
+  .shot { flex: none !important; width: auto !important; }
 }
 </style>
 </head>
@@ -1084,11 +1349,21 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
     <section class="block" id="built" aria-labelledby="built-title">
       <h2 id="built-title">I didn't wait. Here's what's already built.</h2>
       <p class="intro">These are working samples with made-up data. Nothing has been sent to anyone, and nothing goes live until you say yes.</p>
-      <div class="gallery">
+      <div class="gallery" id="gallery">
+        <figure class="shot is-phone reveal">
+          <button type="button" class="shot-btn" data-cap="It works on a phone">
+            <span class="phone">
+              <img src="img/site-phone.jpg" width="390" height="780" alt="The same Your Hot Tub Guy sample website on a phone" loading="lazy">
+            </span>
+            <span class="zoom-hint" aria-hidden="true">Tap to zoom</span>
+          </button>
+          <figcaption>It works on a phone</figcaption>
+        </figure>
         <figure class="shot reveal">
           <button type="button" class="shot-btn" data-cap="Your new Your Hot Tub Guy website (sample)">
             <span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
             <img src="img/site-desk.jpg" width="1600" height="1000" alt="Sample of the new Your Hot Tub Guy website on a desktop screen" loading="lazy">
+            <span class="zoom-hint" aria-hidden="true">Tap to zoom</span>
           </button>
           <figcaption>Your new Your Hot Tub Guy website (sample)</figcaption>
         </figure>
@@ -1096,6 +1371,7 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
           <button type="button" class="shot-btn" data-cap="Six quick questions help people pick the right tub">
             <span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
             <img src="img/finder.jpg" width="1600" height="1000" alt="Sample tub finder asking six questions, starting with the occasion" loading="lazy">
+            <span class="zoom-hint" aria-hidden="true">Tap to zoom</span>
           </button>
           <figcaption>Six quick questions help people pick the right tub</figcaption>
         </figure>
@@ -1103,6 +1379,7 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
           <button type="button" class="shot-btn" data-cap="A request form for rentals, moves, removals and storage">
             <span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
             <img src="img/request.jpg" width="1600" height="1000" alt="Sample request form for a hot tub rental, move, removal or storage" loading="lazy">
+            <span class="zoom-hint" aria-hidden="true">Tap to zoom</span>
           </button>
           <figcaption>A request form for rentals, moves, removals and storage</figcaption>
         </figure>
@@ -1110,6 +1387,7 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
           <button type="button" class="shot-btn" data-cap="Every request lands in one list for Beau">
             <span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
             <img src="img/queue.jpg" width="1600" height="1000" alt="Sample list where every hot tub request lands for Beau" loading="lazy">
+            <span class="zoom-hint" aria-hidden="true">Tap to zoom</span>
           </button>
           <figcaption>Every request lands in one list for Beau</figcaption>
         </figure>
@@ -1117,21 +1395,15 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
           <button type="button" class="shot-btn" data-cap="Call centre sample: a customer books their delivery window by text">
             <span class="chrome" aria-hidden="true"><i></i><i></i><i></i></span>
             <img src="img/desk.jpg" width="1600" height="1000" alt="Sample call centre desk where a customer books a delivery window by text. Nothing is sent." loading="lazy">
+            <span class="zoom-hint" aria-hidden="true">Tap to zoom</span>
           </button>
           <figcaption>Call centre sample: a customer books their delivery window by text</figcaption>
         </figure>
-        <figure class="shot is-phone reveal">
-          <button type="button" class="shot-btn" data-cap="It works on a phone">
-            <span class="phone">
-              <img src="img/site-phone.jpg" width="390" height="780" alt="The same Your Hot Tub Guy sample website on a phone" loading="lazy">
-            </span>
-          </button>
-          <figcaption>It works on a phone</figcaption>
-        </figure>
-        <article class="research reveal">
-          <p>New customer research: 20 target companies looked at, the first 8 picked, and the first calls planned. You'll see the list once we start.</p>
-        </article>
       </div>
+      <div class="shot-dots" id="shot-dots" role="group" aria-label="Sample screens"></div>
+      <article class="research reveal">
+        <p>New customer research: 20 target companies looked at, the first 8 picked, and the first calls planned. You'll see the list once we start.</p>
+      </article>
     </section>
 
     <section class="block" id="money" aria-labelledby="money-title">
@@ -1521,9 +1793,10 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
     <section class="block" aria-labelledby="next-title">
       <h2 id="next-title">Next step</h2>
       <p class="intro">Read it, play with the numbers, then we go through it Tuesday at 10. When you're ready, reply to my email with 'yes, hot tubs' and I send the signing copy.</p>
-      <div class="reply">
-        <span class="ref">yes, hot tubs</span>
-        <button type="button" class="copy" data-copy="yes, hot tubs"><span class="copy-label">Copy</span><span class="sr-only"> yes, hot tubs</span></button>
+      <div class="next-card">
+        <p class="next-say">Reply 'yes, hot tubs' to my email</p>
+        <button type="button" class="copy" data-copy="yes, hot tubs"><span class="copy-label">Copy 'yes, hot tubs'</span></button>
+        <button type="button" class="print-btn print-bottom">Print / save as PDF</button>
       </div>
       <p class="sign">Marc</p>
     </section>
@@ -1534,26 +1807,18 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
   </footer>
 </div>
 
-<div class="bar" role="region" aria-label="Running total">
+<div class="bar" id="pay-bar" role="region" aria-label="Running total" aria-hidden="true">
   <div class="bar-inner">
-    <p>
-      <span class="lbl">You'd pay me</span>
-      <output class="amt" id="pay-out" for="sales revenue margin">$23,500</output>
-      <span class="hst">+ HST</span>
-    </p>
-    <p>
-      <span class="lbl">Most you could ever pay</span>
-      <output class="amt" id="cap-out">$120,000</output>
-      <span class="hst">+ HST</span>
-    </p>
+    <p>You'd pay me <output class="amt" id="pay-out" for="sales revenue margin">$23,500</output> <span class="hst">+ HST</span></p>
+    <p>Your max <output class="amt" id="cap-out">$120,000</output> <span class="hst">+ HST</span></p>
   </div>
 </div>
 
 <dialog id="light" aria-labelledby="light-cap">
-  <div class="light-bar">
-    <button type="button" class="light-close" id="light-close">Close</button>
+  <button type="button" class="light-close" id="light-close" aria-label="Close">×</button>
+  <div class="light-zoom" id="light-zoom">
+    <img id="light-img" alt="">
   </div>
-  <img id="light-img" alt="">
   <p id="light-cap"></p>
 </dialog>
 
@@ -1819,8 +2084,8 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
 
   document.getElementById("calc").addEventListener("submit", function (e) { e.preventDefault(); });
 
-  document.getElementById("print").addEventListener("click", function () {
-    window.print();
+  Array.prototype.forEach.call(document.querySelectorAll(".print-btn"), function (btn) {
+    btn.addEventListener("click", function () { window.print(); });
   });
 
   var openState = [];
@@ -1865,9 +2130,14 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
     btn.addEventListener("click", function () {
       copyText(btn.getAttribute("data-copy")).then(function () {
         var label = btn.querySelector(".copy-label");
+        var idle = label.getAttribute("data-idle");
+        if (!idle) {
+          idle = label.textContent;
+          label.setAttribute("data-idle", idle);
+        }
         label.textContent = "Copied";
         window.clearTimeout(timer);
-        timer = window.setTimeout(function () { label.textContent = "Copy"; }, 1400);
+        timer = window.setTimeout(function () { label.textContent = idle; }, 1400);
       }, function () {});
     });
   });
@@ -1890,6 +2160,22 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
     });
   }
 
+  var payBar = document.getElementById("pay-bar");
+  var playSection = document.getElementById("play");
+  if (payBar && playSection && "IntersectionObserver" in window) {
+    var barIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var on = entry.isIntersecting;
+        payBar.classList.toggle("is-on", on);
+        payBar.setAttribute("aria-hidden", on ? "false" : "true");
+      });
+    }, { threshold: 0 });
+    barIO.observe(playSection);
+  } else if (payBar) {
+    payBar.classList.add("is-on");
+    payBar.setAttribute("aria-hidden", "false");
+  }
+
   render();
 })();
 </script>
@@ -1899,25 +2185,98 @@ dialog#light::backdrop { background: rgba(20, 21, 23, 0.78); }
   var lightImg = document.getElementById("light-img");
   var lightCap = document.getElementById("light-cap");
   var closeBtn = document.getElementById("light-close");
+  var zoom = document.getElementById("light-zoom");
   function openLight(btn) {
     var img = btn.querySelector("img");
     lightImg.src = img.getAttribute("src");
     lightImg.alt = img.alt;
     lightCap.textContent = btn.getAttribute("data-cap") || "";
+    if (zoom) { zoom.scrollTop = 0; zoom.scrollLeft = 0; }
     if (light.showModal) light.showModal();
     else light.setAttribute("open", "");
   }
   function closeLight() {
+    if (!light.open && !light.hasAttribute("open")) return;
     if (light.close) light.close();
     else light.removeAttribute("open");
   }
   Array.prototype.forEach.call(document.querySelectorAll(".shot-btn"), function (btn) {
     btn.addEventListener("click", function () { openLight(btn); });
   });
-  closeBtn.addEventListener("click", closeLight);
-  light.addEventListener("click", function (e) {
-    if (e.target === light) closeLight();
+  closeBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    closeLight();
   });
+  light.addEventListener("click", function (e) {
+    if (e.target === light || e.target === zoom) closeLight();
+  });
+  light.addEventListener("cancel", function (e) {
+    e.preventDefault();
+    closeLight();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeLight();
+  });
+
+  var gallery = document.getElementById("gallery");
+  var dotsWrap = document.getElementById("shot-dots");
+  if (!gallery || !dotsWrap) return;
+  var shots = Array.prototype.filter.call(gallery.children, function (el) {
+    return el.classList && el.classList.contains("shot");
+  });
+  var phoneQ = window.matchMedia("(max-width: 699px)");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var dots = shots.map(function (shot, i) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "shot-dot";
+    b.setAttribute("aria-label", "Sample " + (i + 1) + " of " + shots.length);
+    b.addEventListener("click", function () {
+      var left = shot.getBoundingClientRect().left - gallery.getBoundingClientRect().left + gallery.scrollLeft;
+      gallery.scrollTo({ left: left, behavior: reduce ? "auto" : "smooth" });
+    });
+    dotsWrap.appendChild(b);
+    return b;
+  });
+  function setActive(index) {
+    dots.forEach(function (dot, n) {
+      var on = n === index;
+      dot.classList.toggle("is-on", on);
+      if (on) dot.setAttribute("aria-current", "true");
+      else dot.removeAttribute("aria-current");
+    });
+  }
+  function activeIndex() {
+    var edge = gallery.getBoundingClientRect().left;
+    var best = 0;
+    var bestDist = Infinity;
+    shots.forEach(function (shot, i) {
+      var dist = Math.abs(shot.getBoundingClientRect().left - edge);
+      if (dist < bestDist) { bestDist = dist; best = i; }
+    });
+    return best;
+  }
+  function fitHeight() {
+    if (!phoneQ.matches) {
+      gallery.style.height = "";
+      return;
+    }
+    var best = activeIndex();
+    setActive(best);
+    if (shots[best] && shots[best].offsetHeight) gallery.style.height = shots[best].offsetHeight + "px";
+  }
+  var settle = 0;
+  gallery.addEventListener("scroll", function () {
+    if (phoneQ.matches) setActive(activeIndex());
+    window.clearTimeout(settle);
+    settle = window.setTimeout(fitHeight, 140);
+  }, { passive: true });
+  if (phoneQ.addEventListener) phoneQ.addEventListener("change", fitHeight);
+  window.addEventListener("resize", fitHeight);
+  Array.prototype.forEach.call(gallery.querySelectorAll("img"), function (img) {
+    img.addEventListener("load", fitHeight);
+  });
+  fitHeight();
 })();
 </script>
 </body>
